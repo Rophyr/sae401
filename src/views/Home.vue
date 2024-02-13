@@ -7,7 +7,7 @@
             <img :src="getCardImagePath(rowIndex, cardIndex)">
           </div>
           <div class="back">
-            <img :src="card.backImagePath" alt="testtestets">
+            <img :src="card.backImagePath" alt="Back face">
           </div>
         </div>
       </div>
@@ -85,35 +85,19 @@ for (let i = 0; i < grid.value.length; i++) {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-  font-family: 'Quicksand', sans-serif;
-}
-
-body {
-  background: #eeffe7;
-}
-
 .grid {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .row {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
 }
 
 .container {
-  margin: 0 10px;
+  margin: 5px;
   perspective: 1000px;
 }
 
@@ -125,7 +109,7 @@ body {
   transition: transform 0.5s;
 }
 
-.container.active .card {
+.card.active {
   transform: rotateY(180deg);
 }
 
@@ -149,5 +133,4 @@ img {
   width: 100%;
   height: 100%;
 }
-
 </style>
