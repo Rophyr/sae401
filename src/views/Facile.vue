@@ -4,10 +4,10 @@
       <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
         <div class="card" :class="{ active: card.isFlipped }">
           <div class="front">
-            <img :src="getCardImagePath(rowIndex, cardIndex)">
+            <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
           </div>
           <div class="back">
-            <img :src="card.backImagePath" alt="Back face">
+            <img draggable="false" :src="card.backImagePath" alt="Back face">
           </div>
         </div>
       </div>
