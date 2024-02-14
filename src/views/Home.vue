@@ -18,11 +18,12 @@
 <script setup>
 import { ref } from 'vue';
 
-const grid = ref([
-  [{ isFlipped: false, backImagePath: '' }, { isFlipped: false, backImagePath: '' }, { isFlipped: false, backImagePath: '' }],
-  [{ isFlipped: false, backImagePath: '' }, { isFlipped: false, backImagePath: '' }, { isFlipped: false, backImagePath: '' }],
-  [{ isFlipped: false, backImagePath: '' }, { isFlipped: false, backImagePath: '' }, { isFlipped: false, backImagePath: '' }]
-]);
+const rows = 3;
+const columns = 4;
+const totalCards = rows * columns;
+const numEachType = totalCards / 6; // Il y a 6 types de cartes
+
+const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
 
@@ -69,12 +70,67 @@ function getCardImagePath(rowIndex, cardIndex) {
 }
 
 function getBackImagePath(rowIndex, cardIndex) {
-  if (Math.random() < 0.5) {
-    return "../../public/rateau.png"; // Utilise le rateau
-  } else {
-    return "../../public/arrosoir.png"; // Utilise l'arrosoir
+  const types = [
+    { image: "../../public/rateau.png", count: 0 },
+    { image: "../../public/arrosoir.png", count: 0 },
+    { image: "../../public/elec.png", count: 0 },
+    { image: "../../public/rotten.png", count: 0 },
+    { image: "../../public/trash.png", count: 0 },
+    { image: "../../public/velo.png", count: 0 }
+  ];
+
+  // Compter le nombre d'occurrences de chaque type dans la grille
+  for (let i = 0; i < grid.value.length; i++) {
+    for (let j = 0; j < grid.value[i].length; j++) {
+      const backImagePath = grid.value[i][j].backImagePath;
+      const index = types.findIndex(type => type.image === backImagePath);
+      if (index !== -1) {
+        types[index].count++;
+      }
+    }
   }
+
+  // Sélectionner un type d'image qui n'a pas encore atteint le nombre maximum de paires
+  let selectedType = null;
+  do {
+    const randomIndex = Math.floor(Math.random() * types.length);
+    if (types[randomIndex].count < numEachType) {
+      selectedType = types[randomIndex];
+      selectedType.count++;
+    }
+  } while (!selectedType);
+
+  // Incrémenter le compteur du type sélectionné
+  switch (selectedType.image) {
+    case "../../public/rateau.png":
+      numRateau++;
+      break;
+    case "../../public/arrosoir.png":
+      numArrosoir++;
+      break;
+    case "../../public/elec.png":
+      numElec++;
+      break;
+    case "../../public/rotten.png":
+      numRotten++;
+      break;
+    case "../../public/trash.png":
+      numTrash++;
+      break;
+    case "../../public/velo.png":
+      numVelo++;
+      break;
+  }
+
+  return selectedType.image;
 }
+
+let numRateau = 0;
+let numArrosoir = 0;
+let numElec = 0;
+let numRotten = 0;
+let numTrash = 0;
+let numVelo = 0;
 
 // Assurez-vous que chaque carte a un chemin de backImagePath attribué correctement lors de la création de la grille
 for (let i = 0; i < grid.value.length; i++) {
