@@ -1,23 +1,24 @@
 <template>
+  <div id="app">
+    <img src="/froggy.png" alt="logo" class="logo">
 
-  <img src="/froggy.png" alt="logo" class="logo">
-
-  <div class="grid">
-    <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
-      <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
-        <div class="card" :class="{ active: card.isFlipped }">
-          <div class="front">
-            <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
-          </div>
-          <div class="back">
-            <img draggable="false" :src="card.backImagePath" alt="Back face">
+    <div class="grid">
+      <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
+        <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
+          <div class="card" :class="{ active: card.isFlipped }">
+            <div class="front">
+              <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+            </div>
+            <div class="back">
+              <img draggable="false" :src="card.backImagePath" alt="Back face">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <button @click="goToMenu" class="btn btn-menu"><img src="/back.png" alt=""></button>
+    <button @click="goToMenu" class="btn btn-menu"><img src="/back.png" alt=""></button>
+  </div>
 </template>
 
 <script setup>
@@ -33,21 +34,15 @@ const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns
 let flippedCard = null;
 
 function flipCard(rowIndex, cardIndex) {
-  console.log("Clicked card:", rowIndex, cardIndex);
-
   const card = grid.value[rowIndex][cardIndex];
 
   if (!card.isFlipped) {
-    console.log("Flipping card...");
-
     card.isFlipped = true;
 
     if (!flippedCard) {
       flippedCard = { rowIndex, cardIndex, backImagePath: card.backImagePath };
-      console.log("First card flipped:", flippedCard);
     } else {
       const { rowIndex: prevRowIndex, cardIndex: prevCardIndex, backImagePath: prevBackImagePath } = flippedCard;
-      console.log("Second card flipped:", rowIndex, cardIndex);
 
       if (rowIndex === prevRowIndex && cardIndex === prevCardIndex) {
         return;
@@ -148,10 +143,24 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.cdnfonts.com/css/simply-rounded');
 
-body{
+body {
   overflow: hidden;
   background-image: url("/homepagebg.png");
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin: 30px 0;
+  width: 250px;
+  height: 80px;
 }
 
 .grid {
@@ -176,10 +185,10 @@ body{
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.1s;
+  transition: transform 0.3s;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.05);
 }
 
@@ -187,9 +196,8 @@ body{
   transform: rotateY(180deg);
 }
 
-.card.active:hover{
+.card.active:hover {
   transform: scale(1.05) rotateY(180deg);
-
 }
 
 .front,
@@ -213,15 +221,7 @@ img {
   height: 100%;
 }
 
-.logo{
-  position: absolute;
-  top: 10px;
-  left: 30px;
-  width: 250px;
-  height: 80px;
-}
-
-.btn-menu{
+.btn-menu {
   position: absolute;
   bottom: 10px;
   left: 10px;
