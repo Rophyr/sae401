@@ -1,4 +1,7 @@
 <template>
+
+  <img src="/froggy.png" alt="logo" class="logo">
+
   <div class="grid">
     <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
       <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
@@ -13,6 +16,8 @@
       </div>
     </div>
   </div>
+
+  <button @click="goToMenu" class="btn btn-menu"><img src="/back.png" alt=""></button>
 </template>
 
 <script setup>
@@ -45,22 +50,18 @@ function flipCard(rowIndex, cardIndex) {
       console.log("Second card flipped:", rowIndex, cardIndex);
 
       if (rowIndex === prevRowIndex && cardIndex === prevCardIndex) {
-        return; // Ne rien faire si la même carte est retournée
+        return;
       }
 
       if (card.backImagePath === prevBackImagePath) {
-        // Les deux cartes ont la même backface, elles disparaissent
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
-        console.log("Matching backfaces!");
       } else {
-        // Les deux cartes ont des backfaces différentes, les retourner à leur frontface
         grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
         grid.value[rowIndex][cardIndex].isFlipped = false;
-        console.log("Different backfaces, flipping back...");
       }
 
-      flippedCard = null; // Réinitialiser la carte retournée
+      flippedCard = null;
     }
   }
 }
@@ -79,7 +80,6 @@ function getBackImagePath(rowIndex, cardIndex) {
     { image: "/velo.png", count: 0 }
   ];
 
-  // Compter le nombre d'occurrences de chaque type dans la grille
   for (let i = 0; i < grid.value.length; i++) {
     for (let j = 0; j < grid.value[i].length; j++) {
       const backImagePath = grid.value[i][j].backImagePath;
@@ -90,7 +90,6 @@ function getBackImagePath(rowIndex, cardIndex) {
     }
   }
 
-  // Sélectionner un type d'image qui n'a pas encore atteint le nombre maximum de paires
   let selectedType = null;
   do {
     const randomIndex = Math.floor(Math.random() * types.length);
@@ -100,7 +99,6 @@ function getBackImagePath(rowIndex, cardIndex) {
     }
   } while (!selectedType);
 
-  // Incrémenter le compteur du type sélectionné
   switch (selectedType.image) {
     case "/rateau.png":
       numRateau++;
@@ -132,7 +130,6 @@ let numRotten = 0;
 let numTrash = 0;
 let numVelo = 0;
 
-// Assurez-vous que chaque carte a un chemin de backImagePath attribué correctement lors de la création de la grille
 for (let i = 0; i < grid.value.length; i++) {
   for (let j = 0; j < grid.value[i].length; j++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
@@ -140,7 +137,23 @@ for (let i = 0; i < grid.value.length; i++) {
 }
 </script>
 
+<script>
+export default {
+  methods: {
+    goToMenu() {
+      this.$router.push('/homepage');
+    }
+  }
+}
+</script>
+
 <style scoped>
+
+body{
+  overflow: hidden;
+  background-image: url("/homepagebg.png");
+}
+
 .grid {
   display: flex;
   flex-direction: column;
@@ -158,15 +171,25 @@ for (let i = 0; i < grid.value.length; i++) {
 }
 
 .card {
-  width: 125px;
-  height: 125px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: transform 0.1s;
+}
+
+.card:hover{
+  transform: scale(1.05);
 }
 
 .card.active {
   transform: rotateY(180deg);
+}
+
+.card.active:hover{
+  transform: scale(1.05) rotateY(180deg);
+
 }
 
 .front,
@@ -188,5 +211,19 @@ for (let i = 0; i < grid.value.length; i++) {
 img {
   width: 100%;
   height: 100%;
+}
+
+.logo{
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 250px;
+  height: 80px;
+}
+
+.btn-menu{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 </style>
