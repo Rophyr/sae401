@@ -4,7 +4,7 @@
     <button @click="goToClassement" class="btn btn-leaderboard">Classement</button>
 
     <!-- Logo (au centre) -->
-    <img src="chemin/vers/logo.png" alt="Logo" class="logo">
+    <img src="/froggy.png" draggable="false" alt="Logo" class="logo">
 
     <!-- Menu déroulant des difficultés du jeu -->
     <select v-model="selectedDifficulty" class="form-select">
@@ -20,7 +20,7 @@
     <button @click="goToProfil" class="btn btn-profile">Profil</button>
 
     <!-- Bouton vers les règles (en bas à droite) -->
-    <button @click="goToRegles" class="btn btn-info">Règles</button>
+    <button @click="goToRegles" class="btn btn-info"><img src="/rules.png" alt="règles"></button>
   </div>
 </template>
 
@@ -53,6 +53,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.cdnfonts.com/css/simply-rounded');
 body{
   overflow: hidden;
 }
@@ -71,6 +72,23 @@ body{
 
 .btn {
   margin: 10px;
+  background: none;
+  border: none;
+  font-family: 'Simply Rounded', sans-serif;
+  font-size: large;
+}
+
+.form-select{
+  width: 15.573vw;
+  height: 5.741vh;
+  color: white;
+  text-align: center;
+  font-family: 'Simply Rounded', sans-serif;
+  font-size: large;
+  background-color: #4C8B25;
+  box-shadow: 0px 4px 0px 0px #5FAE30;
+  border-radius: 15px;
+  border: none;
 }
 
 .btn-profile {
