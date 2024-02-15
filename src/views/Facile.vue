@@ -66,17 +66,17 @@ function flipCard(rowIndex, cardIndex) {
 }
 
 function getCardImagePath(rowIndex, cardIndex) {
-  return "../../public/card.png";
+  return "/card.png";
 }
 
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "../../public/rateau.png", count: 0 },
-    { image: "../../public/arrosoir.png", count: 0 },
-    { image: "../../public/elec.png", count: 0 },
-    { image: "../../public/rotten.png", count: 0 },
-    { image: "../../public/trash.png", count: 0 },
-    { image: "../../public/velo.png", count: 0 }
+    { image: "/rateau.png", count: 0 },
+    { image: "/arrosoir.png", count: 0 },
+    { image: "/elec.png", count: 0 },
+    { image: "/rotten.png", count: 0 },
+    { image: "/trash.png", count: 0 },
+    { image: "/velo.png", count: 0 }
   ];
 
   // Compter le nombre d'occurrences de chaque type dans la grille
@@ -102,22 +102,22 @@ function getBackImagePath(rowIndex, cardIndex) {
 
   // Incrémenter le compteur du type sélectionné
   switch (selectedType.image) {
-    case "../../public/rateau.png":
+    case "/rateau.png":
       numRateau++;
       break;
-    case "../../public/arrosoir.png":
+    case "/arrosoir.png":
       numArrosoir++;
       break;
-    case "../../public/elec.png":
+    case "/elec.png":
       numElec++;
       break;
-    case "../../public/rotten.png":
+    case "/rotten.png":
       numRotten++;
       break;
-    case "../../public/trash.png":
+    case "/trash.png":
       numTrash++;
       break;
-    case "../../public/velo.png":
+    case "/velo.png":
       numVelo++;
       break;
   }
