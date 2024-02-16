@@ -148,6 +148,9 @@ export default {
 body {
   overflow: hidden;
   background-image: url("/homepagebg.png");
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #app {
@@ -158,9 +161,12 @@ body {
 }
 
 .logo {
+  position: absolute;
   margin: 30px 0;
   width: 250px;
   height: 80px;
+  top: 10px;
+  left: 10px;
 }
 
 .grid {
@@ -181,8 +187,8 @@ body {
 
 .card {
   margin: 10px;
-  width: 200px;
-  height: 200px;
+  width:  10.417vw;
+  height:  10.417vw ;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.3s;

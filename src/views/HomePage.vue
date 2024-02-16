@@ -48,6 +48,9 @@ export default {
 body{
   overflow: hidden;
   background-image: url("/homepagebg.png");
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #app {
