@@ -12,7 +12,8 @@
 
     <button @click="playGame" class="btn btn-play">Jouer</button>
 
-    <button @click="goToProfil" class="btn btn-profile">Profil</button>
+    <button @click="goToLogin" class="btn btn-login">Login</button>
+    <button @click="goToRegister" class="btn btn-register">Register</button>
 
     <button @click="goToRegles" class="btn btn-info"><img src="/rules.png" alt="règles"></button>
   </div>
@@ -38,6 +39,12 @@ export default {
       } else if (selectedDifficulty === 'difficile') {
         this.$router.push('/difficile');
       }
+    },
+    goToRegister(){
+      this.$router.push('/register');
+    },
+    goToLogin(){
+      this.$router.push('/login');
     }
   }
 }
@@ -101,10 +108,16 @@ body{
   box-shadow: 0 4px 0 0 #8CCF57;
 }
 
-.btn-profile {
+.btn-register {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 2%;
+  right: 2%;
+}
+
+.btn-login {
+  position: absolute;
+  top: 2%;
+  right: 10%;
 }
 
 .btn-play {

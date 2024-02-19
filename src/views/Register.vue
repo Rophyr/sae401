@@ -2,13 +2,16 @@
   <div id="app">
     <img src="/froggy.png" alt="logo" class="logo">
 
-    h1
+    <div class="register-header">
+      <div class="green-bar"></div>
+      <h1>INSCRIPTION</h1>
+    </div>
 
     <form @submit.prevent="registerUser" class="register-form">
       <input v-model="email" type="text" placeholder="Adresse Mail" required>
       <input v-model="password" type="password" placeholder="Mot de passe" required>
       <input v-model="confirmPassword" type="password" placeholder="Confirmer le mot de passe" required>
-      <button type="submit" class="btn btn-register">S'inscrire</button>
+      <button type="submit" class="btn btn-submit">S'inscrire</button>
     </form>
 
     <button @click="goToMenu" class="btn btn-menu"><img src="/back.png" alt=""></button>
@@ -34,6 +37,36 @@ body {
   background-size: 100vw;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.register-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 18%;
+  width: 42.344vw;
+  right:  13.177vw;
+}
+
+.green-bar{
+  display: flex;
+  background-color: #4C8B25;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 80%;
+  border-radius: 5px;
+  width: 16vw;
+  height: 6px;
+  right:  13.177vw;
+}
+
+.register-header h1 {
+  text-align: center;
+  width: 42.344vw;
+  font-size: 32px;
+  font-family: 'Simply Rounded', sans-serif;
 }
 
 .register-form {
@@ -63,7 +96,7 @@ body {
   border: 1px solid #ccc;
 }
 
-.btn-register {
+.btn-submit {
   background-color: #4C8B25;
   box-shadow: 0 4px 0 0 #5FAE30;
   width: 38.1665vw;
@@ -76,7 +109,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.btn-register:hover {
+.btn-submit:hover {
   background-color: #5FAE30;
   box-shadow: 0 4px 0 0 #4C8B25;
 }
