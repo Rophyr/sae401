@@ -1,18 +1,31 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import '__variables.scss';
- *   |         ^^^^^^^^^^^^^^^^^^
- *   '
- *   assets\__component.scss 1:9  @import
- *   assets\styles.scss 3:9       root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import '__variables.scss';\d\a   \2502          ^^^^^^^^^^^^^^^^^^\a   \2575 \a   assets\\__component.scss 1:9  @import\a   assets\\styles.scss 3:9       root stylesheet";
+@font-face {
+  font-family: "Sobiscuit";
+  src: url("/public/fonts/Sobiscuit.otf") format("opentype");
 }
+@font-face {
+  font-family: "Simply Rounded";
+  src: url("/public/fonts/Simply Rounded.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sobiscuit";
+  src: url("/public/fonts/Sobiscuit.otf") format("opentype");
+}
+@font-face {
+  font-family: "Simply Rounded";
+  src: url("/public/fonts/Simply Rounded.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sobiscuit";
+  src: url("/public/fonts/Sobiscuit.otf") format("opentype");
+}
+@font-face {
+  font-family: "Simply Rounded";
+  src: url("/public/fonts/Simply Rounded.ttf") format("truetype");
+}
+.btn {
+  padding: 3%;
+  background-color: #F7FAF7;
+  border: 3px solid red;
+}
+
+/*# sourceMappingURL=styles.css.map */
