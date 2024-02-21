@@ -5,6 +5,7 @@ import Moyen from '../views/Moyen.vue'
 import Difficile from '../views/Difficile.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
+import Classement from '../views/Classement.vue'
 
 const routes = [
   // Redirection automatique vers la page d'accueil
@@ -15,6 +16,7 @@ const routes = [
   { path: '/difficile', component: Difficile },
   { path: '/register', component: Register },
   { path: '/login', component: Login },
+  {path: '/classement', component: Classement}
 ]
 
 const router = createRouter({
