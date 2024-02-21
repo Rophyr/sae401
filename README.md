@@ -94,7 +94,7 @@ Maîtrise technique - Organisé - Bonne compréhension
 
 Amandine VERNEAU
 
-Développeur FullStack - Designer Graphique
+Développeuse FullStack - Designer Graphique
 
 Polyvalente - Bonne collaboration - Pertinente********
 
