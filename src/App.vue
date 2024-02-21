@@ -5,9 +5,12 @@
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App'
+  };
+  
+  // import '../src/assets/styles.css'; 
+
 </script>
 
 <style>

@@ -1,22 +1,42 @@
 <template>
-  <div id="app">
-    <button @click="goToClassement" class="btn btn-leaderboard">Classement</button>
+  <div id="app" class="home">
 
-    <img src="/froggy.png" draggable="false" alt="Logo" class="logo">
+    <div class="container container--home">
+      <div class="top">
+        <button @click="goToClassement" class="btn btn--green btn--round"><img src="/images/Classement.svg" alt=""></button>
+        <button class="btn btn--green btn--round"><img src="/images/Profil.svg" alt=""></button>
+      </div>
 
-    <select v-model="selectedDifficulty" class="form-select">
-      <option value="facile">Facile</option>
-      <option value="moyen">Moyen</option>
-      <option value="difficile">Difficile</option>
-    </select>
+      <div class="middle">
+        
+        <img src="/froggy.png" draggable="false" alt="Logo" class="logo">
 
-    <button @click="playGame" class="btn btn-play">Jouer</button>
+        <div class="middle__buttons">
 
-    <button @click="goToLogin" class="btn btn-login">Login</button>
-    <button @click="goToRegister" class="btn btn-register">Register</button>
+          <select v-model="selectedDifficulty" class="btn btn--green btn--select">
+            <option value="facile">Facile</option>
+            <option value="moyen">Moyen</option>
+            <option value="difficile">Difficile</option>
+          </select>
 
-    <button @click="goToRegles" class="btn btn-info"><img src="/rules.png" alt="règles"></button>
+          <button @click="playGame" class="btn btn--green">Jouer</button>
+
+          <!-- <button @click="goToLogin" class="btn btn--green">Login</button>
+          <button @click="goToRegister" class="btn btn--green">Register</button> -->
+
+        </div>
+
+      </div>
+
+      <div class="bottom">
+        <button @click="goToRegles" class="btn btn--green btn--round"><img src="/images/Rules.svg" alt="règles"></button>
+      </div>
+
+    </div>
+      
   </div>
+
+    
 </template>
 
 <script>
@@ -52,83 +72,83 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.cdnfonts.com/css/simply-rounded');
-body{
-  overflow: hidden;
-  background-image: url("/homepagebg.png");
-  background-size: 100vw;
-  background-repeat: no-repeat;
-  background-position: center;
-  #app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    .btn {
-      margin: 10px;
-      background: none;
-      border: none;
-      font-family: 'Simply Rounded', sans-serif;
-      font-size: x-large;
-    }
-    .form-select {
-      appearance: none;
-      background-image: url('/arrow.png');
-      background-repeat: no-repeat;
-      background-position: calc(100% - 10%) center;;
-      width: 15.573vw;
-      height: 5.741vh;
-      color: white;
-      text-align: center;
-      font-family: 'Simply Rounded', sans-serif;
-      font-size: x-large;
-      background-color: #4C8B25;
-      box-shadow: 0 4px 0 0 #5FAE30;
-      border-radius: 15px;
-      border: none;
-      &:hover {
-        transform: scale(1.03);
-        background-color: #5FAE30;
-        box-shadow: 0 4px 0 0 #8CCF57;
-      }
-    }
-    .btn-register {
-      position: absolute;
-      top: 2%;
-      right: 2%;
-    }
-    .btn-login {
-      position: absolute;
-      top: 2%;
-      right: 10%;
-    }
-    .btn-play {
-      width: 15.573vw;
-      height: 5.741vh;
-      color: white;
-      text-align: center;
-      background-color: #4C8B25;
-      box-shadow: 0 4px 0 0 #5FAE30;
-      border-radius: 15px;
-      border: none;
-      margin-top: 8%;
-      transition: 0.1s;
-      &:hover{
-        transform: scale(1.03);
-        background-color: #5FAE30;
-        box-shadow: 0 4px 0 0 #8CCF57;
-      }
-    }
-    .btn-leaderboard {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-    .btn-info {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-    }
-  }
-}
+// body{
+//   overflow: hidden;
+//   background-image: url("/homepagebg.png");
+//   background-size: 100vw;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   #app {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     height: 100vh;
+//     // .btn {
+//     //   margin: 10px;
+//     //   // background: none;
+//     //   border: none;
+//     //   font-family: 'Simply Rounded', sans-serif;
+//     //   font-size: x-large;
+//     // }
+//     .form-select {
+//       appearance: none;
+//       background-image: url('/arrow.png');
+//       background-repeat: no-repeat;
+//       background-position: calc(100% - 10%) center;;
+//       width: 15.573vw;
+//       height: 5.741vh;
+//       color: white;
+//       text-align: center;
+//       font-family: 'Simply Rounded', sans-serif;
+//       font-size: x-large;
+//       background-color: #4C8B25;
+//       box-shadow: 0 4px 0 0 #5FAE30;
+//       border-radius: 15px;
+//       border: none;
+//       &:hover {
+//         transform: scale(1.03);
+//         background-color: #5FAE30;
+//         box-shadow: 0 4px 0 0 #8CCF57;
+//       }
+//     }
+//     .btn-register {
+//       position: absolute;
+//       top: 2%;
+//       right: 2%;
+//     }
+//     .btn-login {
+//       position: absolute;
+//       top: 2%;
+//       right: 10%;
+//     }
+//     .btn-play {
+//       width: 15.573vw;
+//       height: 5.741vh;
+//       color: white;
+//       text-align: center;
+//       background-color: #4C8B25;
+//       box-shadow: 0 4px 0 0 #5FAE30;
+//       border-radius: 15px;
+//       border: none;
+//       margin-top: 8%;
+//       transition: 0.1s;
+//       &:hover{
+//         transform: scale(1.03);
+//         background-color: #5FAE30;
+//         box-shadow: 0 4px 0 0 #8CCF57;
+//       }
+//     }
+//     .btn-leaderboard {
+//       position: absolute;
+//       top: 10px;
+//       left: 10px;
+//     }
+//     .btn-info {
+//       position: absolute;
+//       bottom: 10px;
+//       right: 10px;
+//     }
+//   }
+// }
 </style>
