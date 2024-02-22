@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <button @click="goToMenu" class="btn btn-menu"><img src="/back.png" alt=""></button>
+    <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
   </div>
 </template>
 

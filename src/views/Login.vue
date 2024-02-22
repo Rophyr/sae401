@@ -1,19 +1,23 @@
 <template>
-  <div id="app">
-    <img src="/froggy.png" alt="logo" class="logo">
+  <div id="app" class="login">
+    <div class="container container__login">
 
-    <div class="register-header">
-      <div class="green-bar"></div>
-      <h1>CONNEXION</h1>
+      <img src="/froggy.png" alt="logo" class="logo">
+
+      <div class="register-header">
+        <div class="green-bar"></div>
+        <h1>CONNEXION</h1>
+      </div>
+
+      <form @submit.prevent="registerUser" class="register-form">
+        <input v-model="email" type="text" placeholder="Adresse Mail" required>
+        <input v-model="password" type="password" placeholder="Mot de passe" required>
+        <button type="submit" class="btn btn--green">Entrer</button>
+      </form>
+
+      <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
+    
     </div>
-
-    <form @submit.prevent="registerUser" class="register-form">
-      <input v-model="email" type="text" placeholder="Adresse Mail" required>
-      <input v-model="password" type="password" placeholder="Mot de passe" required>
-      <button type="submit" class="btn btn-submit">Entrer</button>
-    </form>
-
-    <button @click="goToMenu" class="btn btn-menu"><img src="/back.png" alt=""></button>
   </div>
 </template>
 
@@ -30,6 +34,7 @@ export default {
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/simply-rounded');
 
+/* 
 body {
   overflow: hidden;
   background-image: url("/homepagebg.png");
@@ -137,5 +142,5 @@ img {
   position: absolute;
   bottom: 10px;
   left: 10px;
-}
-</style>
+} */
+</style> 
