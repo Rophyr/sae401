@@ -2,21 +2,35 @@
   <div id="app" class="login">
     <div class="container container__login">
 
-      <img src="/froggy.png" alt="logo" class="logo">
-
-      <div class="register-header">
-        <div class="green-bar"></div>
-        <h1>CONNEXION</h1>
+      <div class="container__top">
+        
       </div>
 
-      <form @submit.prevent="registerUser" class="register-form">
-        <input v-model="email" type="text" placeholder="Adresse Mail" required>
-        <input v-model="password" type="password" placeholder="Mot de passe" required>
-        <button type="submit" class="btn btn--green">Entrer</button>
-      </form>
+      <div class="container__middle">
+        <img src="/froggy.png" alt="logo" class="logo">
 
-      <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
+        <div class="form">
+          
+          <div class="title">
+            <h1>CONNEXION</h1>
+            <div class="green-bar"></div>
+          </div>
+
+          <form @submit.prevent="registerUser">
+            <div class="inputs">
+              <input v-model="email" type="text" placeholder="email" required>
+              <input v-model="password" type="password" placeholder="mot de passe" required>
+            </div>
+            <button type="submit" class="btn btn--dark-green">valider</button>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="container__bottom">
+        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
     
+      </div>
     </div>
   </div>
 </template>
