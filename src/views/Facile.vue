@@ -3,7 +3,14 @@
     <div class="container container__facile">
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
-      <div class="grid">
+      <div class="container__top">
+        <div class="timer">
+          <p>00:00</p>
+        </div>
+      </div>
+
+      <div class="container__middle">
+        <div class="grid"> <!-- JEU -->
         <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
           <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
             <div class="card" :class="{ active: card.isFlipped }">
@@ -16,9 +23,13 @@
             </div>
           </div>
         </div>
+      </div> <!-- Fin JEU -->
       </div>
 
-      <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
+      <div class="container__bottom">
+        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
+    
+      </div>
       
     </div>
   </div>
@@ -159,91 +170,4 @@ export default {
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/simply-rounded');
 
-body {
-  overflow: hidden;
-  /* background-image: url("/homepagebg.png"); */
-  background-size: 100vw;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  position: absolute;
-  margin: 30px 0;
-  width: 250px;
-  height: 80px;
-  top: 10px;
-  left: 10px;
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.row {
-  display: flex;
-}
-
-.container {
-  margin: 5px;
-  perspective: 1000px;
-}
-
-.card {
-  margin: 10px;
-  width:  10.417vw;
-  height:  10.417vw ;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card.active {
-  transform: rotateY(180deg);
-}
-
-.card.active:hover {
-  transform: scale(1.05) rotateY(180deg);
-}
-
-.front,
-.back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.front {
-  transform: rotateY(0deg);
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-
-.btn-menu {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
 </style>
