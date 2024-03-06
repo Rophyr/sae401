@@ -39,15 +39,11 @@
       </div>
 
     </div>
-
-      
-      
     </div>
 
       <div id="victory">
         <p id="vic-text">Félicitations, tu as réussi(e) !</p>
       </div>
-  </div>
 </template>
 
 <script setup>
