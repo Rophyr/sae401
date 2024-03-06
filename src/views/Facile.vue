@@ -21,6 +21,10 @@
       <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
       
     </div>
+
+      <div id="victory">
+        <p id="vic-text">Félicitations, tu as réussi(e) !</p>
+      </div>
   </div>
 </template>
 
@@ -161,7 +165,6 @@ export default {
 
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/simply-rounded');
-
 body {
   overflow: hidden;
   /* background-image: url("/homepagebg.png"); */
