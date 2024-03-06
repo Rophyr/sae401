@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-between;
     
-    border: 1px solid green;
+    // border: 1px solid green;
 
     height: 100%;
 
@@ -27,6 +27,7 @@
 @mixin container-top{
     // &__top{
         height: 100px;
+        width: 94%;
 }
     
 @mixin container-middle{
@@ -49,4 +50,14 @@
 
         // border: 1px solid red;
 
+}
+
+@mixin colorize-letters($colors) {
+    $i: 1;
+    @each $color in $colors {
+      .word:nth-child(#{$i}) {
+        color: $color;
+      }
+      $i: $i + 1;
     }
+}

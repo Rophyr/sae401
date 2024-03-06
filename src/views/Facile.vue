@@ -10,27 +10,37 @@
       </div>
 
       <div class="container__middle">
+
+        <div class="explain">
+          <p class="word">
+            RATEAU
+          </p>
+        </div>
+        
         <div class="grid"> <!-- JEU -->
-        <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
-          <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
-            <div class="card" :class="{ active: card.isFlipped }">
-              <div class="front">
-                <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
-              </div>
-              <div class="back">
-                <img draggable="false" :src="card.backImagePath" alt="Back face">
+          <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
+            <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
+              <div class="card" :class="{ active: card.isFlipped }">
+                <div class="front">
+                  <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+                </div>
+                <div class="back">
+                  <img draggable="false" :src="card.backImagePath" alt="Back face">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div> <!-- Fin JEU -->
+        </div> <!-- Fin JEU -->
       </div>
-    </div>
 
       <div class="container__bottom">
         <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
     
       </div>
+
+    </div>
+
+      
       
     </div>
 
