@@ -166,14 +166,19 @@ body{
     justify-content: space-between;
     height: 100vh;
     // max-height: 100vh;
-    // width: 100vw;
+    width: 100%;
     background-image: url('/public/images/background-niv-facile.jpg');
     background-size: cover;
     background-position: center;
+    // background-repeat: no-repeat;
     overflow: hidden;
+
+    // border: 1px solid red;
 
     .container{
         @include container-col;
+
+        width: 100%;
 
         &__top{
             @include container-top;

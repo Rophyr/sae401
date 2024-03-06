@@ -9,7 +9,7 @@
     name: 'App'
   };
   
-  import '../src/assets/styles.css'; //jsp pas pourquoi y'en a pas besoin ??
+  // import '../src/assets/styles.css'; //jsp pas pourquoi y'en a pas besoin ??
 
 </script>
 

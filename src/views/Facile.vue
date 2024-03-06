@@ -31,6 +31,7 @@
             </div>
           </div>
         </div> <!-- Fin JEU -->
+
       </div>
 
       <div class="container__bottom">
