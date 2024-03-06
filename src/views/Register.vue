@@ -1,20 +1,42 @@
 <template>
-  <div id="app">
-    <img src="/froggy.png" alt="logo" class="logo">
+  <div id="app" class="login">
+    <div class="container container__login">
 
-    <div class="register-header">
-      <div class="green-bar"></div>
-      <h1>INSCRIPTION</h1>
+      <div class="container__top">
+        
+      </div>
+
+      <div class="container__middle">
+
+        <img src="/froggy.png" alt="logo" class="logo">
+
+        <div class="form">
+
+          <div class="title">
+            <h1>INSCRIPTION</h1>
+            <div class="green-bar"></div>
+          </div>
+
+          <form @submit.prevent="registerUser">
+            <div class="inputs">
+              <input v-model="email" type="text" placeholder="Adresse Mail" required>
+              <input v-model="password" type="password" placeholder="Mot de passe" required>
+              <input v-model="confirmPassword" type="password" placeholder="Confirmer le mot de passe" required>
+            </div>
+            <button type="submit" class="btn btn--dark-green">S'inscrire</button>
+          </form>
+
+        </div>
+      
+      
+      </div>
+
+      <div class="container__bottom">
+        <button @click="goToMenu" class="tn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
+      </div>
+
     </div>
-
-    <form @submit.prevent="registerUser" class="register-form">
-      <input v-model="email" type="text" placeholder="Adresse Mail" required>
-      <input v-model="password" type="password" placeholder="Mot de passe" required>
-      <input v-model="confirmPassword" type="password" placeholder="Confirmer le mot de passe" required>
-      <button type="submit" class="btn btn-submit">S'inscrire</button>
-    </form>
-
-    <button @click="goToMenu" class="btn btn-menu"><img src="/back.png" alt=""></button>
+    
   </div>
 </template>
 
@@ -30,7 +52,7 @@ export default {
 
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/simply-rounded');
-
+/* 
 body {
   overflow: hidden;
   background-image: url("/homepagebg.png");
@@ -138,5 +160,5 @@ img {
   position: absolute;
   bottom: 10px;
   left: 10px;
-}
+} */
 </style>
