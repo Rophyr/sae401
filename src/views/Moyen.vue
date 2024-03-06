@@ -23,6 +23,8 @@ const columns = 5;
 const totalCards = rows * columns;
 const numEachType = totalCards / 6; // Il y a 6 types de cartes
 
+let winCount = 0;
+
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
@@ -53,6 +55,10 @@ function flipCard(rowIndex, cardIndex) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
         console.log("Matching backfaces!");
+        winCount++;
+        if(winCount == 10){
+          console.log('Bravo, tu as gagné !')
+        }
       } else {
         // Les deux cartes ont des backfaces différentes, les retourner à leur frontface
         grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
