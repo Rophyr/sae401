@@ -16,6 +16,9 @@
         </div>
       </div>
     </div>
+    <div id="victory" style="height: 0; width: 0; background-color: red; transition: 0.3s">
+      <p id="vic-text" style="font-size: 0">Félicitations, tu as gagné(e) !</p>
+    </div>
 
     <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
   </div>
@@ -55,7 +58,10 @@ function flipCard(rowIndex, cardIndex) {
         card.isFlipped = true;
         winCount++;
         if(winCount == 6){
-          console.log('Bravo, tu as gagné !')
+          document.getElementById('victory').style.height = "100px";
+          document.getElementById('victory').style.width = "300px";
+          document.getElementById('vic-text').style.transitionDelay = "300ms";
+          document.getElementById('vic-text').style.fontSize = "30px";
         }
       } else {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
