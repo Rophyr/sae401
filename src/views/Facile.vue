@@ -25,6 +25,7 @@
         </div>
       </div> <!-- Fin JEU -->
       </div>
+    </div>
 
       <div class="container__bottom">
         <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
@@ -71,7 +72,10 @@ function flipCard(rowIndex, cardIndex) {
         card.isFlipped = true;
         winCount++;
         if(winCount == 6){
-          console.log('Bravo, tu as gagné !')
+          document.getElementById('victory').style.height = "100px";
+          document.getElementById('victory').style.width = "300px";
+          document.getElementById('vic-text').style.transitionDelay = "300ms";
+          document.getElementById('vic-text').style.fontSize = "30px";
         }
       } else {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
