@@ -29,6 +29,8 @@ const columns = 4;
 const totalCards = rows * columns;
 const numEachType = totalCards / 6; // Il y a 6 types de cartes
 
+let winCount = 0;
+
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
@@ -51,6 +53,10 @@ function flipCard(rowIndex, cardIndex) {
       if (card.backImagePath === prevBackImagePath) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
+        winCount++;
+        if(winCount == 6){
+          console.log('Bravo, tu as gagné !')
+        }
       } else {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
         grid.value[rowIndex][cardIndex].isFlipped = false;
