@@ -1,27 +1,32 @@
 <template>
-  <div id="app">
-    <img src="/froggy.png" alt="logo" class="logo">
+  <div id="app" class="facile">
+    <div class="container container__facile">
+      <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
-    <div class="grid">
-      <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
-        <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
-          <div class="card" :class="{ active: card.isFlipped }">
-            <div class="front">
-              <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
-            </div>
-            <div class="back">
-              <img draggable="false" :src="card.backImagePath" alt="Back face">
+      <div class="grid">
+        <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
+          <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
+            <div class="card" :class="{ active: card.isFlipped }">
+              <div class="front">
+                <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+              </div>
+              <div class="back">
+                <img draggable="false" :src="card.backImagePath" alt="Back face">
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
+      <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
+      
+    </div>
   </div>
 </template>
 
 <script setup>
+import '../assets/styles.css';  //link css / scss
+
 import { ref } from 'vue';
 
 const rows = 3;
@@ -139,6 +144,9 @@ for (let i = 0; i < grid.value.length; i++) {
 </script>
 
 <script>
+
+import '../assets/styles.css';  //link css / scss
+
 export default {
   methods: {
     goToMenu() {
@@ -153,7 +161,7 @@ export default {
 
 body {
   overflow: hidden;
-  background-image: url("/homepagebg.png");
+  /* background-image: url("/homepagebg.png"); */
   background-size: 100vw;
   background-repeat: no-repeat;
   background-position: center;
