@@ -168,30 +168,6 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.facile .container__middle .explain .object-description {
-  display: inline-block;
-  white-space: nowrap;
-  color: #4C8B25;
-  color: #D3715B;
-  color: #228AB9;
-  color: #E2A340;
-}
-.facile .container__middle .explain .object-description:not(:last-child):after {
-  content: "";
-  display: inline-block;
-}
-.facile .container__middle .explain .object-description:not(:last-child):after {
-  content: "";
-  display: inline-block;
-}
-.facile .container__middle .explain .object-description:not(:last-child):after {
-  content: "";
-  display: inline-block;
-}
-.facile .container__middle .explain .object-description:not(:last-child):after {
-  content: "";
-  display: inline-block;
-}
 .facile__bottom {
   display: flex;
   flex-direction: row;

@@ -208,26 +208,26 @@ body{
         &__middle {
             @include container-middle;
           
-            .explain {
-              .object-description {
-                  display: inline-block;
-                  white-space: nowrap; // Ensure letters don't wrap to the next line
+            // .explain {
+            //   .object-description {
+            //       display: inline-block;
+            //       white-space: nowrap; // Ensure letters don't wrap to the next line
           
-                // Définir les couleurs sombres disponibles
-                $couleurs: ($dark-green, $dark-red, $dark-blue, $dark-yellow);
+            //     // Définir les couleurs sombres disponibles
+            //     $couleurs: ($dark-green, $dark-red, $dark-blue, $dark-yellow);
           
-                // Appliquer la couleur à chaque lettre
-                @each $color in $couleurs {
-                  color: $color;
-                  &:not(:last-child) {
-                    &:after {
-                      content: '';
-                      display: inline-block;
-                    }
-                  }
-                }
-              }
-            }
+            //     // Appliquer la couleur à chaque lettre
+            //     @each $color in $couleurs {
+            //       color: $color;
+            //       &:not(:last-child) {
+            //         &:after {
+            //           content: '';
+            //           display: inline-block;
+            //         }
+            //       }
+            //     }
+            //   }
+            // }
           }
           
           

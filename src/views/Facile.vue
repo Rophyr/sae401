@@ -11,10 +11,11 @@
 
         <div v-if="objectDescription" class="object-description">
           {{ objectDescription }}
-        <div class="explain">
-          <p class="word">
-            {{word}}
-          </p>
+          <div class="explain">
+            <p class="word">
+              {{word}}
+            </p>
+          </div>
         </div>
 
         <div class="grid"> <!-- JEU -->
@@ -32,20 +33,24 @@
           </div>
         </div> <!-- Fin JEU -->
 
+      
+
       </div>
 
       <div class="container__bottom">
         <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
-      <p id="timer"></p>
+        <p id="timer"></p>
       </div>
 
     </div>
-    </div>
+  </div>
 
       <div id="victory">
         <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span> </p>
       </div>
-  </div>
+
+
+  
 </template>
 <script setup>
 import Timer from '../components/Timer.vue'
