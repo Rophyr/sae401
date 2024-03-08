@@ -4,7 +4,7 @@
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
       <div class="container__top">
-        <Timer/>
+        <Timer ref="timerComponent"/>
       </div>
 
       <div class="container__middle">
@@ -61,6 +61,9 @@ const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns
 
 let flippedCard = null;
 
+// eslint-disable-next-line no-unused-vars
+let timerComponent = null;
+
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
 
@@ -88,6 +91,7 @@ function flipCard(rowIndex, cardIndex) {
           document.getElementById('victory').style.width = "300px";
           document.getElementById('vic-text').style.transitionDelay = "300ms";
           document.getElementById('vic-text').style.fontSize = "30px";
+          timerComponent.stopTimer();
         }
       } else {
         // Retourner les cartes après une pause de 0.5 seconde
@@ -178,14 +182,17 @@ for (let i = 0; i < grid.value.length; i++) {
   }
 }
 
-
-
 </script>
 <script>
 
   import '../assets/styles.css';  //link css / scss
 
   export default {
+    setup() {
+      return {
+        timerComponent: timerComponent, // Retournez timerComponent pour pouvoir y accéder dans votre template
+      };
+    },
     methods: {
       goToMenu() {
         this.$router.push('/homepage');
