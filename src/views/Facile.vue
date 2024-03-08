@@ -1,27 +1,55 @@
 <template>
-  <div id="app">
-    <img src="/froggy.png" alt="logo" class="logo">
+  <div id="app" class="facile">
+    <div class="container container__facile">
+      <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
-    <div class="grid">
-      <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
-        <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
-          <div class="card" :class="{ active: card.isFlipped }">
-            <div class="front">
-              <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
-            </div>
-            <div class="back">
-              <img draggable="false" :src="card.backImagePath" alt="Back face">
-            </div>
-          </div>
+      <div class="container__top">
+        <div class="timer">
+          <p>00:00</p>
         </div>
       </div>
+
+      <div class="container__middle">
+
+        <div class="explain">
+          <p class="word">
+            RATEAU
+          </p>
+        </div>
+        
+        <div class="grid"> <!-- JEU -->
+          <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
+            <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
+              <div class="card" :class="{ active: card.isFlipped }">
+                <div class="front">
+                  <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+                </div>
+                <div class="back">
+                  <img draggable="false" :src="card.backImagePath" alt="Back face">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- Fin JEU -->
+
+      </div>
+
+      <div class="container__bottom">
+        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
+      <p id="timer"></p>
+      </div>
+
+    </div>
     </div>
 
-    <button @click="goToMenu" class="btn btn--green btn--round"><img src="/back.png" alt=""></button>
-  </div>
+      <div id="victory">
+        <p id="vic-text">Félicitations, tu as réussi(e) !</p>
+      </div>
 </template>
 
 <script setup>
+import '../assets/styles.css';  //link css / scss
+
 import { ref } from 'vue';
 
 const rows = 3;
@@ -55,7 +83,10 @@ function flipCard(rowIndex, cardIndex) {
         card.isFlipped = true;
         winCount++;
         if(winCount == 6){
-          console.log('Bravo, tu as gagné !')
+          document.getElementById('victory').style.height = "100px";
+          document.getElementById('victory').style.width = "300px";
+          document.getElementById('vic-text').style.transitionDelay = "300ms";
+          document.getElementById('vic-text').style.fontSize = "30px";
         }
       } else {
         // Retourner les cartes après une pause de 0.5 seconde
@@ -139,9 +170,24 @@ for (let i = 0; i < grid.value.length; i++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
   }
 }
+
+
+let horloge = null;
+let temps = 0;
+
+function timerhorloge() {
+  horloge = setInterval(() => {
+    temps++;
+    console.log("Temps écoulé : " + temps + " secondes");
+  }, 1000); // Une seconde
+}
+console.log(timerhorloge());
 </script>
 
 <script>
+
+import '../assets/styles.css';  //link css / scss
+
 export default {
   methods: {
     goToMenu() {
@@ -156,7 +202,7 @@ export default {
 
 body {
   overflow: hidden;
-  background-image: url("/homepagebg.png");
+  /* background-image: url("/homepagebg.png"); */
   background-size: 100vw;
   background-repeat: no-repeat;
   background-position: center;
