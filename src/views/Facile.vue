@@ -4,7 +4,7 @@
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
       <div class="container__top">
-        <Timer />
+        <Timer ref="timerComponent"/>
       </div>
 
       <div class="container__middle">
@@ -41,7 +41,7 @@
     </div>
 
       <div id="victory">
-        <p id="vic-text">Félicitations, tu as réussi(e) !</p>
+        <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
       </div>
 </template>
 <script setup>
@@ -59,6 +59,7 @@ let winCount = 0;
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
+let timerComponent = null;
 
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
@@ -84,6 +85,7 @@ function flipCard(rowIndex, cardIndex) {
           document.getElementById('victory').style.width = "300px";
           document.getElementById('vic-text').style.transitionDelay = "300ms";
           document.getElementById('vic-text').style.fontSize = "30px";
+          timerComponent.stopTimer();
         }
       } else {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
@@ -179,6 +181,11 @@ for (let i = 0; i < grid.value.length; i++) {
   import '../assets/styles.css';  //link css / scss
 
   export default {
+    setup(){
+      return{
+        timerComponent: timercomponent,
+      }
+    },
     methods: {
       goToMenu() {
         this.$router.push('/homepage');

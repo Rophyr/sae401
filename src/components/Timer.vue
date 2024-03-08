@@ -10,7 +10,7 @@ export default {
     return {
       horloge: null,
       secondes: 0,
-      minutes: 0
+      minutes: 0,
     };
   },
   computed: {
@@ -29,7 +29,12 @@ export default {
           this.minutes++;
           this.secondes = 0;
         }
-        console.log(this.formattedMinutes + ":" + this.formattedSecondes);
+        if (this.minutes === 0){
+          document.getElementById("time").textContent = this.minutes + ":" + this.secondes;
+        }
+        else{
+          document.getElementById("time").textContent = this.minutes + ":" + this.secondes;
+        }
       }, 1000); // Une seconde
     },
     stopTimer() {
