@@ -209,9 +209,9 @@ body{
             @include container-middle;
           
             .explain {
-              .word {
-                display: inline-block;
-                white-space: nowrap; // Ensure letters don't wrap to the next line
+              .object-description {
+                  display: inline-block;
+                  white-space: nowrap; // Ensure letters don't wrap to the next line
           
                 // Définir les couleurs sombres disponibles
                 $couleurs: ($dark-green, $dark-red, $dark-blue, $dark-yellow);

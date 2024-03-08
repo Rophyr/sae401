@@ -4,17 +4,15 @@
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
       <div class="container__top">
-        <Timer />
+        <Timer/>
       </div>
 
       <div class="container__middle">
 
-        <div class="explain">
-          <p class="word">
-            RATEAU
-          </p>
+        <div v-if="objectDescription" class="object-description">
+          {{ objectDescription }}
         </div>
-        
+
         <div class="grid"> <!-- JEU -->
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
@@ -49,6 +47,9 @@ import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
 import { ref } from 'vue';
 
+import objectsData from '../../public/data/objectDescription.json';
+const objectDescription = ref('');
+
 const rows = 3;
 const columns = 4;
 const totalCards = rows * columns;
@@ -79,7 +80,10 @@ function flipCard(rowIndex, cardIndex) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
         winCount++;
-        if(winCount == 6){
+
+        const objectName = card.backImagePath.split("/").pop().split(".")[0];
+        objectDescription.value = objectsData[objectName];
+        if(winCount === 6){
           document.getElementById('victory').style.height = "100px";
           document.getElementById('victory').style.width = "300px";
           document.getElementById('vic-text').style.transitionDelay = "300ms";
