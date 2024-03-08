@@ -4,9 +4,7 @@
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
       <div class="container__top">
-        <div class="timer">
-          <p>00:00</p>
-        </div>
+        <Timer />
       </div>
 
       <div class="container__middle">
@@ -46,10 +44,9 @@
         <p id="vic-text">Félicitations, tu as réussi(e) !</p>
       </div>
 </template>
-
 <script setup>
+import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
-
 import { ref } from 'vue';
 
 const rows = 3;
@@ -100,11 +97,12 @@ function flipCard(rowIndex, cardIndex) {
     }
   }
 }
-
+// eslint-disable-next-line no-unused-vars
 function getCardImagePath(rowIndex, cardIndex) {
   return "/card.png";
 }
 
+// eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
     { image: "/rateau.png", count: 0 },
@@ -157,12 +155,17 @@ function getBackImagePath(rowIndex, cardIndex) {
 
   return selectedType.image;
 }
-
+// eslint-disable-next-line no-unused-vars
 let numRateau = 0;
+// eslint-disable-next-line no-unused-vars
 let numArrosoir = 0;
+// eslint-disable-next-line no-unused-vars
 let numElec = 0;
+// eslint-disable-next-line no-unused-vars
 let numRotten = 0;
+// eslint-disable-next-line no-unused-vars
 let numTrash = 0;
+// eslint-disable-next-line no-unused-vars
 let numVelo = 0;
 
 for (let i = 0; i < grid.value.length; i++) {
