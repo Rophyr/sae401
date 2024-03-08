@@ -1,30 +1,50 @@
-<script setup>
-let horloge = null;
-let secondes = 0;
-let minutes = 0;
+<template>
+  <div class="timer">
+    <p>{{ formattedMinutes }}:{{ formattedSecondes }}</p>
+  </div>
+</template>
 
-function formatTemps(temps) {
-  return temps < 10 ? "0" + temps : temps;
-}
-
-function timerhorloge() {
-  horloge = setInterval(() => {
-    secondes++;
-    if (secondes === 60) {
-      minutes++;
-      secondes = 0;
+<script>
+export default {
+  data() {
+    return {
+      horloge: null,
+      secondes: 0,
+      minutes: 0
+    };
+  },
+  computed: {
+    formattedSecondes() {
+      return this.secondes < 10 ? '0' + this.secondes : this.secondes;
+    },
+    formattedMinutes() {
+      return this.minutes < 10 ? '0' + this.minutes : this.minutes;
     }
-    console.log(formatTemps(minutes) + ":" + formatTemps(secondes));
-  }, 1000); // Une seconde
-}
-
-function stopTimer() {
-  clearInterval(horloge);
-}
-
-timerhorloge();
-
-window.addEventListener('beforeunload', function(event) {
-  stopTimer();
-});
+  },
+  methods: {
+    timerhorloge() {
+      this.horloge = setInterval(() => {
+        this.secondes++;
+        if (this.secondes === 60) {
+          this.minutes++;
+          this.secondes = 0;
+        }
+        console.log(this.formattedMinutes + ":" + this.formattedSecondes);
+      }, 1000); // Une seconde
+    },
+    stopTimer() {
+      clearInterval(this.horloge);
+    }
+  },
+  mounted() {
+    this.timerhorloge();
+  },
+  beforeDestroy() {
+    this.stopTimer();
+  }
+};
 </script>
+
+<style scoped>
+/* Styles spécifiques au composant Timer.vue */
+</style>

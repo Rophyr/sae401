@@ -4,9 +4,7 @@
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
 
       <div class="container__top">
-        <div class="timer">
-          <p>00:00</p>
-        </div>
+        <Timer />
       </div>
 
       <div class="container__middle">
@@ -46,10 +44,9 @@
         <p id="vic-text">Félicitations, tu as réussi(e) !</p>
       </div>
 </template>
-
 <script setup>
+import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
-
 import { ref } from 'vue';
 
 const rows = 3;
