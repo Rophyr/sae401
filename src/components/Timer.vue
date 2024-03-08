@@ -10,7 +10,7 @@ export default {
     return {
       horloge: null,
       secondes: 0,
-      minutes: 0
+      minutes: 0,
     };
   },
   computed: {
