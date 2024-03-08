@@ -169,29 +169,19 @@ for (let i = 0; i < grid.value.length; i++) {
 }
 
 
-let horloge = null;
-let temps = 0;
 
-function timerhorloge() {
-  horloge = setInterval(() => {
-    temps++;
-    console.log("Temps écoulé : " + temps + " secondes");
-  }, 1000); // Une seconde
-}
-console.log(timerhorloge());
 </script>
-
 <script>
 
-import '../assets/styles.css';  //link css / scss
+  import '../assets/styles.css';  //link css / scss
 
-export default {
-  methods: {
-    goToMenu() {
-      this.$router.push('/homepage');
+  export default {
+    methods: {
+      goToMenu() {
+        this.$router.push('/homepage');
+      }
     }
   }
-}
 </script>
 
 <style scoped>
