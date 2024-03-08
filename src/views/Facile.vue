@@ -39,7 +39,7 @@
     </div>
 
       <div id="victory">
-        <p id="vic-text">Félicitations, tu as réussi(e) !</p>
+        <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span> </p>
       </div>
 </template>
 <script setup>

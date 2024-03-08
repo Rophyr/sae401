@@ -29,7 +29,7 @@ export default {
           this.minutes++;
           this.secondes = 0;
         }
-        console.log(this.formattedMinutes + ":" + this.formattedSecondes);
+        document.getElementById("time").textContent = this.minutes + " minutes et " + this.secondes + " secondes";
       }, 1000); // Une seconde
     },
     stopTimer() {
