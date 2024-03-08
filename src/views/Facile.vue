@@ -36,7 +36,7 @@
 
       <div class="container__bottom">
         <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
-    
+      <p id="timer"></p>
       </div>
 
     </div>
@@ -167,6 +167,18 @@ for (let i = 0; i < grid.value.length; i++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
   }
 }
+
+
+let horloge = null;
+let temps = 0;
+
+function timerhorloge() {
+  horloge = setInterval(() => {
+    temps++;
+    console.log("Temps écoulé : " + temps + " secondes");
+  }, 1000); // Une seconde
+}
+console.log(timerhorloge());
 </script>
 
 <script>
