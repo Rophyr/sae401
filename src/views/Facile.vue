@@ -73,7 +73,7 @@ let flippedCard = null;
 let timerComponent = null;
 
 // eslint-disable-next-line no-unused-vars
-let timerComponent = null;
+// let timerComponent = null;
 
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
