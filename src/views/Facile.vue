@@ -46,7 +46,7 @@
   </div>
 
       <div id="victory">
-        <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span> </p>
+        <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
       </div>
 
 
@@ -70,6 +70,7 @@ let winCount = 0;
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
+let timerComponent = null;
 
 // eslint-disable-next-line no-unused-vars
 let timerComponent = null;
@@ -198,10 +199,10 @@ for (let i = 0; i < grid.value.length; i++) {
   import '../assets/styles.css';  //link css / scss
 
   export default {
-    setup() {
-      return {
-        timerComponent: timerComponent, // Retournez timerComponent pour pouvoir y accéder dans votre template
-      };
+    setup(){
+      return{
+        timerComponent: timercomponent,
+      }
     },
     methods: {
       goToMenu() {
