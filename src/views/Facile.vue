@@ -9,12 +9,14 @@
 
       <div class="container__middle">
 
+        <div v-if="objectDescription" class="object-description">
+          {{ objectDescription }}
         <div class="explain">
           <p class="word">
-            RATEAU
+            {{word}}
           </p>
         </div>
-        
+
         <div class="grid"> <!-- JEU -->
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
@@ -43,11 +45,15 @@
       <div id="victory">
         <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
       </div>
+  </div>
 </template>
 <script setup>
 import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
 import { ref } from 'vue';
+import objectsData from '../../public/data/objectDescription.json';
+const objectDescription = ref('');
+// let word = "RATEAU"; //debug
 
 const rows = 3;
 const columns = 4;
@@ -59,6 +65,9 @@ let winCount = 0;
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
+let timerComponent = null;
+
+// eslint-disable-next-line no-unused-vars
 let timerComponent = null;
 
 function flipCard(rowIndex, cardIndex) {
@@ -80,7 +89,10 @@ function flipCard(rowIndex, cardIndex) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
         winCount++;
-        if(winCount == 6){
+
+        const objectName = card.backImagePath.split("/").pop().split(".")[0];
+        objectDescription.value = objectsData[objectName];
+        if(winCount === 6){
           document.getElementById('victory').style.height = "100px";
           document.getElementById('victory').style.width = "300px";
           document.getElementById('vic-text').style.transitionDelay = "300ms";
@@ -88,8 +100,11 @@ function flipCard(rowIndex, cardIndex) {
           timerComponent.stopTimer();
         }
       } else {
-        grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
-        grid.value[rowIndex][cardIndex].isFlipped = false;
+        // Retourner les cartes après une pause de 0.5 seconde
+        setTimeout(() => {
+          grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
+          card.isFlipped = false;
+        }, 500);
       }
 
       flippedCard = null;
@@ -172,8 +187,6 @@ for (let i = 0; i < grid.value.length; i++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
   }
 }
-
-
 
 </script>
 <script>

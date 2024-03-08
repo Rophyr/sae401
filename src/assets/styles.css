@@ -168,7 +168,7 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.facile .container__middle .explain .word {
+.facile .container__middle .explain .object-description {
   display: inline-block;
   white-space: nowrap;
   color: #4C8B25;
@@ -176,23 +176,23 @@ body {
   color: #228AB9;
   color: #E2A340;
 }
-.facile .container__middle .explain .word:not(:last-child):after {
+.facile .container__middle .explain .object-description:not(:last-child):after {
   content: "";
   display: inline-block;
 }
-.facile .container__middle .explain .word:not(:last-child):after {
+.facile .container__middle .explain .object-description:not(:last-child):after {
   content: "";
   display: inline-block;
 }
-.facile .container__middle .explain .word:not(:last-child):after {
+.facile .container__middle .explain .object-description:not(:last-child):after {
   content: "";
   display: inline-block;
 }
-.facile .container__middle .explain .word:not(:last-child):after {
+.facile .container__middle .explain .object-description:not(:last-child):after {
   content: "";
   display: inline-block;
 }
-.facile .container__bottom {
+.facile__bottom {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -319,32 +319,43 @@ body {
   border: none;
   border-radius: 10px;
   width: auto;
-  box-shadow: 1.5px 2px 0px 1px #313131;
+  box-shadow: inset 0px 2px 0px 1px #313131;
+}
+.btn:hover {
+  transform: translate(0, 0.025em);
+  box-shadow: inset 0px 2px 0px 1px #313131;
 }
 .btn--facile {
   background-color: #8CCF57;
-  box-shadow: 0.13em 0.15em 0em 0.01em #4C8B25;
+  box-shadow: inset -0.1875rem -0.1875rem #4C8B25;
 }
 .btn--moyen {
   background-color: #FBB03A;
-  box-shadow: 0.13em 0.15em 0em 0.01em #E2A340;
+  box-shadow: inset -0.1875rem -0.1875rem #E2A340;
 }
 .btn--difficile {
   background-color: #EC8670;
-  box-shadow: 0.13em 0.15em 0em 0.01em #D3715B;
+  box-shadow: inset -0.1875rem -0.1875rem #D3715B;
 }
 .btn--green {
   background-color: #8CCF57;
-  box-shadow: 0.13em 0.15em 0em 0.01em #4C8B25;
+  box-shadow: inset -0.1875rem -0.1875rem #4C8B25;
   border: none;
   color: #F7FAF7;
+  transition: box-shadow 0.1s ease-out;
+}
+.btn--green:hover, .btn--green:focus {
+  transition: box-shadow 0.1s ease-in;
+  transform: translate(0, 0.025em);
+  box-shadow: inset 0.125em 0.125em #4C8B25;
+  background-color: darker(#8CCF57);
 }
 .btn--green i {
   font-size: 0.8em;
 }
 .btn--dark-green {
   background-color: #4C8B25;
-  box-shadow: 0.13em 0.13em 0em 0em #5FAE30;
+  box-shadow: 0em 0.13em 0em 0em #5FAE30;
   border: none;
   color: #F7FAF7;
 }

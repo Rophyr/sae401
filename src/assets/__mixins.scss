@@ -52,13 +52,3 @@
         // border: 1px solid red;
 
 }
-
-@mixin colorize-letters($colors) {
-    $i: 1;
-    @each $color in $colors {
-      .word:nth-child(#{$i}) {
-        color: $color;
-      }
-      $i: $i + 1;
-    }
-}

@@ -17,32 +17,53 @@
 
     // max-width: 10vw;
 
-    box-shadow: 1.5px 2px 0px 1px $dark;
+    box-shadow: inset 0px 2px 0px 1px $dark;
+    // box-shadow: inset -0.1875rem -0.1875rem var(--color-black);
+
+    &:hover{
+        // background-color: $dark-blue;
+        // color: $mid-green;
+        transform: translate(0, 0.025em);
+        box-shadow: inset 0px 2px 0px 1px $dark;
+    }
 
     &--facile{
         background-color: $light-green;
         // box-shadow: 1.5px 2px 0px 0.5px $dark-green;
-        box-shadow: 0.13em 0.15em 0em 0.01em $dark-green;
+        
+        box-shadow: inset -0.1875rem -0.1875rem $dark-green;
         // border-color: $dark-green;
     }
 
     &--moyen{
         background-color: $light-yellow;
-        box-shadow: 0.13em 0.15em 0em 0.01em $dark-yellow;
+        // box-shadow: 0.13em 0.15em 0em 0.01em $dark-yellow;
+        box-shadow: inset -0.1875rem -0.1875rem $dark-yellow;
         // border-color: $dark-yellow;
     }
 
     &--difficile{
         background-color: $light-red;
-        box-shadow: 0.13em 0.15em 0em 0.01em $dark-red;
+        // box-shadow: 0.13em 0.15em 0em 0.01em $dark-red;
+        box-shadow: inset -0.1875rem -0.1875rem $dark-red;
         // border-color: $dark-red;
     }
 
     &--green{
         background-color: $light-green;
-        box-shadow: 0.13em 0.15em 0em 0.01em $dark-green;
+        box-shadow: inset -0.1875rem -0.1875rem $dark-green;
         border: none;
         color: $light;
+        transition: box-shadow 0.1s ease-out;
+
+        &:hover,&:focus{
+            
+            transition: box-shadow 0.1s ease-in;
+            transform: translate(0, 0.025em);
+            box-shadow: inset 0.125em 0.125em $dark-green;
+            background-color: darker($light-green);
+            
+        }
 
         i{
             font-size: 0.8em;
@@ -51,7 +72,7 @@
 
     &--dark-green{
         background-color: $dark-green;
-        box-shadow: 0.13em 0.13em 0em 0em $mid-green;
+        box-shadow: 0em 0.13em 0em 0em $mid-green;
         border: none;
         color: $light;
 

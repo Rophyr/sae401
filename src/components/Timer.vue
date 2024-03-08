@@ -29,12 +29,7 @@ export default {
           this.minutes++;
           this.secondes = 0;
         }
-        if (this.minutes === 0){
-          document.getElementById("time").textContent = this.minutes + ":" + this.secondes;
-        }
-        else{
-          document.getElementById("time").textContent = this.minutes + ":" + this.secondes;
-        }
+        document.getElementById("time").textContent = this.minutes + " minutes et " + this.secondes + " secondes";
       }, 1000); // Une seconde
     },
     stopTimer() {
