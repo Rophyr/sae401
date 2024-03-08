@@ -94,11 +94,12 @@ function flipCard(rowIndex, cardIndex) {
     }
   }
 }
-
+// eslint-disable-next-line no-unused-vars
 function getCardImagePath(rowIndex, cardIndex) {
   return "/card.png";
 }
 
+// eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
     { image: "/rateau.png", count: 0 },
@@ -151,12 +152,17 @@ function getBackImagePath(rowIndex, cardIndex) {
 
   return selectedType.image;
 }
-
+// eslint-disable-next-line no-unused-vars
 let numRateau = 0;
+// eslint-disable-next-line no-unused-vars
 let numArrosoir = 0;
+// eslint-disable-next-line no-unused-vars
 let numElec = 0;
+// eslint-disable-next-line no-unused-vars
 let numRotten = 0;
+// eslint-disable-next-line no-unused-vars
 let numTrash = 0;
+// eslint-disable-next-line no-unused-vars
 let numVelo = 0;
 
 for (let i = 0; i < grid.value.length; i++) {
