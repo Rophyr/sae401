@@ -9,15 +9,12 @@
 
       <div class="container__middle">
 
-<<<<<<< Updated upstream
         <div v-if="objectDescription" class="object-description">
           {{ objectDescription }}
-=======
         <div class="explain">
           <p class="word">
             {{word}}
           </p>
->>>>>>> Stashed changes
         </div>
 
         <div class="grid"> <!-- JEU -->
@@ -48,18 +45,15 @@
       <div id="victory">
         <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span> </p>
       </div>
+  </div>
 </template>
 <script setup>
 import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
 import { ref } from 'vue';
-
-<<<<<<< Updated upstream
 import objectsData from '../../public/data/objectDescription.json';
 const objectDescription = ref('');
-=======
-let word = "RATEAU"; //debug
->>>>>>> Stashed changes
+// let word = "RATEAU"; //debug
 
 const rows = 3;
 const columns = 4;
