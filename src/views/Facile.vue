@@ -58,8 +58,11 @@ function flipCard(rowIndex, cardIndex) {
           console.log('Bravo, tu as gagné !')
         }
       } else {
-        grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
-        grid.value[rowIndex][cardIndex].isFlipped = false;
+        // Retourner les cartes après une pause de 0.5 seconde
+        setTimeout(() => {
+          grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
+          card.isFlipped = false;
+        }, 500);
       }
 
       flippedCard = null;
