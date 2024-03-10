@@ -65,6 +65,9 @@ export default {
     },
     goToLogin(){
       this.$router.push('/login');
+    },
+    goToClassement(){
+      this.$router.push('/classement');
     }
   }
 }

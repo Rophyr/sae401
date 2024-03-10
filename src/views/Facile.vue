@@ -199,11 +199,6 @@ for (let i = 0; i < grid.value.length; i++) {
   import '../assets/styles.css';  //link css / scss
 
   export default {
-    setup(){
-      return{
-        timerComponent: timercomponent,
-      }
-    },
     methods: {
       goToMenu() {
         this.$router.push('/homepage');
