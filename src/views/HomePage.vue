@@ -2,19 +2,19 @@
   <div id="app" class="home">
 
     <div class="container container--home">
-      <div class="top">
+      <div class="container__top">
         <button @click="goToClassement" class="btn btn--green btn--round"><img src="/images/Classement.svg" alt=""></button>
         <button class="btn btn--green btn--round"><img src="/images/Profil.svg" alt=""></button>
       </div>
 
-      <div class="middle">
+      <div class="container__middle">
         
         <div class="ensemble-logo">
           <img src="/public/images/logo.svg" alt="" class="logo-frog">
           <img src="/public/images/logo-froggy.svg" draggable="false" alt="Logo" class="logo-froggy">
         </div>
 
-        <div class="middle__buttons">
+        <div class="container__middle__buttons">
 
           <select v-model="selectedDifficulty" class="btn btn--green btn--select">
             <option value="facile">Facile</option>
@@ -31,7 +31,7 @@
 
       </div>
 
-      <div class="bottom">
+      <div class="container__bottom">
         <button @click="goToRegles" class="btn btn--green btn--round"><img src="/images/Rules.svg" alt="règles"></button>
       </div>
 

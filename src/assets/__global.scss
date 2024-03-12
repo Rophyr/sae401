@@ -34,17 +34,19 @@ body{
         @include container-col;
 
         
-        .top{
+        &__top{
             display: flex;
             flex-direction: row;
             width: 94%;
             justify-content: space-between;
             padding: 1% 3%;
 
+           
+
             // border: 1px solid red;
         }
 
-        .bottom{
+        &__bottom{
             display: flex;
             flex-direction: row;
             justify-content: end;
@@ -55,16 +57,19 @@ body{
             // border: 1px solid red;
         }
 
-        .middle{
+        &__middle{
+            
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
 
-            // height: 100%;
+            height: 100%;
             
             gap: 30px;
             // border: 1px solid green;
+
+            
 
             .ensemble-logo{
                 display: flex;
@@ -84,7 +89,7 @@ body{
             &__buttons{
                 display: flex;
                 flex-direction: column;
-
+                // justify-content: center;
                 gap: 10px;
               
                 // border: 1px solid blue;
@@ -188,6 +193,8 @@ body{
     .container{
         @include container-col;
 
+
+        // border: 1px solid red;
         width: 100%;
 
         &__top{
@@ -217,68 +224,40 @@ body{
 
         &__middle {
             @include container-middle;
-          
-            // .explain {
-            //   .object-description {
-            //       display: inline-block;
-            //       white-space: nowrap; // Ensure letters don't wrap to the next line
-          
-            //     // Définir les couleurs sombres disponibles
-            //     $couleurs: ($dark-green, $dark-red, $dark-blue, $dark-yellow);
-          
-            //     // Appliquer la couleur à chaque lettre
-            //     @each $color in $couleurs {
-            //       color: $color;
-            //       &:not(:last-child) {
-            //         &:after {
-            //           content: '';
-            //           display: inline-block;
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
-          }
-          
-          
-          
-        
-            //     .word {
-            //     //     $couleurs: ($dark-green, $dark-blue, $dark-red, $dark-yellow);
 
-            //     //     //récupérer les lettres de la variable word depuis facile.vue
-            //     //     $lettres: attr(word);
-
-            //     //     @for $j from 1 through length($couleurs){
-            //     //         $color-letters: $j;
-            //     //         $j: $j+1;
-
-            //     //         // $color-letters: nth($couleurs, $j);
-
-
-            //     //     }
-                    
+            gap: 100px;
+          
+            .explain {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 80%;
+                width: 200px;
+                padding: 2.5% 3%;
+                border: 10px solid $dark-green;
+                border-radius: 25px;
+                background-color: $light;
             
-            //     //     @for $i from 1 through length($lettres){
-                    
-            //     //         &:nth-child(#{$i}){
-            //     //             color: $color-letters;
-            //     //         }
-                        
-            //     //     }
-            //     // }
-            // }
-    
-          
-          
+                .word {
+                    font-size: 2em;
+                }
+            }
         }
+    
         
-
+        
+        
+        
+        
         &__bottom{
             @include container-bottom;
+
+            // width: 100vw;
+
+            // border: 1px solid green ;
         }
     
-    
+    }
 
         // css jeu //
         
@@ -372,25 +351,28 @@ body{
 
     // fin css jeu //
 
-}
 
-#victory{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: drop-shadow(5px 5px 0 $dark-green);
-    height: 0;
-    width: 0;
-    background-color: $light-green;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    #vic-text{
-        font-family: 'Simply Rounded', sans-serif;
-        font-size: 0;
-        text-align: center;
+
+
+    #victory{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: drop-shadow(5px 5px 0 $dark-green);
+        height: 0;
+        width: 0;
+        background-color: $light-green;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #vic-text{
+            font-family: 'Simply Rounded', sans-serif;
+            font-size: 0;
+            text-align: center;
+
+        }
 
     }
 }   

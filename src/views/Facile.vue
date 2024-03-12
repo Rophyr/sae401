@@ -9,13 +9,14 @@
 
       <div class="container__middle">
 
-        <div v-if="objectDescription" class="object-description">
-          {{ objectDescription }}
-          <div class="explain">
+        <div v-if="objectDescription" class="object-description explain">
+          
             <p class="word">
-              {{word}}
+              {{ word }}
             </p>
-          </div>
+
+            <p>{{ objectDescription }}</p>
+          
         </div>
 
         <div class="grid"> <!-- JEU -->
@@ -36,10 +37,11 @@
       
 
       </div>
+    
 
       <div class="container__bottom">
         <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
-        <p id="timer"></p>
+        <!-- <p id="timer"></p> -->
       </div>
 
     </div>
@@ -58,7 +60,7 @@ import '../assets/styles.css';  //link css / scss
 import { ref } from 'vue';
 import objectsData from '../../public/data/objectDescription.json';
 const objectDescription = ref('');
-// let word = "RATEAU"; //debug
+let word = "RATEAU"; //debug
 
 const rows = 3;
 const columns = 4;
