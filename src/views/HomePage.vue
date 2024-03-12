@@ -9,7 +9,10 @@
 
       <div class="middle">
         
-        <img src="/froggy.png" draggable="false" alt="Logo" class="logo">
+        <div class="ensemble-logo">
+          <img src="/public/images/logo.svg" alt="" class="logo-frog">
+          <img src="/public/images/logo-froggy.svg" draggable="false" alt="Logo" class="logo-froggy">
+        </div>
 
         <div class="middle__buttons">
 
