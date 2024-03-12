@@ -227,16 +227,32 @@ body{
 
             gap: 100px;
           
+
+            &__top{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 100px;
+                height: 90vh;
+                border: 1px solid red;
+
+                img{
+                    width: 100px;
+                }
+            }
+
             .explain {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 height: 80%;
                 width: 200px;
-                padding: 2.5% 3%;
+                padding: 1% 2%;
                 border: 10px solid $dark-green;
                 border-radius: 25px;
-                background-color: $light;
+                background-color: $light-light-green;
+                color: $dark-green;
+                font-size: 1.5em;
             
                 .word {
                     font-size: 2em;
@@ -258,7 +274,7 @@ body{
         }
     
     }
-
+        // $lighterDark: lighten($dark, 30%); 
         // css jeu //
         
         body {
@@ -308,10 +324,13 @@ body{
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.3s;
+            
+            // filter: drop-shadow(4px 4px 0px $lighterDark);
         }
         
         .card:hover {
             transform: scale(1.05);
+            // filter: drop-shadow(8px 8px 0px $lighterDark);
         }
         
         .card.active {

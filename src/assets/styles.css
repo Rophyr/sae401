@@ -181,16 +181,29 @@ body {
   align-items: center;
   gap: 100px;
 }
+.facile .container__middle__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  height: 90vh;
+  border: 1px solid red;
+}
+.facile .container__middle__top img {
+  width: 100px;
+}
 .facile .container__middle .explain {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80%;
   width: 200px;
-  padding: 2.5% 3%;
+  padding: 1% 2%;
   border: 10px solid #4C8B25;
   border-radius: 25px;
-  background-color: #F7FAF7;
+  background-color: #DBFFD5;
+  color: #4C8B25;
+  font-size: 1.5em;
 }
 .facile .container__middle .explain .word {
   font-size: 2em;

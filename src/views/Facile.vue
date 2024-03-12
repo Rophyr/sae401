@@ -7,15 +7,21 @@
       </div>
       <div class="container__middle">
 
-        <div v-if="objectDescription" class="object-description explain">
-          
-            <p class="word">
-              {{ word }}
-            </p>
+        <div class="container__middle__top">
+          <img src="/public/images/logo_glasses.svg" alt="">
+          <div  class="object-description explain">
+            
+              <p class="word">
+                {{ word }}
+              </p>
 
-            <p>{{ objectDescription }}</p>
-          
+              <p>{{ objectDescription }}</p>
+            
+          </div>
         </div>
+
+        
+
         <div class="grid"> <!-- JEU -->
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
@@ -39,10 +45,14 @@
     </div>
   </div>
 
-      <div id="victory">
-        <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
-      </div>
+  <div id="victory">
+    <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
+  </div>
+
+
 </template>
+
+
 <script setup>
 import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
