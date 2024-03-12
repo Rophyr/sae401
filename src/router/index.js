@@ -8,7 +8,6 @@ import Login from '../views/Login.vue'
 import Classement from '../views/Classement.vue'
 
 const routes = [
-  // Redirection automatique vers la page d'accueil
   { path: '/', redirect: '/homepage' },
   { path: '/homepage', component: HomePage },
   { path: '/facile', component: Facile },
