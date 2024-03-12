@@ -71,12 +71,12 @@ function getCardImagePath(rowIndex, cardIndex) {
 
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/rateau.png", count: 0 },
-    { image: "/arrosoir.png", count: 0 },
-    { image: "/elec.png", count: 0 },
-    { image: "/rotten.png", count: 0 },
-    { image: "/trash.png", count: 0 },
-    { image: "/velo.png", count: 0 }
+    { image: "/images/difficile/rateau.png", count: 0 },
+    { image: "/images/difficile/arrosoir.png", count: 0 },
+    { image: "/images/difficile/elec.png", count: 0 },
+    { image: "/images/difficile/rotten.png", count: 0 },
+    { image: "/images/difficile/trash.png", count: 0 },
+    { image: "/images/difficile/velo.png", count: 0 }
   ];
 
   // Compter le nombre d'occurrences de chaque type dans la grille
