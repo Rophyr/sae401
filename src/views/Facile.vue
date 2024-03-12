@@ -2,13 +2,10 @@
   <div id="app" class="facile">
     <div class="container container__facile">
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
-
       <div class="container__top">
         <Timer ref="timerComponent"/>
       </div>
-
       <div class="container__middle">
-
         <div v-if="objectDescription" class="object-description">
           {{ objectDescription }}
           <div class="explain">
@@ -17,7 +14,6 @@
             </p>
           </div>
         </div>
-
         <div class="grid"> <!-- JEU -->
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
@@ -32,25 +28,17 @@
             </div>
           </div>
         </div> <!-- Fin JEU -->
-
-      
-
       </div>
-
       <div class="container__bottom">
         <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
         <p id="timer"></p>
       </div>
-
     </div>
   </div>
 
       <div id="victory">
         <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
       </div>
-
-
-  
 </template>
 <script setup>
 import Timer from '../components/Timer.vue'
@@ -103,6 +91,7 @@ function flipCard(rowIndex, cardIndex) {
           document.getElementById('vic-text').style.transitionDelay = "300ms";
           document.getElementById('vic-text').style.fontSize = "30px";
           timerComponent.stopTimer();
+          console.log('Recommencer')
         }
       } else {
         // Retourner les cartes après une pause de 0.5 seconde
