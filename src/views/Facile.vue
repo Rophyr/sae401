@@ -124,12 +124,12 @@ function getCardImagePath(rowIndex, cardIndex) {
 // eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/rateau.png", count: 0 },
-    { image: "/arrosoir.png", count: 0 },
-    { image: "/elec.png", count: 0 },
-    { image: "/rotten.png", count: 0 },
-    { image: "/trash.png", count: 0 },
-    { image: "/velo.png", count: 0 }
+    { image: "/images/facile/rateau.png", count: 0 },
+    { image: "/images/facile/arrosoir.png", count: 0 },
+    { image: "/images/facile/elec.png", count: 0 },
+    { image: "/images/facile/rotten.png", count: 0 },
+    { image: "/images/facile/trash.png", count: 0 },
+    { image: "/images/facile/velo.png", count: 0 }
   ];
 
   for (let i = 0; i < grid.value.length; i++) {
