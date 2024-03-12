@@ -124,10 +124,10 @@ function getCardImagePath(rowIndex, cardIndex) {
 // eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/facile/rateau.png", count: 0 },
-    { image: "/images/facile/arrosoir.png", count: 0 },
-    { image: "/images/facile/elec.png", count: 0 },
-    { image: "/images/facile/rotten.png", count: 0 },
+    { image: "/images/facile/rateau.svg", count: 0 },
+    { image: "/images/facile/arrosoir.svg", count: 0 },
+    { image: "/images/facile/pelle.svg", count: 0 },
+    { image: "/images/facile/solaire.svg", count: 0 },
     { image: "/images/facile/trash.png", count: 0 },
     { image: "/images/facile/velo.png", count: 0 }
   ];
