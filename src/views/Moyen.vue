@@ -1,22 +1,62 @@
 <template>
-  <div class="grid">
-    <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
-      <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
-        <div class="card" :class="{ active: card.isFlipped }">
-          <div class="front">
-            <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
-          </div>
-          <div class="back">
-            <img draggable="false" :src="card.backImagePath" alt="Back face">
+  <div id="app" class="facile">
+    <div class="container container__facile">
+      <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
+
+      <div class="container__top">
+        <Timer ref="timerComponent"/>
+      </div>
+
+      <div class="container__middle">
+
+        <div v-if="objectDescription" class="object-description">
+          {{ objectDescription }}
+          <div class="explain">
+            <p class="word">
+              {{word}}
+            </p>
           </div>
         </div>
+
+        <div class="grid"> <!-- JEU -->
+          <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
+            <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
+              <div class="card" :class="{ active: card.isFlipped }">
+                <div class="front">
+                  <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+                </div>
+                <div class="back">
+                  <img draggable="false" :src="card.backImagePath" alt="Back face">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- Fin JEU -->
+
+
+
       </div>
+
+      <div class="container__bottom">
+        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
+        <p id="timer"></p>
+      </div>
+
     </div>
+  </div>
+
+  <div id="victory">
+    <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
   </div>
 </template>
 
 <script setup>
+import Timer from '../components/Timer.vue'
+import '../assets/styles.css';  //link css / scss
 import { ref } from 'vue';
+import objectsData from '../../public/data/objectDescription.json';
+const objectDescription = ref('');
+// let word = "RATEAU"; //debug
 
 const rows = 4;
 const columns = 5;
@@ -28,64 +68,68 @@ let winCount = 0;
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
+let timerComponent = null;
+
+// eslint-disable-next-line no-unused-vars
+// let timerComponent = null;
 
 function flipCard(rowIndex, cardIndex) {
-  console.log("Clicked card:", rowIndex, cardIndex);
-
   const card = grid.value[rowIndex][cardIndex];
 
   if (!card.isFlipped) {
-    console.log("Flipping card...");
-
     card.isFlipped = true;
 
     if (!flippedCard) {
       flippedCard = { rowIndex, cardIndex, backImagePath: card.backImagePath };
-      console.log("First card flipped:", flippedCard);
     } else {
       const { rowIndex: prevRowIndex, cardIndex: prevCardIndex, backImagePath: prevBackImagePath } = flippedCard;
-      console.log("Second card flipped:", rowIndex, cardIndex);
 
       if (rowIndex === prevRowIndex && cardIndex === prevCardIndex) {
-        return; // Ne rien faire si la même carte est retournée
+        return;
       }
 
       if (card.backImagePath === prevBackImagePath) {
-        // Les deux cartes ont la même backface, elles disparaissent
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
-        console.log("Matching backfaces!");
         winCount++;
-        if(winCount == 10){
-          console.log('Bravo, tu as gagné !')
+
+        const objectName = card.backImagePath.split("/").pop().split(".")[0];
+        objectDescription.value = objectsData[objectName];
+        if(winCount === 10){
+          document.getElementById('victory').style.height = "100px";
+          document.getElementById('victory').style.width = "300px";
+          document.getElementById('vic-text').style.transitionDelay = "300ms";
+          document.getElementById('vic-text').style.fontSize = "30px";
+          timerComponent.stopTimer();
         }
       } else {
-        // Les deux cartes ont des backfaces différentes, les retourner à leur frontface
-        grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
-        grid.value[rowIndex][cardIndex].isFlipped = false;
-        console.log("Different backfaces, flipping back...");
+        // Retourner les cartes après une pause de 0.5 seconde
+        setTimeout(() => {
+          grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
+          card.isFlipped = false;
+        }, 500);
       }
 
-      flippedCard = null; // Réinitialiser la carte retournée
+      flippedCard = null;
     }
   }
 }
-
+// eslint-disable-next-line no-unused-vars
 function getCardImagePath(rowIndex, cardIndex) {
-  return "/card.png";
+  return "/images/moyen/back-inter.svg";
 }
 
+// eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/moyen/rateau.png", count: 0 },
-    { image: "/images/moyen/arrosoir.png", count: 0 },
-    { image: "/images/moyen/elec.png", count: 0 },
-    { image: "/images/moyen/rotten.png", count: 0 },
+    { image: "/images/moyen/orange-rateau.svg", count: 0 },
+    { image: "/images/moyen/orange-arrosoir.svg", count: 0 },
+    { image: "/images/moyen/orange-pelle.svg", count: 0 },
+    { image: "/images/moyen/orange-solaire.svg", count: 0 },
     { image: "/images/moyen/trash.png", count: 0 },
     { image: "/images/moyen/velo.png", count: 0 }
   ];
 
-  // Compter le nombre d'occurrences de chaque type dans la grille
   for (let i = 0; i < grid.value.length; i++) {
     for (let j = 0; j < grid.value[i].length; j++) {
       const backImagePath = grid.value[i][j].backImagePath;
@@ -105,19 +149,18 @@ function getBackImagePath(rowIndex, cardIndex) {
     }
   } while (!selectedType);
 
-  // Incrémenter le compteur du type sélectionné
   switch (selectedType.image) {
-    case "/rateau.png":
+    case "/orange-rateau.svg":
       numRateau++;
       break;
-    case "/arrosoir.png":
+    case "/orange-arrosoir.svg":
       numArrosoir++;
       break;
-    case "/elec.png":
-      numElec++;
+    case "/orange-solaire.svg":
+      numSolaire++;
       break;
-    case "/rotten.png":
-      numRotten++;
+    case "/orange-pelle.svg":
+      numPelle++;
       break;
     case "/trash.png":
       numTrash++;
@@ -129,75 +172,40 @@ function getBackImagePath(rowIndex, cardIndex) {
 
   return selectedType.image;
 }
-
+// eslint-disable-next-line no-unused-vars
 let numRateau = 0;
+// eslint-disable-next-line no-unused-vars
 let numArrosoir = 0;
-let numElec = 0;
-let numRotten = 0;
+// eslint-disable-next-line no-unused-vars
+let numSolaire = 0;
+// eslint-disable-next-line no-unused-vars
+let numPelle = 0;
+// eslint-disable-next-line no-unused-vars
 let numTrash = 0;
+// eslint-disable-next-line no-unused-vars
 let numVelo = 0;
 
-// Assurez-vous que chaque carte a un chemin de backImagePath attribué correctement lors de la création de la grille
 for (let i = 0; i < grid.value.length; i++) {
   for (let j = 0; j < grid.value[i].length; j++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
   }
 }
+
+</script>
+<script>
+
+import '../assets/styles.css';  //link css / scss
+
+export default {
+  methods: {
+    goToMenu() {
+      this.$router.push('/homepage');
+    }
+  }
+}
 </script>
 
 <style scoped>
+@import url('https://fonts.cdnfonts.com/css/simply-rounded');
 
-body{
-  overflow: hidden;
-  background-image: url("/homepagebg.png");
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.row {
-  display: flex;
-}
-
-.container {
-  margin: 5px;
-  perspective: 1000px;
-}
-
-.card {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-}
-
-.card.active {
-  transform: rotateY(180deg);
-}
-
-.front,
-.back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.front {
-  transform: rotateY(0deg);
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
 </style>

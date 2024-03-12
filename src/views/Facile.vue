@@ -2,11 +2,9 @@
   <div id="app" class="facile">
     <div class="container container__facile">
       <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
-
       <div class="container__top">
         <Timer ref="timerComponent"/>
       </div>
-
       <div class="container__middle">
 
         <div v-if="objectDescription" class="object-description explain">
@@ -18,7 +16,6 @@
             <p>{{ objectDescription }}</p>
           
         </div>
-
         <div class="grid"> <!-- JEU -->
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
@@ -33,26 +30,18 @@
             </div>
           </div>
         </div> <!-- Fin JEU -->
-
-      
-
       </div>
-    
 
       <div class="container__bottom">
         <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
         <!-- <p id="timer"></p> -->
       </div>
-
     </div>
   </div>
 
       <div id="victory">
         <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
       </div>
-
-
-  
 </template>
 <script setup>
 import Timer from '../components/Timer.vue'
@@ -105,6 +94,7 @@ function flipCard(rowIndex, cardIndex) {
           document.getElementById('vic-text').style.transitionDelay = "300ms";
           document.getElementById('vic-text').style.fontSize = "30px";
           timerComponent.stopTimer();
+          console.log('Recommencer')
         }
       } else {
         // Retourner les cartes après une pause de 0.5 seconde
@@ -120,16 +110,16 @@ function flipCard(rowIndex, cardIndex) {
 }
 // eslint-disable-next-line no-unused-vars
 function getCardImagePath(rowIndex, cardIndex) {
-  return "/card.png";
+  return "/images/facile/back-facile.svg";
 }
 
 // eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/facile/rateau.png", count: 0 },
-    { image: "/images/facile/arrosoir.png", count: 0 },
-    { image: "/images/facile/elec.png", count: 0 },
-    { image: "/images/facile/rotten.png", count: 0 },
+    { image: "/images/facile/vert-rateau.svg", count: 0 },
+    { image: "/images/facile/vert-arrosoir.svg", count: 0 },
+    { image: "/images/facile/vert-pelle.svg", count: 0 },
+    { image: "/images/facile/vert-solaire.svg", count: 0 },
     { image: "/images/facile/trash.png", count: 0 },
     { image: "/images/facile/velo.png", count: 0 }
   ];
@@ -154,17 +144,17 @@ function getBackImagePath(rowIndex, cardIndex) {
   } while (!selectedType);
 
   switch (selectedType.image) {
-    case "/rateau.png":
+    case "/vert-rateau.svg":
       numRateau++;
       break;
-    case "/arrosoir.png":
+    case "/vert-arrosoir.svg":
       numArrosoir++;
       break;
-    case "/elec.png":
-      numElec++;
+    case "/vert-solaire.svg":
+      numSolaire++;
       break;
-    case "/rotten.png":
-      numRotten++;
+    case "vert-pelle.svg":
+      numPelle++;
       break;
     case "/trash.png":
       numTrash++;
@@ -181,9 +171,9 @@ let numRateau = 0;
 // eslint-disable-next-line no-unused-vars
 let numArrosoir = 0;
 // eslint-disable-next-line no-unused-vars
-let numElec = 0;
+let numSolaire = 0;
 // eslint-disable-next-line no-unused-vars
-let numRotten = 0;
+let numPelle = 0;
 // eslint-disable-next-line no-unused-vars
 let numTrash = 0;
 // eslint-disable-next-line no-unused-vars
