@@ -118,16 +118,16 @@ function flipCard(rowIndex, cardIndex) {
 }
 // eslint-disable-next-line no-unused-vars
 function getCardImagePath(rowIndex, cardIndex) {
-  return "/card.png";
+  return "/images/facile/back-facile.svg";
 }
 
 // eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/facile/rateau.svg", count: 0 },
-    { image: "/images/facile/arrosoir.svg", count: 0 },
-    { image: "/images/facile/pelle.svg", count: 0 },
-    { image: "/images/facile/solaire.svg", count: 0 },
+    { image: "/images/facile/vert-rateau.svg", count: 0 },
+    { image: "/images/facile/vert-arrosoir.svg", count: 0 },
+    { image: "/images/facile/vert-pelle.svg", count: 0 },
+    { image: "/images/facile/vert-solaire.svg", count: 0 },
     { image: "/images/facile/trash.png", count: 0 },
     { image: "/images/facile/velo.png", count: 0 }
   ];
@@ -152,17 +152,17 @@ function getBackImagePath(rowIndex, cardIndex) {
   } while (!selectedType);
 
   switch (selectedType.image) {
-    case "/rateau.png":
+    case "/vert-rateau.svg":
       numRateau++;
       break;
-    case "/arrosoir.png":
+    case "/vert-arrosoir.svg":
       numArrosoir++;
       break;
-    case "/elec.png":
-      numElec++;
+    case "/vert-solaire.svg":
+      numSolaire++;
       break;
-    case "/rotten.png":
-      numRotten++;
+    case "vert-pelle.svg":
+      numPelle++;
       break;
     case "/trash.png":
       numTrash++;
@@ -179,9 +179,9 @@ let numRateau = 0;
 // eslint-disable-next-line no-unused-vars
 let numArrosoir = 0;
 // eslint-disable-next-line no-unused-vars
-let numElec = 0;
+let numSolaire = 0;
 // eslint-disable-next-line no-unused-vars
-let numRotten = 0;
+let numPelle = 0;
 // eslint-disable-next-line no-unused-vars
 let numTrash = 0;
 // eslint-disable-next-line no-unused-vars
