@@ -4,7 +4,7 @@
     <div class="container container--home">
       <div class="container__top">
         <button @click="goToClassement" class="btn btn--green btn--round"><img src="/images/Classement.svg" alt=""></button>
-        <button class="btn btn--green btn--round"><img src="/images/Profil.svg" alt=""></button>
+        <button class="btn btn--green btn--round btn--round--col"><img src="/images/Profil.svg" alt=""></button>
       </div>
 
       <div class="container__middle">

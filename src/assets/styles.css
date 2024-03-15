@@ -17,6 +17,9 @@ body {
 }
 
 .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background-image: url("/public/images/bg.svg");
   background-size: cover;
@@ -30,21 +33,20 @@ body {
   justify-content: space-between;
   height: 100%;
   width: 97%;
+  height: 95%;
 }
 .home .container__top {
   display: flex;
   flex-direction: row;
-  width: 94%;
+  width: 100%;
   justify-content: space-between;
-  padding: 1% 3%;
 }
 .home .container__bottom {
   display: flex;
   flex-direction: row;
   justify-content: end;
-  width: 94%;
+  width: 100%;
   justify-content: space-between;
-  padding: 1% 3%;
 }
 .home .container__middle {
   display: flex;
@@ -93,7 +95,8 @@ body {
 .login {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   background-image: url("/public/images/bg-login.jpg");
@@ -108,6 +111,7 @@ body {
   justify-content: space-between;
   height: 100%;
   width: 97%;
+  height: 95%;
 }
 .login .container__top {
   height: 100px;
@@ -144,9 +148,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: start;
-  width: 94%;
+  width: 100%;
   justify-content: space-between;
-  padding: 1% 3%;
 }
 
 .jeux {
@@ -174,7 +177,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25vw;
+  width: 22vw;
   gap: 20px;
 }
 .jeux .container__left img {
@@ -367,11 +370,7 @@ body {
   min-width: 75px;
 }
 .btn--round img {
-  transform: scale(5);
-}
-.btn--round--col img {
   max-width: 40px;
-  transform: scale(1);
 }
 .btn--select {
   padding: 0.2em 2em;
@@ -469,47 +468,20 @@ table td {
   color: #F7FAF7;
 }
 
-body {
-  overflow: hidden;
-  /* background-image: url("/homepagebg.png"); */
-  background-size: 100vw;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  position: absolute;
-  margin: 30px 0;
-  width: 250px;
-  height: 80px;
-  top: 10px;
-  left: 10px;
-}
-
 .grid {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
-.row {
+.grid .row {
   display: flex;
 }
-
-.container {
+.grid .container {
   margin: 5px;
   perspective: 1000px;
 }
-
-.card {
+.grid .card {
   margin: 10px;
   width: 10.417vw;
   height: 10.417vw;
@@ -517,41 +489,33 @@ body {
   transform-style: preserve-3d;
   transition: transform 0.3s;
 }
-
-.card:hover {
+.grid .card:hover {
   transform: scale(1.05);
 }
-
-.card.active {
+.grid .card.active {
   transform: rotateY(180deg);
 }
-
-.card.active:hover {
+.grid .card.active:hover {
   transform: scale(1.05) rotateY(180deg);
 }
-
-.front,
-.back {
+.grid .front,
+.grid .back {
   width: 100%;
   height: 100%;
   position: absolute;
   backface-visibility: hidden;
 }
-
-.front {
+.grid .front {
   transform: rotateY(0deg);
 }
-
-.back {
+.grid .back {
   transform: rotateY(180deg);
 }
-
-img {
+.grid img {
   width: 100%;
   height: 100%;
 }
-
-.btn-menu {
+.grid .btn-menu {
   position: absolute;
   bottom: 10px;
   left: 10px;
