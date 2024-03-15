@@ -313,6 +313,37 @@ body {
   text-align: center;
 }
 
+.classement {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url("/public/images/background-niv-facile.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.classement .container {
+  display: flex;
+  flex-direction: row;
+  height: 95%;
+  width: 97%;
+}
+.classement .container__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.classement .container__middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
 @font-face {
   font-family: "Sobiscuit";
   src: url("/public/fonts/Sobiscuit.otf") format("opentype");
@@ -460,6 +491,34 @@ form .inputs ::placeholder {
   color: #8CCF57;
   font-size: 20px;
   align-items: center;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  padding: 1em 1.5em;
+  width: fit-content;
+  background-color: #8CCF57;
+  color: #8CCF57;
+  border-radius: 15px;
+  font-size: 2em;
+  border: 1px solid #8CCF57;
+}
+table th {
+  padding: 0 1.5em 0.5em 1.5em;
+  text-align: left;
+  font-family: "Sobiscuit";
+  font-weight: 300;
+  text-shadow: 0.05em 0.05em 0em #4C8B25;
+  color: #F7FAF7;
+}
+table td {
+  padding: 0 1em 0.2em 1em;
+  border-bottom: 1px solid #8CCF57;
+  font-family: "Simply Rounded";
+  color: #F7FAF7;
 }
 
 /*# sourceMappingURL=styles.css.map */
