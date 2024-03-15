@@ -136,7 +136,8 @@ body {
 .facile {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100%;
   background-image: url("/public/images/background-niv-facile.jpg");
@@ -146,75 +147,66 @@ body {
 }
 .facile .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-}
-.facile .container__top {
-  height: 100px;
-  width: 94%;
-  display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  height: 95%;
+  width: 97%;
 }
-.facile .container__top .timer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1% 3%;
-}
-.facile .container__top .timer p {
-  color: #4C8B25;
-  font-size: 2.5em;
-  font-family: "Simply Rounded", sans-serif;
-  margin: 0 0;
-}
-.facile .container__middle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  width: 90%;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 100px;
-}
-.facile .container__middle__top {
+.facile .container__left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 100px;
-  height: 90vh;
-  border: 1px solid red;
+  justify-content: space-between;
+  width: 25vw;
+  gap: 20px;
 }
-.facile .container__middle__top img {
+.facile .container__left img {
   width: 100px;
+  height: fit-content;
 }
-.facile .container__middle .explain {
+.facile .container__left .explain {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80%;
-  width: 200px;
-  padding: 1% 2%;
+  width: 15vw;
+  padding: 1% 2.5%;
   border: 10px solid #4C8B25;
   border-radius: 25px;
   background-color: #DBFFD5;
-  color: #4C8B25;
   font-size: 1.5em;
 }
-.facile .container__middle .explain .word {
-  font-size: 2em;
-}
-.facile .container__bottom {
+.facile .container__left .explain .word {
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  width: 94%;
-  justify-content: space-between;
+  font-size: 2em;
+  font-family: "Sobiscuit";
+}
+.facile .container__middle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: max-content;
+}
+.facile .container__right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0 3%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.facile .container__right .timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 150px;
   padding: 1% 3%;
+}
+.facile .container__right .timer p {
+  color: #4C8B25;
+  font-size: 2.5em;
+  font-family: "Simply Rounded", sans-serif;
+  margin: 0 0;
 }
 .facile body {
   overflow: hidden;

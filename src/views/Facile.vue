@@ -1,36 +1,37 @@
 <template>
   <div id="app" class="facile">
     <div class="container container__facile">
-      <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
-      <div class="container__top">
-        <Timer ref="timerComponent"/>
-      </div>
-      <div class="container__middle">
+      
 
-        <div class="container__middle__top">
-          <img src="/public/images/logo_glasses.svg" alt="">
-          <div  class="object-description explain">
+      <div class="container__left">
+        <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
+        
+        <div  class="object-description explain">
             
-              <p class="word">
-                {{ word }}
-              </p>
+          <div class="word">
+            <span v-for="(letter, index) in word" :key="index" :class="'lettre-' + index">{{ letter }}</span>
+          </div>
+
 
               <p>{{ objectDescription }}</p>
             
           </div>
-        </div>
 
-        
+        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="retourner au menu"></button>
+      
+      </div> <!-- Fin container left -->
 
-        <div class="grid"> <!-- JEU -->
+      <div class="container__middle">
+
+        <div class="grid game"> <!-- JEU -->
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
               <div class="card" :class="{ active: card.isFlipped }">
                 <div class="front">
-                  <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+                  <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)" alt="carte retourné">
                 </div>
                 <div class="back">
-                  <img draggable="false" :src="card.backImagePath" alt="Back face">
+                  <img draggable="false" :src="card.backImagePath" alt="Back face" :alt="carte">
                 </div>
               </div>
             </div>
@@ -38,11 +39,14 @@
         </div> <!-- Fin JEU -->
       </div>
 
-      <div class="container__bottom">
-        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
+      <div class="container__right">
+        
+        <Timer ref="timerComponent"/>
         <!-- <p id="timer"></p> -->
       </div>
+
     </div>
+
   </div>
 
   <div id="victory">
@@ -194,6 +198,15 @@ for (let i = 0; i < grid.value.length; i++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
   }
 }
+
+
+
+
+
+
+
+
+
 
 </script>
 <script>
