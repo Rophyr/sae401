@@ -9,7 +9,7 @@
         <div  class="object-description explain">
             
           <div class="word">
-            <span v-for="(letter, index) in word" :key="index" :class="'lettre-' + index">{{ letter }}</span>
+            <span v-for="(letter, i) in word" :key="i" :class="'lettre-' + i">{{ letter }}</span>
           </div>
 
 

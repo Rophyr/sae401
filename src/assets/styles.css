@@ -207,12 +207,6 @@ body {
   background-color: #ffe8e3;
   border-color: #D3715B;
 }
-.jeux .container__left .explain .word {
-  display: flex;
-  flex-direction: row;
-  font-size: 2em;
-  font-family: "Sobiscuit";
-}
 .jeux .container__middle {
   display: flex;
   justify-content: flex-start;

@@ -260,14 +260,36 @@ body{
                     border-color: $dark-red;
                 }
             
-                .word {
-                    display: flex;
-                    flex-direction: row;
-                    font-size: 2em;
-                    font-family: 'Sobiscuit';
-                  
+                .word{
+                    $colors: ($dark-green, $dark-blue, $dark-red, $dark-yellow);
+                    $count: 0;
+                    $word: 'Rateau';
                     
-                  }
+
+                    // @for $i from 0 through length($word){
+                    //     .#{$lettre-#{$i}}{
+                    //         color: $colors($count);
+                    //     }
+                    //     $count: $count + 1;
+
+                    //     @if $count == length($colors){
+                    //         $count: 0;
+                    //     }@else{
+                    //         $count: $count + 1; 
+                    //     }
+                    // }
+                   
+
+
+
+                    // .lettre-#{$i}{
+                    //     @for $i from 0 through length($word){
+                    //         color: $couleur;
+                    //     }
+                    // }
+
+                    
+                }
             }
   
   
