@@ -44,16 +44,11 @@
         <Timer ref="timerComponent"/>
         <!-- <p id="timer"></p> -->
       </div>
-
     </div>
-
   </div>
-
   <div id="victory">
     <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
   </div>
-
-
 </template>
 
 
@@ -105,6 +100,7 @@ function flipCard(rowIndex, cardIndex) {
         if(winCount === 6){
           document.getElementById('victory').style.height = "100px";
           document.getElementById('victory').style.width = "300px";
+          document.getElementById('victory').style.border = "10px solid #4C8B25";
           document.getElementById('vic-text').style.transitionDelay = "300ms";
           document.getElementById('vic-text').style.fontSize = "30px";
           timerComponent.stopTimer();
@@ -199,19 +195,8 @@ for (let i = 0; i < grid.value.length; i++) {
   }
 }
 
-
-
-
-
-
-
-
-
-
 </script>
 <script>
-
-  import '../assets/styles.css';  //link css / scss
 
   export default {
     methods: {
@@ -224,5 +209,4 @@ for (let i = 0; i < grid.value.length; i++) {
 
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/simply-rounded');
-
 </style>

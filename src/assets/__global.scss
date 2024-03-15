@@ -1,8 +1,6 @@
 @import '__variable.scss';
 @import '__mixins.scss';
 
-
-
 body{
     font-family: 'Simply Rounded', sans-serif;
     margin: 0;
@@ -16,11 +14,7 @@ body{
     width: 30vw;
 }
 
-
 // FIN GLOBAL //
-
-
-
 .home{
     display: flex;
     justify-content: center;
@@ -121,7 +115,6 @@ body{
 
 
 }
-
 
 .login{
     display: flex;
@@ -372,33 +365,27 @@ body{
         }
     
     }
-        // $lighterDark: lighten($dark, 30%); 
-        
-
-
-
-    #victory{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        filter: drop-shadow(5px 5px 0 $dark-green);
-        height: 0;
-        width: 0;
-        background-color: $light-green;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        #vic-text{
-            font-family: 'Simply Rounded', sans-serif;
-            font-size: 0;
-            text-align: center;
-
-        }
-
+        // $lighterDark: lighten($dark, 30%);
+}
+#victory{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 0;
+    width: 0;
+    background-color: $light-light-green;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #vic-text{
+        font-family: 'Simply Rounded', sans-serif;
+        font-size: 0;
+        text-align: center;
     }
-}  
+}
 
 
 
