@@ -5,8 +5,10 @@
 <template>
     <div class="classement">
 
-        <div class="classement__left">
-            <router-link to="/homepage">Home</router-link>
+        <div class="container container__classement">
+
+            <div class="classement__left">
+            <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
             <div class="niveau">
                 <button class="btn btn--facile">Facile</button>
                 <button class="btn btn--moyen">Intermédiaire</button>
@@ -14,13 +16,10 @@
                 
                 
             </div>
-            <br>
-            <button class="btn btn--green">jouer</button>
-            <button class="btn btn--green">Niveau <i class="fa-solid fa-chevron-down"></i></button>
+            
+           
 
-            <button class="btn btn--round btn--green">
-                <i class="fa-solid fa-play"></i>
-            </button>
+            
 
         </div>
         <div class="classement__right">
@@ -50,6 +49,10 @@
             </table>
             </div>
         </div>
+    </div>
+
+        
+
     </div>
 </template>
 

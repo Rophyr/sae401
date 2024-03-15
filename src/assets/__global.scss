@@ -58,6 +58,7 @@ body{
         }
 
         &__middle{
+            @include ensemble-logo;
             
             display: flex;
             flex-direction: column;
@@ -71,20 +72,7 @@ body{
 
             
 
-            .ensemble-logo{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .logo-frog{
-                    width: 200px;
-
-                    // border: 1px solid red;
-                }
-
-                .logo-froggy{
-                    width: 500px;
-                }
-            }
+    
            
             &__buttons{
                 display: flex;
@@ -152,6 +140,9 @@ body{
 
         &__middle{
             @include container-middle;
+            @include ensemble-logo;
+            // display: flex;
+            // flex-direction: row;
 
             .form{
                 //formulaire + titre

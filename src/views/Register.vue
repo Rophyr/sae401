@@ -8,7 +8,10 @@
 
       <div class="container__middle">
 
-        <img src="/froggy.png" alt="logo" class="logo">
+        <div class="ensemble-logo">
+          <img src="/public/images/logo.svg" alt="" class="logo-frog">
+          <img src="/public/images/logo-froggy.svg" draggable="false" alt="Logo" class="logo-froggy">
+        </div>
 
         <div class="form">
 
