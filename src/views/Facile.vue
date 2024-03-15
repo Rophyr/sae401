@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="facile">
+  <div id="app" class="jeux jeux--facile">
     <div class="container container__facile">
       
 
@@ -17,7 +17,7 @@
             
           </div>
 
-        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="retourner au menu"></button>
+        <button @click="goToMenu" class="btn btn--green btn--round btn--round--col"><img src="/images/back_door.svg" aria-label="retourner au menu"></button>
       
       </div> <!-- Fin container left -->
 

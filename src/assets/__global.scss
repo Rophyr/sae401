@@ -29,10 +29,11 @@ body{
     background-size: cover;
     // background-repeat: no-repeat;
     overflow: hidden;
+    width: 100vw;
 
     .container{
         @include container-col;
-
+        width: 97%;
         
         &__top{
             display: flex;
@@ -120,7 +121,7 @@ body{
     justify-content: space-between;
     height: 100vh;
     // max-height: 100vh;
-    // width: 100vw;
+    width: 100vw;
     background-image: url('/public/images/bg-login.jpg');
     background-size: cover;
     background-position: center;
@@ -132,6 +133,7 @@ body{
     .container{
 
         @include container-col;
+        width: 97%;
 
         &__top{
             @include container-top;
@@ -166,14 +168,14 @@ body{
     }
 }
 
-.facile{
+.jeux{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     // max-height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-image: url('/public/images/background-niv-facile.jpg');
     background-size: cover;
     background-position: center;
@@ -181,6 +183,10 @@ body{
     overflow: hidden;
 
     // border: 1px solid red;
+
+    &--moyen{
+        background-image: url('/public/images/background-niv-inter.jpg');
+    }
 
     .container{
         // @include container-row;
@@ -191,6 +197,8 @@ body{
 
         // border: 1px solid red;
         // width: 100%;
+
+        
 
         &__left{
             // @include container-top;
@@ -229,6 +237,11 @@ body{
                 border-radius: 25px;
                 background-color: $light-light-green;
                 font-size: 1.5em;
+
+                &--moyen{
+                    background-color: $light-light-yellow;
+                    border-color: $dark-yellow;
+                }
             
                 .word {
                     display: flex;
@@ -254,6 +267,13 @@ body{
             max-width: max-content;
         
             // border: 1px solid blue;
+
+            .grid{
+
+                &--moyen{
+                    transform: scale(0.9);
+                }
+            }
         }
     
          
@@ -280,11 +300,19 @@ body{
 
                 // border: 1px solid black;
 
+
+
                 p{
                     color: $dark-green;
                     font-size: 2.5em;
                     font-family: 'Simply Rounded', sans-serif;
                     margin: 0 0;
+                }
+
+                &--moyen{
+                    p{
+                        color: $dark-yellow;
+                    }
                 }
             
             }
@@ -295,101 +323,7 @@ body{
     
     }
         // $lighterDark: lighten($dark, 30%); 
-        // css jeu //
         
-        body {
-            overflow: hidden;
-            /* background-image: url("/homepagebg.png"); */
-            background-size: 100vw;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        #app {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo {
-            position: absolute;
-            margin: 30px 0;
-            width: 250px;
-            height: 80px;
-            top: 10px;
-            left: 10px;
-        }
-        
-        .grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .row {
-            display: flex;
-        }
-        
-        .container {
-            margin: 5px;
-            perspective: 1000px;
-        }
-        
-        .card {
-            margin: 10px;
-            width:  10.417vw;
-            height:  10.417vw ;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.3s;
-            
-            // filter: drop-shadow(4px 4px 0px $lighterDark);
-        }
-        
-        .card:hover {
-            transform: scale(1.05);
-            // filter: drop-shadow(8px 8px 0px $lighterDark);
-        }
-        
-        .card.active {
-            transform: rotateY(180deg);
-        }
-        
-        .card.active:hover {
-            transform: scale(1.05) rotateY(180deg);
-        }
-        
-        .front,
-        .back {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            backface-visibility: hidden;
-        }
-        
-        .front {
-            transform: rotateY(0deg);
-        }
-        
-        .back {
-            transform: rotateY(180deg);
-        }
-        
-        img {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .btn-menu {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-        }
-
-    // fin css jeu //
-
 
 
 
@@ -415,6 +349,9 @@ body{
 
     }
 }  
+
+
+
 
 .classement{
 
@@ -469,3 +406,4 @@ body{
 
     }
 }
+

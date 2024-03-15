@@ -1,24 +1,33 @@
 <template>
-  <div id="app" class="facile">
-    <div class="container container__facile">
-      <!-- <img src="/froggy.png" alt="logo" class="logo"> -->
+  <div id="app" class="jeux jeux--moyen">
+    <div class="container container__facile container--moyen">
+      
 
-      <div class="container__top">
-        <Timer ref="timerComponent"/>
+      <div class="container__left">
+
+        <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
+        
+        <div  class="object-description explain explain--moyen">
+            
+          <div class="word">
+            <span v-for="(letter, index) in word" :key="index" :class="'lettre-' + index">{{ letter }}</span>
+          </div>
+
+
+              <p>{{ objectDescription }}</p>
+            
+          </div>
+
+
+        <button @click="goToMenu" class="btn btn--moyen btn--round btn--round--col"><img src="/images/back_door.svg" alt=""></button>
+        
       </div>
 
       <div class="container__middle">
 
-        <div v-if="objectDescription" class="object-description">
-          {{ objectDescription }}
-          <div class="explain">
-            <p class="word">
-              {{word}}
-            </p>
-          </div>
-        </div>
+        
 
-        <div class="grid"> <!-- JEU -->
+        <div class="grid grid--moyen"> <!-- JEU -->
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
               <div class="card" :class="{ active: card.isFlipped }">
@@ -37,9 +46,9 @@
 
       </div>
 
-      <div class="container__bottom">
-        <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" alt=""></button>
-        <p id="timer"></p>
+      <div class="container__right">
+        <Timer ref="timerComponent" class="timer timer--moyen"/>
+        
       </div>
 
     </div>
