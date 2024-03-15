@@ -1,21 +1,66 @@
 <template>
-  <div class="grid">
-    <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
-      <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
-        <div class="card" :class="{ active: card.isFlipped }">
-          <div class="front">
-            <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+  <div id="app" class="jeux jeux--difficile">
+    <div class="container container__facile container--difficile">
+      
+
+      <div class="container__left">
+
+        <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
+        
+        <div  class="object-description explain explain--difficile">
+            
+          <div class="word">
+            <span v-for="(letter, index) in word" :key="index" :class="'lettre-' + index">{{ letter }}</span>
           </div>
-          <div class="back">
-            <img draggable="false" :src="card.backImagePath" alt="Back face">
+
+
+              <p>{{ objectDescription }}</p>
+            
           </div>
-        </div>
+
+
+        <button @click="goToMenu" class="btn btn--difficile btn--round btn--round--col"><img src="/images/back_door.svg" alt=""></button>
+        
       </div>
+
+      <div class="container__middle">
+
+        
+
+        <div class="grid grid--difficile">
+          <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
+            <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
+              <div class="card" :class="{ active: card.isFlipped }">
+                <div class="front">
+                  <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)">
+                </div>
+                <div class="back">
+                  <img draggable="false" :src="card.backImagePath" alt="Back face">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- Fin JEU -->
+
+
+
+      </div>
+
+      <div class="container__right">
+        <Timer ref="timerComponent" class="timer timer--difficile"/>
+        
+      </div>
+
     </div>
+  </div>
+
+  <div id="victory">
+    <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
   </div>
 </template>
 
 <script setup>
+import Timer from '../components/Timer.vue'
 import { ref } from 'vue';
 
 const rows = 3;

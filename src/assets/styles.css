@@ -167,6 +167,9 @@ body {
 .jeux--moyen {
   background-image: url("/public/images/background-niv-inter.jpg");
 }
+.jeux--difficile {
+  background-image: url("/public/images/background-niv-diff.jpg");
+}
 .jeux .container {
   display: flex;
   flex-direction: row;
@@ -199,6 +202,10 @@ body {
 .jeux .container__left .explain--moyen {
   background-color: #fff0d2;
   border-color: #E2A340;
+}
+.jeux .container__left .explain--difficile {
+  background-color: #ffe8e3;
+  border-color: #D3715B;
 }
 .jeux .container__left .explain .word {
   display: flex;
@@ -239,6 +246,9 @@ body {
 }
 .jeux .container__right .timer--moyen p {
   color: #E2A340;
+}
+.jeux .container__right .timer--difficile p {
+  color: #D3715B;
 }
 .jeux #victory {
   position: absolute;

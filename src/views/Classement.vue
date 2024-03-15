@@ -13,8 +13,8 @@
             
            
 
-            <button @click="goToMenu" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="retourner au menu"></button>
-      
+            
+            <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="retourner au menu"></router-link>
 
         </div>
         <div class="container__middle">

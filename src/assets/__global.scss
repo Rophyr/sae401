@@ -196,6 +196,10 @@ body{
         background-image: url('/public/images/background-niv-inter.jpg');
     }
 
+    &--difficile{
+        background-image: url('/public/images/background-niv-diff.jpg');
+    }
+
     .container{
         // @include container-row;
         display: flex;
@@ -250,6 +254,11 @@ body{
                     background-color: $light-light-yellow;
                     border-color: $dark-yellow;
                 }
+
+                &--difficile{
+                    background-color: $light-light-red;
+                    border-color: $dark-red;
+                }
             
                 .word {
                     display: flex;
@@ -282,6 +291,8 @@ body{
                 &--moyen{
                     transform: scale(0.9);
                 }
+
+
             }
         }
     
@@ -321,6 +332,12 @@ body{
                 &--moyen{
                     p{
                         color: $dark-yellow;
+                    }
+                }
+
+                &--difficile{
+                    p{
+                        color: $dark-red;
                     }
                 }
             
