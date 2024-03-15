@@ -304,11 +304,13 @@ body{
             justify-content: flex-start;
             align-items: center;          
             max-width: max-content;
-            
+            padding-left: 5vw;
         
             // border: 1px solid blue;
 
             .grid{
+
+                // transform: scale(1.1);
 
                 &--moyen{
                     transform: scale(0.9);

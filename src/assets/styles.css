@@ -212,6 +212,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   max-width: max-content;
+  padding-left: 5vw;
 }
 .jeux .container__middle .grid--moyen {
   transform: scale(0.9);
