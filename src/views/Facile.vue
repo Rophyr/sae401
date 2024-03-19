@@ -46,14 +46,19 @@
       </div>
     </div>
   </div>
-  <div id="victory">
-    <p id="vic-text">Félicitations, tu as réussi(e) ! <span id="time"></span></p>
+  <div id="victory" style="display: none">
+    <p id="vic-text">Bravo !</p>
+    <div class="separation"></div>
+    <p>Temps réalisé : 00:32</p>
+    <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
+    <button @click="goToMenu" class="btn btn--green">Accueil</button>
+
   </div>
 </template>
 
 
 <script setup>
-import Timer from '../components/Timer.vue'
+//import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
 import { ref } from 'vue';
 import objectsData from '../../public/data/objectDescription.json';
@@ -98,11 +103,7 @@ function flipCard(rowIndex, cardIndex) {
         const objectName = card.backImagePath.split("/").pop().split(".")[0];
         objectDescription.value = objectsData[objectName];
         if(winCount === 6){
-          document.getElementById('victory').style.height = "100px";
-          document.getElementById('victory').style.width = "300px";
-          document.getElementById('victory').style.border = "10px solid #4C8B25";
-          document.getElementById('vic-text').style.transitionDelay = "300ms";
-          document.getElementById('vic-text').style.fontSize = "30px";
+          document.getElementById('victory').style.display = "flex"
           timerComponent.stopTimer();
           console.log('Recommencer')
         }

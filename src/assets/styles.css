@@ -247,23 +247,43 @@ body {
 }
 
 #victory {
+  padding: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 0;
-  width: 0;
-  background-color: #DBFFD5;
-  border: none;
+  background-color: white;
+  border: solid #8CCF57 10px;
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 #victory #vic-text {
-  font-family: "Simply Rounded", sans-serif;
-  font-size: 0;
+  font-family: "Sobiscuit", sans-serif;
+  font-size: 60px;
   text-align: center;
+  margin: 0;
+  color: #8CCF57;
+}
+#victory .separation {
+  position: relative;
+  margin-bottom: 5px;
+  height: 10px;
+  width: 224px;
+  border-radius: 100px;
+  background-color: #8CCF57;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2509803922);
+}
+#victory p {
+  margin-bottom: 30px;
+}
+#victory button {
+  width: auto;
+  height: auto;
+  margin: 5px;
+  padding: 10px 50px;
 }
 
 .classement {

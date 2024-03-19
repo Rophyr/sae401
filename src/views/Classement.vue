@@ -10,10 +10,6 @@
             <div class="container__left">
             <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
             
-            
-           
-
-            
             <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="retourner au menu"></router-link>
 
         </div>
