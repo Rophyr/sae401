@@ -1,5 +1,5 @@
 <template>
-  <div class="grid game"> <!-- JEU -->
+  <div id="jeu" class="grid game"> <!-- JEU -->
     <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
       <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
         <div class="card" :class="{ active: card.isFlipped }">
@@ -20,7 +20,7 @@ import { ref } from 'vue';
 import objectsData from '../../public/data/objectDescription.json';
 
 const objectDescription = ref('');
-let word = "RATEAU"; //debug
+
 
 const rows = 3;
 const columns = 4;
@@ -35,7 +35,6 @@ const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns
 }))));
 
 let flippedCard = null;
-let timerComponent = null;
 
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
@@ -60,9 +59,8 @@ function flipCard(rowIndex, cardIndex) {
         const objectName = card.backImagePath.split("/").pop().split(".")[0];
         objectDescription.value = objectsData[objectName];
         if (winCount === 6) {
+          document.getElementById('jeu').style.display = "none"
           document.getElementById('victory').style.display = "flex"
-          timerComponent.stopTimer();
-          console.log('Recommencer')
         }
       } else {
         setTimeout(() => {

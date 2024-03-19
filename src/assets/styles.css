@@ -207,6 +207,13 @@ body {
   background-color: #ffe8e3;
   border-color: #D3715B;
 }
+.jeux .container__left .explain .FroggyDesc {
+  font-family: "Sobiscuit", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 52.45px;
+  text-align: center;
+}
 .jeux .container__middle {
   display: flex;
   justify-content: flex-start;

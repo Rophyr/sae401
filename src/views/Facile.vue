@@ -5,7 +5,7 @@
         <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
         <div  class="object-description explain">
           <div class="word">
-            <span v-for="(letter, i) in word" :key="i" :class="'lettre-' + i">{{ letter }}</span>
+            <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
               <p>{{ objectDescription }}</p>
           </div>
@@ -16,7 +16,7 @@
           <Game />
       </div>
       <div class="container__right">
-        <Timer ref="timerComponent"/>
+        <Timer />
       </div>
     </div>
   </div>
@@ -32,7 +32,14 @@
 </template>
 
 
+<script setup>
+const word = "FROGGY"; // Votre mot ici
+const colors = ['#E2A340FF', '#D3715BFF', '#228AB9FF', '#4C8B25FF'];
 
+function getColorByIndex(index) {
+  return colors[index % colors.length];
+}
+</script>
 <script>
 import Timer from '../components/Timer.vue'
 import Game from '../components/Game.vue';
