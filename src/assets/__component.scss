@@ -115,6 +115,29 @@
     }
   }
 
+
+
+.logo-bg-white{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    // padding: 0;
+    background-color: $light;
+    box-shadow: 0.12rem 0.12rem #00000068;
+    z-index: 1;
+
+    // border: 1Px solid red;
+
+    img{
+        height: 100px;
+    }
+}
+
 table{
     border-collapse: collapse;
     width: 100%;

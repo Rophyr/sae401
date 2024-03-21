@@ -2,7 +2,9 @@
   <div id="app" class="jeux jeux--facile">
     <div class="container container__facile">
       <div class="container__left">
-        <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
+        <div class="logo-bg-white">
+          <img src="/public/images/logo-glasses.svg" alt="">
+        </div>
         <div  class="object-description explain">
           <div class="word">
             <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>

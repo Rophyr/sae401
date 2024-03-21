@@ -409,6 +409,23 @@ body {
   padding: 0.2em 2em;
 }
 
+.logo-bg-white {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: #F7FAF7;
+  box-shadow: 0.12rem 0.12rem rgba(0, 0, 0, 0.4078431373);
+  z-index: 1;
+}
+.logo-bg-white img {
+  height: 100px;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
