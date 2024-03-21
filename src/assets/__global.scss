@@ -31,33 +31,38 @@ body{
     // border: 1px solid red;
 
     .container {
-        @include container-col;
+        @include container-row;
         width: 97%;
         height: 95%;
 
         // border: 1px solid green;
 
-        &__top {
-            display: flex;
-            flex-direction: row-reverse;
-            width: 100%;
-            justify-content: space-between;
+        &__left {
+            @include container-left;
+            flex-direction: column-reverse;
+
+            // display: flex;
+            // flex-direction: column;
+            // width: 100%;
+            // justify-content: space-between;
             // padding: 1% 3%;
 
 
             // border: 1px solid red;
         }
 
-        &__bottom {
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: flex-end;
-            justify-content: end;
-            width: 100%;
-            justify-content: space-between;
-            // padding: 1% 3%;
+        &__right {
+            @include container-left
 
-            // border: 1px solid red;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: flex-end;
+            // justify-content: end;
+            // width: 100%;
+            // justify-content: space-between;
+            // // padding: 1% 3%;
+
+            // // border: 1px solid red;
         }
 
         &__middle {
@@ -202,14 +207,11 @@ body{
         
 
         &__left{
-            // @include container-top;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            @include container-left;
             width: 22vw;
-            // border: 1px solid red;
             gap: 20px;
+
+            // border: 1px solid red;
 
             img{
                 width: 100px;
@@ -443,10 +445,7 @@ body{
         width: 97%;
 
         &__left {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
+            @include container-left;
 
             // border: 1px solid red;
         }
@@ -459,10 +458,19 @@ body{
             justify-content: space-around;
             // border: 1px solid blue;
             width: 100%;
+            padding-right: 8vw;
 
-            table {
+            .niveau{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 35vw;
 
+                // border: 1px solid blue;
             }
+
+            
 
         }
     }
@@ -501,5 +509,53 @@ body{
     }
 
 
+}
+
+.profil{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('/public/images/background-profil.jpg');
+    background-size: cover;
+    overflow: hidden;
+
+
+    .container{
+      
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 95%;
+        width: 97%;
+
+        // border: 1px solid green;
+
+        
+
+
+    &__left{
+        @include container-left;
+    }
+
+    &__middle{
+        @include container-middle;
+        flex-direction: column;
+        // justify-content: space-between;
+
+        // border: 1px solid red;
+        width: 70vw;
+
+
+        h1{
+            color: $light-blue;
+            text-shadow: 0.05em 0.05em 0em $dark-blue;
+        }
+    }
+
+    }
 }
 

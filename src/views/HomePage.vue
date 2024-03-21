@@ -2,9 +2,9 @@
   <div id="app" class="home">
 
     <div class="container container--home">
-      <div class="container__top">
-        
-        <button class="btn btn--green btn--round btn--round--col"><img src="/images/Profil.svg"  aria-label="voir le profil"></button>
+      <div class="container__left">
+        <router-link to="classement" class="btn btn--green btn--round"><img src="/images/Classement.svg"  aria-label="aller au classement"></router-link>
+
       </div>
 
       <div class="container__middle">
@@ -28,13 +28,15 @@
           <button @click="goToRegister" class="btn btn--green">Register</button> -->
 
         </div>
+        <router-link to="/mentions-legales" class="at-bottom"><p class="underline">Mentions Légales</p></router-link>
 
       </div>
 
-      <div class="container__bottom">
-        <button @click="goToRegles" class="btn btn--green btn--round"><img src="/images/Rules.svg"  aria-label="règles"></button>
-        <router-link to="/mentions-legales"><p class="underline">Mentions Légales</p></router-link>
-        <button @click="goToClassement" class="btn btn--green btn--round"><img src="/images/Classement.svg"  aria-label="aller au classement"></button>
+      <div class="container__right">
+        <router-link to="/profil" class="btn btn--green btn--round btn--round--col"><img src="/images/Profil.svg"  aria-label="voir le profil"></router-link>
+        <router-link to="/regles" class="btn btn--green btn--round"><img src="/images/Rules.svg"  aria-label="règles"></router-link>
+        
+        
       </div>
 
     </div>
@@ -65,15 +67,15 @@ export default {
         this.$router.push('/difficile');
       }
     },
-    goToRegister(){
-      this.$router.push('/register');
-    },
-    goToLogin(){
-      this.$router.push('/login');
-    },
-    goToClassement(){
-      this.$router.push('/classement');
-    }
+    // goToRegister(){
+    //   this.$router.push('/register');
+    // },
+    // goToLogin(){
+    //   this.$router.push('/login');
+    // },
+    // goToClassement(){
+    //   this.$router.push('/classement');
+    // }
   }
 }
 </script>

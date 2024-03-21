@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Classement from '../views/Classement.vue'
 import Mentions from '../views/MentionsLegales.vue'
+import Profil from '../views/Profil.vue'
 
 const routes = [
   { path: '/', redirect: '/homepage' },
@@ -17,7 +18,8 @@ const routes = [
   { path: '/register', component: Register },
   { path: '/login', component: Login },
   {path: '/classement', component: Classement},
-  {path: '/mentions-legales', component: Mentions}
+  {path: '/mentions-legales', component: Mentions},
+  {path: '/profil', component: Profil}
 ]
 
 const router = createRouter({

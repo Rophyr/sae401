@@ -22,7 +22,7 @@
                 <div class="green-bar"></div>
             </div>
 
-            <div class="tableau">
+            <div class="tableau tableau--green">
                 
                 <table>
                 <tr>
