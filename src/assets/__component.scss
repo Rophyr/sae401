@@ -2,7 +2,7 @@
 
 
 .btn{
-    padding: 2.5% 2%;
+    padding: 2% 2%;
     font-family: 'simply rounded', sans-serif;
     font-size: 1.5em;
     color: $light;
@@ -13,40 +13,70 @@
 
     
     width: auto;
-    // letter-spacing: 1px;
-
-    // max-width: 10vw;
+    
 
     box-shadow: inset 0px 2px 0px 1px $dark;
-    // box-shadow: inset -0.1875rem -0.1875rem var(--color-black);
+
+    &:hover,&:focus{
+            
+        transition: box-shadow 0.1s ease-in;
+        transform: translate(0, 0.025em);
+        box-shadow: inset 0.125em 0.125em $dark-green;
+        background-color: darker($light-green);
+        
+    }
+    
 
     &:hover{
-        // background-color: $dark-blue;
-        // color: $mid-green;
+        
         transform: translate(0, 0.025em);
         box-shadow: inset 0px 2px 0px 1px $dark;
     }
 
     &--facile{
         background-color: $light-green;
-        // box-shadow: 1.5px 2px 0px 0.5px $dark-green;
+        
         
         box-shadow: inset -0.1875rem -0.1875rem $dark-green;
-        // border-color: $dark-green;
+
+        &:hover,&:focus{
+            
+            
+            box-shadow: inset 0.125em 0.125em $dark-green;
+            
+            
+        }
+        
     }
 
     &--moyen{
         background-color: $light-yellow;
-        // box-shadow: 0.13em 0.15em 0em 0.01em $dark-yellow;
+        
         box-shadow: inset -0.1875rem -0.1875rem $dark-yellow;
-        // border-color: $dark-yellow;
+
+        &:hover,&:focus{
+            
+            
+            box-shadow: inset 0.125em 0.125em $dark-yellow;
+            
+            
+        }
+       
     }
 
     &--difficile{
         background-color: $light-red;
-        // box-shadow: 0.13em 0.15em 0em 0.01em $dark-red;
+        
         box-shadow: inset -0.1875rem -0.1875rem $dark-red;
-        // border-color: $dark-red;
+
+        &:hover,&:focus{
+            
+            
+            box-shadow: inset 0.125em 0.125em $dark-red;
+            
+            
+        }
+        
     }
 
     &--green{
@@ -94,20 +124,10 @@
 
         img{
             max-width: 40px;
-            // transform: scale(1);
             
-            // border: 1px solid red;
         }
 
         
-
-        // &--col{
-            
-        //     img{
-        //         max-width: 40px;
-        //         transform: scale(1);
-        //     }
-        // }
     }
 
     &--select{
@@ -205,10 +225,11 @@ form{
         gap: 20px;
 
         input{
-            width: 100%;
+            // height: 30px;
+            width: 94%;
             // height: 50px;
             background-color: $light;
-            padding: 2% 1.5%;
+            padding: 2% 3%;
             border: none;
             border-radius: 8px;
             
@@ -222,7 +243,10 @@ form{
             display: flex;
             color: $light-green;
             font-size: 20px;
-            align-items: center;
+            // margin: 0 30px 0 0;
+            // border: 1px solid red;
+            // align-items: center;
+            
             
         }
     }

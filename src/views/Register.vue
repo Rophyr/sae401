@@ -22,11 +22,11 @@
 
           <form @submit.prevent="registerUser">
             <div class="inputs">
-              <input v-model="email" type="text" placeholder="Adresse Mail" required>
-              <input v-model="password" type="password" placeholder="Mot de passe" required>
-              <input v-model="confirmPassword" type="password" placeholder="Confirmer le mot de passe" required>
+              <input v-model="email" type="text" placeholder="email" required>
+              <input v-model="password" type="password" placeholder="mot de passe" required>
+              <input v-model="confirmPassword" type="password" placeholder="confirmer le mot de passe" required>
             </div>
-            <button type="submit" class="btn btn--dark-green">S'inscrire</button>
+            <button type="submit" class="btn btn--dark-green">valider</button>
           </form>
 
         </div>

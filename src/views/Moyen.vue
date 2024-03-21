@@ -5,7 +5,9 @@
 
       <div class="container__left">
 
-        <router-link to="/"><img src="/public/images/logo_glasses.svg" alt=""></router-link>
+        <div class="logo-bg-white">
+          <img src="/public/images/logo-glasses.svg" alt="">
+        </div>
         
         <div  class="object-description explain explain--moyen">
             

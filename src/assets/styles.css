@@ -37,13 +37,13 @@ body {
 }
 .home .container__top {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   width: 100%;
   justify-content: space-between;
 }
 .home .container__bottom {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: end;
   width: 100%;
   justify-content: space-between;
@@ -341,7 +341,7 @@ body {
   src: url("/public/fonts/Simply Rounded.ttf") format("truetype");
 }
 .btn {
-  padding: 2.5% 2%;
+  padding: 2% 2%;
   font-family: "simply rounded", sans-serif;
   font-size: 1.5em;
   color: #F7FAF7;
@@ -351,6 +351,12 @@ body {
   width: auto;
   box-shadow: inset 0px 2px 0px 1px #313131;
 }
+.btn:hover, .btn:focus {
+  transition: box-shadow 0.1s ease-in;
+  transform: translate(0, 0.025em);
+  box-shadow: inset 0.125em 0.125em #4C8B25;
+  background-color: darker(#8CCF57);
+}
 .btn:hover {
   transform: translate(0, 0.025em);
   box-shadow: inset 0px 2px 0px 1px #313131;
@@ -359,13 +365,22 @@ body {
   background-color: #8CCF57;
   box-shadow: inset -0.1875rem -0.1875rem #4C8B25;
 }
+.btn--facile:hover, .btn--facile:focus {
+  box-shadow: inset 0.125em 0.125em #4C8B25;
+}
 .btn--moyen {
   background-color: #FBB03A;
   box-shadow: inset -0.1875rem -0.1875rem #E2A340;
 }
+.btn--moyen:hover, .btn--moyen:focus {
+  box-shadow: inset 0.125em 0.125em #E2A340;
+}
 .btn--difficile {
   background-color: #EC8670;
   box-shadow: inset -0.1875rem -0.1875rem #D3715B;
+}
+.btn--difficile:hover, .btn--difficile:focus {
+  box-shadow: inset 0.125em 0.125em #D3715B;
 }
 .btn--green {
   background-color: #8CCF57;
@@ -476,9 +491,9 @@ form .inputs {
   gap: 20px;
 }
 form .inputs input {
-  width: 100%;
+  width: 94%;
   background-color: #F7FAF7;
-  padding: 2% 1.5%;
+  padding: 2% 3%;
   border: none;
   border-radius: 8px;
   font-family: "Simply Rounded", sans-serif;
@@ -487,7 +502,6 @@ form .inputs ::placeholder {
   display: flex;
   color: #8CCF57;
   font-size: 20px;
-  align-items: center;
 }
 
 table {

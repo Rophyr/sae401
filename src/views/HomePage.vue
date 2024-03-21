@@ -3,7 +3,7 @@
 
     <div class="container container--home">
       <div class="container__top">
-        <button @click="goToClassement" class="btn btn--green btn--round"><img src="/images/Classement.svg"  aria-label="aller au classement"></button>
+        
         <button class="btn btn--green btn--round btn--round--col"><img src="/images/Profil.svg"  aria-label="voir le profil"></button>
       </div>
 
@@ -33,6 +33,7 @@
 
       <div class="container__bottom">
         <button @click="goToRegles" class="btn btn--green btn--round"><img src="/images/Rules.svg"  aria-label="règles"></button>
+        <button @click="goToClassement" class="btn btn--green btn--round"><img src="/images/Classement.svg"  aria-label="aller au classement"></button>
       </div>
 
     </div>
