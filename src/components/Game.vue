@@ -13,8 +13,10 @@
       </div>
     </div>
   </div>
-  <div>
-    <p> {{ displayTime }}</p>
+  <div class="container__right">
+    <div class="timer">
+      <p> {{ displayTime }}</p>
+    </div>
   </div>
 </template>
 

@@ -14,13 +14,10 @@
         <button @click="goToMenu" class="btn btn--green btn--round btn--round--col"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></button>
       </div> <!-- Fin container left -->
       <div class="container__middle">
-        <div class="grid game"> <!-- JEU -->
-          <Game />
-      </div>
-      <div class="container__right">
+        <Game />
       </div>
     </div>
-  </div>
+
   </div>
   <div id="victory" style="display: none">
     <p id="vic-text">Bravo !</p>
