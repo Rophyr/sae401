@@ -10,8 +10,8 @@
       <div class="container__middle">
         
         <div class="ensemble-logo">
-          <img src="/public/images/logo.svg" alt="" class="logo-frog">
-          <img src="/public/images/logo-froggy.svg" draggable="false" alt="Logo" class="logo-froggy">
+          <img src="/public/images/logo.svg" alt="logo froggy grenouille" draggable="false" class="logo-frog">
+          <img src="/public/images/logo-froggy.svg" draggable="false" alt="Logo texte" class="logo-froggy">
         </div>
 
         <div class="container__middle__buttons">
@@ -33,6 +33,7 @@
 
       <div class="container__bottom">
         <button @click="goToRegles" class="btn btn--green btn--round"><img src="/images/Rules.svg"  aria-label="règles"></button>
+        <router-link to="/mentions-legales"><p class="underline">Mentions Légales</p></router-link>
         <button @click="goToClassement" class="btn btn--green btn--round"><img src="/images/Classement.svg"  aria-label="aller au classement"></button>
       </div>
 
@@ -78,6 +79,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+.underline{
+  text-decoration: underline
+}
 @import url('https://fonts.cdnfonts.com/css/simply-rounded');
 // body{
 //   overflow: hidden;

@@ -6,6 +6,7 @@ import Difficile from '../views/Difficile.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Classement from '../views/Classement.vue'
+import Mentions from '../views/MentionsLegales.vue'
 
 const routes = [
   { path: '/', redirect: '/homepage' },
@@ -15,7 +16,8 @@ const routes = [
   { path: '/difficile', component: Difficile },
   { path: '/register', component: Register },
   { path: '/login', component: Login },
-  {path: '/classement', component: Classement}
+  {path: '/classement', component: Classement},
+  {path: '/mentions-legales', component: Mentions}
 ]
 
 const router = createRouter({
