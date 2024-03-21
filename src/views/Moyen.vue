@@ -47,8 +47,6 @@
       </div>
 
       <div class="container__right">
-        <Timer ref="timerComponent" class="timer timer--moyen"/>
-        
       </div>
 
     </div>
@@ -60,7 +58,6 @@
 </template>
 
 <script setup>
-import Timer from '../components/Timer.vue'
 import '../assets/styles.css';  //link css / scss
 import { ref } from 'vue';
 import objectsData from '../../public/data/objectDescription.json';
@@ -77,10 +74,8 @@ let winCount = 0;
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({ isFlipped: false, backImagePath: '' }))));
 
 let flippedCard = null;
-let timerComponent = null;
 
 // eslint-disable-next-line no-unused-vars
-// let timerComponent = null;
 
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
@@ -109,7 +104,6 @@ function flipCard(rowIndex, cardIndex) {
           document.getElementById('victory').style.width = "300px";
           document.getElementById('vic-text').style.transitionDelay = "300ms";
           document.getElementById('vic-text').style.fontSize = "30px";
-          timerComponent.stopTimer();
         }
       } else {
         // Retourner les cartes après une pause de 0.5 seconde

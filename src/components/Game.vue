@@ -13,11 +13,45 @@
       </div>
     </div>
   </div>
+  <div>
+    <p> {{ displayTime }}</p>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import objectsData from '../../public/data/objectDescription.json';
+
+const horloge = ref(null);
+const minutes = ref(0);
+const secondes = ref(0);
+
+const startTimer = () => {
+  horloge.value = setInterval(() => {
+    secondes.value++;
+    if (secondes.value === 60) {
+      minutes.value++;
+      secondes.value = 0;
+    }
+  }, 1000);
+};
+
+const stopTimer = () => {
+  clearInterval(horloge.value);
+};
+
+onMounted(() => {
+  startTimer();
+});
+
+onBeforeUnmount(() => {
+  stopTimer();
+});
+
+const displayTime = computed(() => {
+  return `${minutes.value < 10 ? '0' + minutes.value : minutes.value}:${secondes.value < 10 ? '0' + secondes.value : secondes.value}`;
+});
 
 const objectDescription = ref('');
 
@@ -59,8 +93,9 @@ function flipCard(rowIndex, cardIndex) {
         const objectName = card.backImagePath.split("/").pop().split(".")[0];
         objectDescription.value = objectsData[objectName];
         if (winCount === 6) {
-          document.getElementById('jeu').style.display = "none"
-          document.getElementById('victory').style.display = "flex"
+          document.getElementById('jeu').style.display = "none";
+          document.getElementById('victory').style.display = "flex";
+          stopTimer();
         }
       } else {
         setTimeout(() => {
@@ -149,4 +184,5 @@ function getCardAlt(imagePath) {
   // Vous pouvez le personnaliser selon vos besoins
   return "Carte " + imagePath.split('/').pop().split('.')[0];
 }
+
 </script>

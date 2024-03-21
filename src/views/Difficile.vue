@@ -47,8 +47,6 @@
       </div>
 
       <div class="container__right">
-        <Timer ref="timerComponent" class="timer timer--difficile"/>
-        
       </div>
 
     </div>
@@ -60,7 +58,6 @@
 </template>
 
 <script setup>
-import Timer from '../components/Timer.vue'
 import { ref } from 'vue';
 
 const rows = 3;
@@ -185,59 +182,3 @@ for (let i = 0; i < grid.value.length; i++) {
 }
 </script>
 
-<style scoped>
-
-body{
-  overflow: hidden;
-  background-image: url("/homepagebg.png");
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.row {
-  display: flex;
-}
-
-.container {
-  margin: 5px;
-  perspective: 1000px;
-}
-
-.card {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-}
-
-.card.active {
-  transform: rotateY(180deg);
-}
-
-.front,
-.back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.front {
-  transform: rotateY(0deg);
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-</style>
