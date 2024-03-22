@@ -30,7 +30,8 @@
                     <th>Temps</th>
                     <th>Pseudo</th>
                 </tr>
-                <tr>
+                <div class="scroll">
+                    <tr>
                     <td>1</td>
                     <td>00:00:00</td>
                     <td>Enzo</td>
@@ -50,6 +51,7 @@
                     <td>00:00:00</td>
                     <td>Alyson</td>
                 </tr>
+                </div>
             </table>
             </div>
             <div class="niveau">

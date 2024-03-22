@@ -20,68 +20,65 @@
 
                 <div class="tableau tableau--blue">
                     <table>
-                        <tr>
-                            <th>Niveau</th>
-                            <th>Parties jouées</th>
-                            <th>Meilleur temps</th>
-                            <th>Classement</th>
-                        </tr>
-
-                        <tr>
-                            <td>Facile</td>
-                            <td>32</td>
-                            <td>1 min 02sec</td>
-                            <td>3e</td>
-                        </tr>
-
-                        <tr>
-                            <td>Moyen</td>
-                            <td>18</td>
-                            <td>1 min 37sec</td>
-                            <td>2e</td>
-                        </tr>
-
-                        <tr>
-                            <td>Difficile</td>
-                            <td>4</td>
-                            <td>2 min 19sec</td>
-                            <td>15e</td>
-                        </tr>
-
-                        <tr>
-                            <td>Difficile</td>
-                            <td>4</td>
-                            <td>2 min 19sec</td>
-                            <td>15e</td>
-                        </tr>
-
-                        <tr>
-                            <td>Difficile</td>
-                            <td>4</td>
-                            <td>2 min 19sec</td>
-                            <td>15e</td>
-                        </tr>
-
-                        <tr>
-                            <td>Difficile</td>
-                            <td>4</td>
-                            <td>2 min 19sec</td>
-                            <td>15e</td>
-                        </tr>
-
-                        <tr>
-                            <td>Difficile</td>
-                            <td>4</td>
-                            <td>2 min 19sec</td>
-                            <td>15e</td>
-                        </tr>
-
-                        <tr>
-                            <td>Difficile</td>
-                            <td>4</td>
-                            <td>2 min 19sec</td>
-                            <td>15e</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Niveau</th>
+                                <th>Parties jouées</th>
+                                <th>Meilleur temps</th>
+                                <th>Classement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Facile</td>
+                                <td>32</td>
+                                <td>1 min 02sec</td>
+                                <td>3e</td>
+                            </tr>
+                            <tr>
+                                <td>Moyen</td>
+                                <td>18</td>
+                                <td>1 min 37sec</td>
+                                <td>2e</td>
+                            </tr>
+                            <tr>
+                                <td>Difficile</td>
+                                <td>4</td>
+                                <td>2 min 19sec</td>
+                                <td>15e</td>
+                            </tr>
+                            <tr>
+                                <td>Difficile</td>
+                                <td>4</td>
+                                <td>2 min 19sec</td>
+                                <td>15e</td>
+                            </tr>
+                            <tr>
+                                <td>Difficile</td>
+                                <td>4</td>
+                                <td>2 min 19sec</td>
+                                <td>15e</td>
+                            </tr>
+                            <tr>
+                                <td>Difficile</td>
+                                <td>4</td>
+                                <td>2 min 19sec</td>
+                                <td>15e</td>
+                            </tr>
+                            <tr>
+                                <td>Difficile</td>
+                                <td>4</td>
+                                <td>2 min 19sec</td>
+                                <td>15e</td>
+                            </tr>
+                            <tr>
+                                <td>Difficile</td>
+                                <td>4</td>
+                                <td>2 min 19sec</td>
+                                <td>15e</td>
+                            </tr>
+                            
+                        </tbody>
                     </table>
 
                     

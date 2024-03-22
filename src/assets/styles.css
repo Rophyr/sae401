@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Sobiscuit";
   src: url("/public/fonts/Sobiscuit.otf") format("opentype");
@@ -460,6 +461,7 @@ body {
 .btn:hover {
   transform: translate(0, 0.025em);
   box-shadow: inset 0px 2px 0px 1px #313131;
+  cursor: pointer;
 }
 .btn--facile {
   background-color: #8CCF57;
@@ -538,6 +540,10 @@ body {
 }
 .btn--select {
   padding: 0.2em 2em;
+}
+
+select {
+  border: 1px solid red;
 }
 
 .underline {
@@ -642,6 +648,8 @@ form .inputs ::placeholder {
   justify-content: center;
   width: 75vw;
   max-height: 53vh;
+  z-index: 1;
+  border: 1px solid red;
 }
 .tableau table {
   display: block;
@@ -654,11 +662,17 @@ form .inputs ::placeholder {
   border-radius: 15px;
   font-size: 2em;
   border: 1px solid #8CCF57;
-  /* Utilise toute la largeur disponible */
   max-width: 100%;
   max-height: 98%;
-  overflow-y: scroll;
-  overflow-x: auto;
+  border: 3px solid black;
+  z-index: 2;
+}
+.tableau table tbody {
+  overflow: scroll;
+  height: auto;
+}
+.tableau table tbody tr {
+  min-height: 40px;
 }
 .tableau table th {
   margin: 0 2% 0.5% 2%;
@@ -672,6 +686,14 @@ form .inputs ::placeholder {
   padding: 0% 0% 1.5% 0%;
   font-family: "Simply Rounded";
   color: #F7FAF7;
+}
+.tableau table thead th {
+  position: sticky;
+  top: 0;
+  left: 0; /* Ajoutez cette ligne pour spécifier la position horizontale */
+  background-color: #2BA9E1;
+  width: 200px; /* Ajoutez une largeur pour les cellules th */
+  border: 1px solid red;
 }
 .tableau--green table {
   background-color: #8CCF57;
@@ -712,6 +734,7 @@ form .inputs ::placeholder {
 }
 .grid .card:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 .grid .card.active {
   transform: rotateY(180deg);
