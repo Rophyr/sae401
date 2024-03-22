@@ -336,24 +336,51 @@ body {
 
 .mentions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
   background-image: url("/public/images/bg.svg");
   background-size: cover;
-  height: 100vh;
-  border: 1px solid green;
+  overflow: hidden;
 }
 .mentions .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 95%;
+  width: 97%;
+}
+.mentions .container__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: column-reverse;
+}
+.mentions .container__middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3%;
+}
+.mentions .container__middle .text {
   background-color: rgba(49, 49, 49, 0.3);
-  padding: 0.5% 3%;
-  margin: 0 5%;
+  padding: 1% 3%;
 }
 .mentions .container h1 {
   margin-top: 0.1%;
 }
 .mentions .container .text-center {
   text-align: center;
+}
+.mentions .back {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  height: 50px;
 }
 
 .profil {
@@ -569,6 +596,14 @@ body .at-bottom {
 .title .green-bar--blue {
   background-color: #228AB9;
   color: #2BA9E1;
+}
+
+.color-black {
+  color: #313131;
+}
+
+a:visited {
+  color: #313131;
 }
 
 form {

@@ -27,7 +27,7 @@
           
 
         </div>
-        <router-link to="/mentions-legales" class="at-bottom"><p class="underline">Mentions Légales</p></router-link>
+        <router-link to="/mentions-legales" class="at-bottom"><p class="underline color-dark">Mentions Légales</p></router-link>
 
       </div>
 
