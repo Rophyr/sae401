@@ -24,8 +24,7 @@
 
           <button @click="playGame" class="btn btn--green"  aria-label="jouer">Jouer</button>
 
-          <!-- <button @click="goToLogin" class="btn btn--green">Login</button>
-          <button @click="goToRegister" class="btn btn--green">Register</button> -->
+          
 
         </div>
         <router-link to="/mentions-legales" class="at-bottom"><p class="underline">Mentions Légales</p></router-link>
@@ -66,103 +65,14 @@ export default {
       } else if (selectedDifficulty === 'difficile') {
         this.$router.push('/difficile');
       }
-    },
-    // goToRegister(){
-    //   this.$router.push('/register');
-    // },
-    // goToLogin(){
-    //   this.$router.push('/login');
-    // },
-    // goToClassement(){
-    //   this.$router.push('/classement');
-    // }
+    }
   }
 }
 </script>
 
 <style lang="scss">
 
-.underline{
-  text-decoration: underline
-}
-@import url('https://fonts.cdnfonts.com/css/simply-rounded');
-// body{
-//   overflow: hidden;
-//   background-image: url("/homepagebg.png");
-//   background-size: 100vw;
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   #app {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     height: 100vh;
-//     // .btn {
-//     //   margin: 10px;
-//     //   // background: none;
-//     //   border: none;
-//     //   font-family: 'Simply Rounded', sans-serif;
-//     //   font-size: x-large;
-//     // }
-//     .form-select {
-//       appearance: none;
-//       background-image: url('/arrow.png');
-//       background-repeat: no-repeat;
-//       background-position: calc(100% - 10%) center;;
-//       width: 15.573vw;
-//       height: 5.741vh;
-//       color: white;
-//       text-align: center;
-//       font-family: 'Simply Rounded', sans-serif;
-//       font-size: x-large;
-//       background-color: #4C8B25;
-//       box-shadow: 0 4px 0 0 #5FAE30;
-//       border-radius: 15px;
-//       border: none;
-//       &:hover {
-//         transform: scale(1.03);
-//         background-color: #5FAE30;
-//         box-shadow: 0 4px 0 0 #8CCF57;
-//       }
-//     }
-//     .btn-register {
-//       position: absolute;
-//       top: 2%;
-//       right: 2%;
-//     }
-//     .btn-login {
-//       position: absolute;
-//       top: 2%;
-//       right: 10%;
-//     }
-//     .btn-play {
-//       width: 15.573vw;
-//       height: 5.741vh;
-//       color: white;
-//       text-align: center;
-//       background-color: #4C8B25;
-//       box-shadow: 0 4px 0 0 #5FAE30;
-//       border-radius: 15px;
-//       border: none;
-//       margin-top: 8%;
-//       transition: 0.1s;
-//       &:hover{
-//         transform: scale(1.03);
-//         background-color: #5FAE30;
-//         box-shadow: 0 4px 0 0 #8CCF57;
-//       }
-//     }
-//     .btn-leaderboard {
-//       position: absolute;
-//       top: 10px;
-//       left: 10px;
-//     }
-//     .btn-info {
-//       position: absolute;
-//       bottom: 10px;
-//       right: 10px;
-//     }
-//   }
-// }
+
+// @import url('https://fonts.cdnfonts.com/css/simply-rounded');
+
 </style>
