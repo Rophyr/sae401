@@ -496,17 +496,17 @@ img {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: $light-blue;
+    background: $shadow-light;
 }
 
 ::-webkit-scrollbar-track {
-    background: $dark-blue;
+    background: $shadow-dark;
     border-radius: 10px;
     
 }
 
 ::-webkit-scrollbar-track:hover {
-    background: $dark-blue;
+    background: $shadow-dark;
 }
 
 ::-webkit-scrollbar-corner {

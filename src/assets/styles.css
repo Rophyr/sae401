@@ -719,16 +719,16 @@ form .inputs ::placeholder {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2BA9E1;
+  background: hsla(0, 0%, 0%, 0.053);
 }
 
 ::-webkit-scrollbar-track {
-  background: #228AB9;
+  background: hsla(0, 0%, 0%, 0.411);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track:hover {
-  background: #228AB9;
+  background: hsla(0, 0%, 0%, 0.411);
 }
 
 ::-webkit-scrollbar-corner {
