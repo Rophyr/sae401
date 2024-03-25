@@ -127,12 +127,16 @@ function getCardImagePath(rowIndex, cardIndex) {
 // eslint-disable-next-line no-unused-vars
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/moyen/orange-rateau.svg", count: 0 },
     { image: "/images/moyen/orange-arrosoir.svg", count: 0 },
-    { image: "/images/moyen/orange-pelle.svg", count: 0 },
-    { image: "/images/moyen/orange-solaire.svg", count: 0 },
-    { image: "/images/moyen/trash.png", count: 0 },
-    { image: "/images/moyen/velo.png", count: 0 }
+    { image: "/images/moyen/orange-biomasse.svg", count: 0 },
+    { image: "/images/moyen/orange-courgette.svg", count: 0 },
+    { image: "/images/moyen/orange-eoli.svg", count: 0 },
+    { image: "/images/moyen/orange-fourche.svg", count: 0 },
+    { image: "/images/moyen/orange-geo.svg", count: 0 },
+    { image: "/images/moyen/orange-hydro.svg", count: 0 },
+    { image: "/images/moyen/orange-lait.svg", count: 0 },
+    { image: "/images/moyen/orange-mushroom.svg", count: 0 },
+    { image: "/images/moyen/orange-orange.svg", count: 0 }
   ];
 
   for (let i = 0; i < grid.value.length; i++) {
@@ -155,40 +159,50 @@ function getBackImagePath(rowIndex, cardIndex) {
   } while (!selectedType);
 
   switch (selectedType.image) {
-    case "/orange-rateau.svg":
-      numRateau++;
-      break;
     case "/orange-arrosoir.svg":
       numArrosoir++;
       break;
-    case "/orange-solaire.svg":
-      numSolaire++;
+    case "/orange-biomasse.svg":
+      numBiomasse++;
       break;
-    case "/orange-pelle.svg":
-      numPelle++;
+    case "/orange-courgette.svg":
+      numCourgette++;
       break;
-    case "/trash.png":
-      numTrash++;
+    case "/orange-eoli.svg":
+      numEolienne++;
       break;
-    case "/velo.png":
-      numVelo++;
+    case "/orange-fourche.svg":
+      numFourche++;
+      break;
+    case "/orange-geo.svg":
+      numGeo++;
+      break;
+    case "/orange-hydro.svg":
+      numHydro++;
+      break;
+    case "/orange-lait.svg":
+      numLait++;
+      break;
+    case "/orange-mushroom.svg":
+      numMushroom++;
+      break;
+    case "/orange-orange.svg":
+      numOrange++;
       break;
   }
 
   return selectedType.image;
 }
-// eslint-disable-next-line no-unused-vars
-let numRateau = 0;
-// eslint-disable-next-line no-unused-vars
 let numArrosoir = 0;
-// eslint-disable-next-line no-unused-vars
-let numSolaire = 0;
-// eslint-disable-next-line no-unused-vars
-let numPelle = 0;
-// eslint-disable-next-line no-unused-vars
-let numTrash = 0;
-// eslint-disable-next-line no-unused-vars
-let numVelo = 0;
+let numBiomasse = 0;
+let numCourgette = 0;
+let numEolienne = 0;
+let numFourche = 0;
+let numGeo = 0;
+let numHydro = 0;
+let numLait = 0;
+let numMushroom = 0;
+let numOrange = 0;
 
 for (let i = 0; i < grid.value.length; i++) {
   for (let j = 0; j < grid.value[i].length; j++) {
