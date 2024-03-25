@@ -1,30 +1,55 @@
 <template>
-  <div id="jeu" class="grid game"> <!-- JEU -->
-    <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
-      <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
-        <div class="card" :class="{ active: card.isFlipped }">
-          <div class="front">
-            <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)" alt="carte retournée">
+  <div id="app" class="jeux jeux--facile">
+    <div class="container container__facile">
+      <div class="container__left">
+        <div class="logo-bg-white">
+          <img src="/public/images/logo-glasses.svg" alt="">
+        </div>
+        <div  class="object-description explain">
+          <div class="word">
+            <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
-          <div class="back">
-            <img draggable="false" :src="card.backImagePath" :alt="getCardAlt(card.backImagePath)">
+          <p>{{ cardName }}</p> <br><br> <!-- Modifier ici pour afficher le nom de la carte -->
+          <p>{{ cardDescription }}</p> <!-- Modifier ici pour afficher la description de la carte -->
+        </div>
+        <button @click="goToMenu" class="btn btn--green btn--round btn--round--col"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></button>
+      </div>
+      <div class="container__middle">
+        <div id="jeu" class="grid game"> <!-- JEU -->
+          <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
+            <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
+              <div class="card" :class="{ active: card.isFlipped }">
+                <div class="front">
+                  <img draggable="false" :src="getCardImagePath(rowIndex, cardIndex)" alt="carte retournée">
+                </div>
+                <div class="back">
+                  <img draggable="false" :src="card.backImagePath" :alt="getCardAlt(card.backImagePath)">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="container__right">
-      <div class="timer">
-        <p> {{ displayTime }}</p>
+        <div>
+          <div class="container__right">
+            <div class="timer">
+              <p> {{ displayTime }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
-import objectsData from '../../public/data/objectDescription.json';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+
+const word = "FROGGY";
+const colors = ['#E2A340FF', '#D3715BFF', '#228AB9FF', '#4C8B25FF'];
+
+function getColorByIndex(index) {
+  return colors[index % colors.length];
+}
 
 const horloge = ref(null);
 const minutes = ref(0);
@@ -51,7 +76,6 @@ const displayTime = computed(() => {
   return `${minutes.value < 10 ? '0' + minutes.value : minutes.value}:${secondes.value < 10 ? '0' + secondes.value : secondes.value}`;
 });
 
-const objectDescription = ref('');
 const rows = 3;
 const columns = 4;
 const totalCards = rows * columns;
@@ -63,6 +87,12 @@ const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns
   backImagePath: ''
 }))));
 let flippedCard = null;
+
+import jsonData from '../../public/data/objectDescription.json';
+
+let cardName = ''; // Ajout d'une variable pour stocker le nom de la carte
+let cardDescription = ''; // Ajout d'une variable pour stocker la description de la carte
+
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
   if (!card.isFlipped) {
@@ -78,13 +108,21 @@ function flipCard(rowIndex, cardIndex) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
         winCount++;
-        const objectName = card.backImagePath.split("/").pop().split(".")[0];
-
-        objectDescription.value = objectsData[objectName];
         if (winCount === 6) {
+          setTimeout(() => {
+            grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
+            card.isFlipped = false;
+          }, 2000);
           document.getElementById('jeu').style.display = "none";
           document.getElementById('victory').style.display = "flex";
           stopTimer();
+        }
+        let cardName = card.backImagePath.split('/').pop().split('.')[0];
+        const matchingCard = jsonData.text.find(item => item.name === cardName);
+        if (matchingCard) {
+          cardName = matchingCard.name;
+          cardDescription = matchingCard.description;
+        } else {
         }
       } else {
         setTimeout(() => {
@@ -96,17 +134,20 @@ function flipCard(rowIndex, cardIndex) {
     }
   }
 }
+
+
+
 function getCardImagePath(rowIndex, cardIndex) {
   return "/images/facile/back-facile.svg";
 }
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/facile/vert-arrosoir.svg", count: 0 },
-    { image: "/images/facile/vert-biomasse.svg", count: 0 },
+    { image: "/images/facile/arrosoir.svg", count: 0 },
+    { image: "/images/facile/biomasse.svg", count: 0 },
     { image: "/images/facile/vert-courgette.svg", count: 0 },
-    { image: "/images/facile/vert-eolie.svg", count: 0 },
-    { image: "/images/facile/vert-fourche.svg", count: 0 },
-    { image: "/images/facile/vert-geo.svg", count: 0 }
+    { image: "/images/facile/eolienne.svg", count: 0 },
+    { image: "/images/facile/fourche.svg", count: 0 },
+    { image: "/images/facile/geothermique.svg", count: 0 }
   ];
   for (let i = 0; i < grid.value.length; i++) {
     for (let j = 0; j < grid.value[i].length; j++) {
@@ -126,22 +167,22 @@ function getBackImagePath(rowIndex, cardIndex) {
     }
   } while (!selectedType);
   switch (selectedType.image) {
-    case "/images/facile/vert-arrosoir.svg":
+    case "/images/facile/arrosoir.svg":
       numArrosoir++;
       break;
-    case "/images/facile/vert-biomasse.svg":
+    case "/images/facile/biomasse.svg":
       numBiomasse++;
       break;
     case "/images/facile/vert-courgette.svg":
       numCourgette++;
       break;
-    case "/images/facile/vert-eolie.svg":
+    case "/images/facile/eolienne.svg":
       numEolie++;
       break;
-    case "/images/facile/vert-fourche.svg":
+    case "/images/facile/fourche.svg":
       numFourche++;
       break;
-    case "/images/facile/vert-geo.svg":
+    case "/images/facile/geothermique.svg":
       numGeo++;
       break;
   }
