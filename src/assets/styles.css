@@ -653,7 +653,7 @@ form .inputs ::placeholder {
   max-width: 100%;
   max-height: 40vh;
   color: #F7FAF7;
-  padding: 10px 40px;
+  padding: 0 40px 10px 40px;
   border-radius: 20px;
 }
 .tableau table {
@@ -667,7 +667,8 @@ form .inputs ::placeholder {
   top: 0;
   z-index: 1;
   font-size: 1.5em;
-  height: 50px;
+  height: 53px;
+  padding: 50px 0 0 0;
 }
 .tableau table th, .tableau table td {
   padding: 10px 20px;

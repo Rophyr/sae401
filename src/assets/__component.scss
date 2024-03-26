@@ -425,7 +425,7 @@ form{
     max-width: 100%;
     max-height: 40vh;
     color: $light;
-    padding: 10px 40px ;
+    padding: 0 40px 10px 40px ;
     // border: 1px solid red;
     border-radius: 20px;
     // background-color: $light-blue;
@@ -445,8 +445,8 @@ form{
         z-index: 1;
         // background-color: $light-blue;
         font-size: 1.5em;
-        height: 50px;
-        // padding: 100px 0;
+        height: 53px;
+        padding: 50px 0 0 0;
 
         // border: 1px solid white;
         }
