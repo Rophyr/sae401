@@ -25,33 +25,36 @@
             <div class="tableau tableau--green">
                 
                 <table>
-                <tr>
-                    <th>Top</th>
-                    <th>Temps</th>
-                    <th>Pseudo</th>
-                </tr>
-                <div class="scroll">
+                <thead>
                     <tr>
-                    <td>1</td>
-                    <td>00:00:00</td>
-                    <td>Enzo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>00:00:00</td>
-                    <td>Julien</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>00:00:00</td>
-                    <td>Amandine</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>00:00:00</td>
-                    <td>Alyson</td>
-                </tr>
-                </div>
+                        <th>Top</th>
+                        <th>Temps</th>
+                        <th>Pseudo</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>00:00:00</td>
+                        <td>Enzo</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>00:00:00</td>
+                        <td>Julien</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>00:00:00</td>
+                        <td>Amandine</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>00:00:00</td>
+                        <td>Alyson</td>
+                    </tr>
+                </tbody>
             </table>
             </div>
             <div class="niveau">

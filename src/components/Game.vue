@@ -12,7 +12,7 @@
           <p>{{ cardName }}</p> <br><br> <!-- Modifier ici pour afficher le nom de la carte -->
           <p>{{ cardDescription }}</p> <!-- Modifier ici pour afficher la description de la carte -->
         </div>
-        <button @click="goToMenu" class="btn btn--green btn--round btn--round--col"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></button>
+        <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>
       <div class="container__middle">
         <div id="jeu" class="grid game"> <!-- JEU -->

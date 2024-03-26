@@ -5,7 +5,7 @@
       <p id="vic-text">Bravo !</p>
       <div class="separation"></div>
       <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
-      <button @click="goToMenu" class="btn btn--green">Accueil</button>
+      <router-link to="/" class="btn btn--dark-green">Accueil</router-link>
     </div>
   </template>
 

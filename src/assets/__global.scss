@@ -235,6 +235,7 @@ body{
                 align-items: center;
                 height: 80%;
                 width: 15vw;
+                min-width: 160px;
                 padding: 1% 2.5%;
                 border: 10px solid $dark-green;
                 border-radius: 25px;
@@ -588,7 +589,8 @@ body{
     &__middle{
         @include container-middle;
         flex-direction: column;
-        // justify-content: space-between;
+        justify-content: flex-start;
+        padding-top: 10vh;
 
         // border: 1px solid red;
         width: 70vw;
