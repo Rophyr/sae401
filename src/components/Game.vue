@@ -2,20 +2,16 @@
   <div id="app" class="jeux jeux--facile">
     <div class="container container__facile">
       <div class="container__left">
-        <!-- <div class="logo-bg-white">
-          <img src="/public/images/logo-glasses.svg" alt="">
-        </div> -->
         <div  class="explain">
           <div class="word">
             <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
-          <!-- <p>{{ cardName }}</p> Modifier ici pour afficher le nom de la carte -->
-          <p class="description">{{ cardDescription }}</p> <!-- Modifier ici pour afficher la description de la carte -->
+          <p class="description">{{ cardDescription }}</p>
         </div>
         <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>
       <div class="container__middle">
-        <div id="jeu" class="grid game"> <!-- JEU -->
+        <div id="jeu" class="grid game">
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
               <div class="card" :class="{ active: card.isFlipped }">
@@ -38,6 +34,16 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="victory" style="display: none">
+    <p id="vic-text">Bravo !</p>
+    <div class="separation"></div>
+    <p>
+      Félicitations ! <br><br>
+      Tu as mis {{ gameTime }} pour réaliser le niveau facile.
+    </p>
+    <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
+    <router-link to="/" class="btn btn--green">Accueil</router-link>
   </div>
 </template>
 
@@ -75,6 +81,9 @@ onBeforeUnmount(() => {
 const displayTime = computed(() => {
   return `${minutes.value < 10 ? '0' + minutes.value : minutes.value}:${secondes.value < 10 ? '0' + secondes.value : secondes.value}`;
 });
+const gameTime = computed(() => {
+  return `${minutes.value < 1 ? '' + '' : ''}${secondes.value + ' secondes'}`;
+})
 
 const rows = 3;
 const columns = 4;
@@ -135,16 +144,14 @@ function flipCard(rowIndex, cardIndex) {
   }
 }
 
-
-
 function getCardImagePath(rowIndex, cardIndex) {
-  return "/images/facile/back-facile.svg";
+  return "/images/facile/back.svg";
 }
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
     { image: "/images/facile/arrosoir.svg", count: 0 },
     { image: "/images/facile/biomasse.svg", count: 0 },
-    { image: "/images/facile/vert-courgette.svg", count: 0 },
+    { image: "/images/facile/courgette.svg", count: 0 },
     { image: "/images/facile/eolienne.svg", count: 0 },
     { image: "/images/facile/fourche.svg", count: 0 },
     { image: "/images/facile/geothermique.svg", count: 0 }
@@ -173,7 +180,7 @@ function getBackImagePath(rowIndex, cardIndex) {
     case "/images/facile/biomasse.svg":
       numBiomasse++;
       break;
-    case "/images/facile/vert-courgette.svg":
+    case "/images/facile/courgette.svg":
       numCourgette++;
       break;
     case "/images/facile/eolienne.svg":
