@@ -2,15 +2,15 @@
   <div id="app" class="jeux jeux--facile">
     <div class="container container__facile">
       <div class="container__left">
-        <div class="logo-bg-white">
+        <!-- <div class="logo-bg-white">
           <img src="/public/images/logo-glasses.svg" alt="">
-        </div>
-        <div  class="object-description explain">
+        </div> -->
+        <div  class="explain">
           <div class="word">
             <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
-          <p>{{ cardName }}</p> <br><br> <!-- Modifier ici pour afficher le nom de la carte -->
-          <p>{{ cardDescription }}</p> <!-- Modifier ici pour afficher la description de la carte -->
+          <!-- <p>{{ cardName }}</p> Modifier ici pour afficher le nom de la carte -->
+          <p class="description">{{ cardDescription }}</p> <!-- Modifier ici pour afficher la description de la carte -->
         </div>
         <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>

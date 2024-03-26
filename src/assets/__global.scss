@@ -208,15 +208,16 @@ body{
 
         &__left{
             @include container-left;
+            justify-content: end;
             width: 22vw;
             gap: 20px;
 
             // border: 1px solid red;
 
-            img{
-                width: 100px;
-                height: fit-content;
-            }
+            // img{
+            //     width: 100px;
+            //     height: fit-content;
+            // }
 
             
 
@@ -233,23 +234,33 @@ body{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                height: 80%;
-                width: 15vw;
+                justify-content: top;
+                height: 60vh;
+                width: 13vw;
                 min-width: 160px;
-                padding: 1% 2.5%;
+                padding: 3% 4%;
                 border: 10px solid $dark-green;
                 border-radius: 25px;
                 background-color: $light-light-green;
                 font-size: 1.5em;
+                color: $dark-green;
+
+                // border: 1px solid red;
+
+                // & > *{
+                //     border: 1px solid red;
+                // }
 
                 &--moyen{
                     background-color: $light-light-yellow;
                     border-color: $dark-yellow;
+                    color: $dark-yellow;
                 }
 
                 &--difficile{
                     background-color: $light-light-red;
                     border-color: $dark-red;
+                    color: $dark-red;
                 }
             
                 // .word{
@@ -288,8 +299,10 @@ body{
                     font-family: 'Sobiscuit', sans-serif;
                     font-size: 40px;
                     font-weight: 400;
-                    line-height: 52.45px;
+                    // line-height: 52.45px;
                     text-align: center;
+                    padding: 0;
+                    margin: 0;
 
                 }
             }

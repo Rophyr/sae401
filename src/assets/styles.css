@@ -181,40 +181,42 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  justify-content: end;
   width: 22vw;
   gap: 20px;
-}
-.jeux .container__left img {
-  width: 100px;
-  height: fit-content;
 }
 .jeux .container__left .explain {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80%;
-  width: 15vw;
+  justify-content: top;
+  height: 60vh;
+  width: 13vw;
   min-width: 160px;
-  padding: 1% 2.5%;
+  padding: 3% 4%;
   border: 10px solid #4C8B25;
   border-radius: 25px;
   background-color: #DBFFD5;
   font-size: 1.5em;
+  color: #4C8B25;
 }
 .jeux .container__left .explain--moyen {
   background-color: #fff0d2;
   border-color: #E2A340;
+  color: #E2A340;
 }
 .jeux .container__left .explain--difficile {
   background-color: #ffe8e3;
   border-color: #D3715B;
+  color: #D3715B;
 }
 .jeux .container__left .explain .FroggyDesc {
   font-family: "Sobiscuit", sans-serif;
   font-size: 40px;
   font-weight: 400;
-  line-height: 52.45px;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 .jeux .container__middle {
   display: flex;
