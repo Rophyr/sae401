@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-  <div id="victory" style="display: none">
+  <div class="victory orange" style="display: none">
     <p id="vic-text">Bravo !</p>
     <div class="separation"></div>
     <p>
@@ -127,7 +127,11 @@ function flipCard(rowIndex, cardIndex) {
         card.isFlipped = true;
         winCount++;
         if (winCount === 10) {
-          document.getElementById('victory').style.display = "flex";
+          let elements = document.getElementsByClassName("victory");
+
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].style.display = "flex";
+          }
           stopTimer();
         }
         let cardName = card.backImagePath.split('/').pop().split('.')[0];

@@ -257,41 +257,68 @@ body {
   color: #D3715B;
 }
 
-#victory {
+.vert {
+  border: solid #8CCF57 10px;
+}
+.vert p {
+  color: #8CCF57;
+}
+.vert .separation {
+  background-color: #8CCF57;
+}
+
+.orange {
+  border: solid #FBB03A 10px;
+}
+.orange p {
+  color: #FBB03A;
+}
+.orange .separation {
+  background-color: #FBB03A;
+}
+
+.rouge {
+  border: solid #EC8670 10px;
+}
+.rouge p {
+  color: #EC8670;
+}
+.rouge .separation {
+  background-color: #EC8670;
+}
+
+.victory {
   padding: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  border: solid #8CCF57 10px;
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-#victory #vic-text {
+.victory #vic-text {
   font-family: "Sobiscuit", sans-serif;
   font-size: 60px;
   text-align: center;
   margin: 0;
-  color: #8CCF57;
 }
-#victory .separation {
+.victory .separation {
   position: relative;
   margin-bottom: 5px;
   height: 10px;
   width: 224px;
   border-radius: 100px;
-  background-color: #8CCF57;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2509803922);
 }
-#victory p {
+.victory p {
   margin-bottom: 30px;
   text-align: center;
 }
-#victory button {
+.victory button {
   width: auto;
   height: auto;
   margin: 5px;

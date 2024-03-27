@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div id="victory" style="display: none">
+  <div class="victory vert" style="display: none">
     <p id="vic-text">Bravo !</p>
     <div class="separation"></div>
     <p>

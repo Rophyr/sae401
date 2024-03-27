@@ -389,14 +389,40 @@ body{
     }
         // $lighterDark: lighten($dark, 30%);
 }
-#victory{
+.vert{
+    border: solid $light-green 10px;
+    p{
+        color: $light-green;
+    }
+    .separation{
+        background-color: $light-green;
+    }
+}
+.orange{
+    border: solid $light-yellow 10px;
+    p{
+        color: $light-yellow;
+    }
+    .separation{
+        background-color: $light-yellow;
+    }
+}
+.rouge{
+    border: solid $light-red 10px;
+    p{
+        color: $light-red;
+    }
+    .separation{
+        background-color: $light-red;
+    }
+}
+.victory{
     padding: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    border: solid $light-green 10px;
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -407,7 +433,6 @@ body{
         font-size: 60px;
         text-align: center;
         margin: 0;
-        color: $light-green;
     }
     .separation{
         position: relative;
@@ -415,9 +440,7 @@ body{
         height: 10px;
         width: 224px;
         border-radius: 100px;
-        background-color: $light-green;
         box-shadow: 2px 2px #00000040;
-
     }
     p{
         margin-bottom: 30px;
