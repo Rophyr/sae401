@@ -106,6 +106,12 @@ let flippedCard = null;
 import jsonData from '../../public/data/objectDescription.json';
 let cardDescription = ''; // Ajout d'une variable pour stocker la description de la carte
 
+const textmp3 = '../../public/sound/text.mp3';
+function playsound(){
+  const audio = new Audio(textmp3);
+  audio.play();
+  console.log('le son est bien charger')
+}
 
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
@@ -139,6 +145,10 @@ function flipCard(rowIndex, cardIndex) {
         if (matchingCard) {
           cardName = matchingCard.name;
           cardDescription = matchingCard.description;
+          console.log('card')
+          const audio = new Audio(textmp3);
+          audio.play();
+          console.log('le son est bien charger')
         } else {
         }
       } else {
@@ -147,7 +157,6 @@ function flipCard(rowIndex, cardIndex) {
           card.isFlipped = false;
         }, 500);
       }
-
       flippedCard = null;
     }
   }
