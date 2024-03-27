@@ -43,7 +43,7 @@
       Tu as mis {{ gameTime }} pour réaliser le niveau facile.
     </p>
     <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
-    <router-link to="/" class="btn btn--green">Accueil</router-link>
+    <button @click="goToMenu"  class="btn btn--green">Accueil</button>
   </div>
 </template>
 
@@ -82,7 +82,13 @@ const displayTime = computed(() => {
   return `${minutes.value < 10 ? '0' + minutes.value : minutes.value}:${secondes.value < 10 ? '0' + secondes.value : secondes.value}`;
 });
 const gameTime = computed(() => {
-  return `${minutes.value < 1 ? '' + '' : ''}${secondes.value + ' secondes'}`;
+  if (minutes.value < 1)
+  {
+    return `${minutes.value < 1 ? '' + '' : ''}${secondes.value + ' secondes'}`;
+  }
+  else {
+    return `${minutes.value + 'minutes et '}${secondes.value + ' secondes'}`;
+  }
 })
 
 const rows = 3;

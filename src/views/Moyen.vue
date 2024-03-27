@@ -83,7 +83,13 @@ const displayTime = computed(() => {
   return `${minutes.value < 10 ? '0' + minutes.value : minutes.value}:${secondes.value < 10 ? '0' + secondes.value : secondes.value}`;
 });
 const gameTime = computed(() => {
-  return `${minutes.value < 1 ? '' + '' : ''}${secondes.value + ' secondes'}`;
+  if (minutes.value < 1)
+  {
+    return `${minutes.value < 1 ? '' + '' : ''}${secondes.value + ' secondes'}`;
+  }
+  else {
+    return `${minutes.value + 'minutes et '}${secondes.value + ' secondes'}`;
+  }
 })
 
 const rows = 4;
