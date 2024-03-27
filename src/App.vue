@@ -1,18 +1,22 @@
 <template>
   <div id="app">
+    
     <router-view></router-view>
+    
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'App'
-  };
-  
-  // import '../src/assets/styles.css'; //jsp pas pourquoi y'en a pas besoin ??
+import ToggleLanguage from './components/ToggleLanguage.vue';
 
+export default {
+  name: 'App',
+  components: {
+    ToggleLanguage
+  }
+};
 </script>
 
 <style>
-
+/* Vos styles existants */
 </style>

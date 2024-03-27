@@ -16,16 +16,16 @@
         <div class="form">
           
           <div class="title">
-            <h1>CONNEXION</h1>
+            <h1>{{ $t('login.title') }}</h1>
             <div class="green-bar"></div>
           </div>
 
           <form @submit.prevent="registerUser">
             <div class="inputs">
-              <input v-model="email" type="text" placeholder="email" required>
-              <input v-model="password" type="password" placeholder="mot de passe" required>
+              <input v-model="email" type="text" :placeholder="$t('login.emailPlaceholder')" required>
+              <input v-model="password" type="password" :placeholder="$t('login.passwordPlaceholder')" required>
             </div>
-            <button type="submit" class="btn btn--dark-green">valider</button>
+            <button type="submit" class="btn btn--dark-green">{{ $t('login.submitButton') }}</button>
           </form>
 
         </div>

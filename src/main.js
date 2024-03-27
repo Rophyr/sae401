@@ -1,5 +1,15 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import { createI18n } from 'vue-i18n';
+import messages from '../src/js/messages'; // Importez vos messages de traduction
 
-createApp(App).use(router).mount('#app')
+const i18n = createI18n({
+  locale: 'en', // Langue par défaut
+  messages
+});
+
+createApp(App)
+  .use(router)
+  .use(i18n) // Utilisez Vue i18n dans votre application
+  .mount('#app');

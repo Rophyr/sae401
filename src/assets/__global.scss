@@ -14,6 +14,8 @@ body{
     width: 30vw;
 }
 
+
+
 // FIN GLOBAL //
 .home{
     display: flex;
@@ -29,6 +31,10 @@ body{
     width: 100vw;
 
     // border: 1px solid red;
+
+    .language-switch{
+        display: flex;
+    }
 
     .container {
         @include container-row;
@@ -632,4 +638,40 @@ body{
 
     }
 }
+
+/* Bouton langue */
+
+
+.language-switch {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px; /* Ajustez la largeur selon vos besoins */
+    height: 30px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: left 0.3s ease;
+  }
+  
+  .switch-en {
+    left: 0;
+  }
+  
+  .switch-fr {
+    left: 50%;
+  }
+
+/* Fin bouton langue */
 

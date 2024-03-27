@@ -28,14 +28,14 @@
         <div>
           <div class="container__right">
             <div class="timer">
-              <p class="vert-p"> {{ displayTime }}</p>
+              <p> {{ displayTime }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="victory vert" style="display: none">
+  <div id="victory" style="display: none">
     <p id="vic-text">Bravo !</p>
     <div class="separation"></div>
     <p>
@@ -49,9 +49,27 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import jsonDataEn from '../../public/data/objectDescription.json';
+import jsonDataFr from '../../public/data/objectDescription_en.json';
 
 const word = "FROGGY";
 const colors = ['#E2A340FF', '#D3715BFF', '#228AB9FF', '#4C8B25FF'];
+
+const language = localStorage.getItem('lang'); 
+console.log(language); 
+
+let jsonData; 
+
+if (language === 'fr') {
+  jsonData = jsonDataFr; 
+} else {
+  jsonData = jsonDataEn; 
+}
+
+console.log(jsonData);
+
+
+
 
 function getColorByIndex(index) {
   return colors[index % colors.length];
@@ -103,7 +121,7 @@ const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns
 }))));
 let flippedCard = null;
 
-import jsonData from '../../public/data/objectDescription.json';
+
 
 let cardName = ''; // Ajout d'une variable pour stocker le nom de la carte
 let cardDescription = ''; // Ajout d'une variable pour stocker la description de la carte

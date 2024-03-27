@@ -3,7 +3,9 @@
 
     <div class="container container--home">
       <div class="container__left">
+        
         <router-link to="classement" class="btn btn--green btn--round"><img src="/images/Classement.svg"  aria-label="aller au classement"></router-link>
+        <ToggleLanguage />
       </div>
       <div class="container__middle">
         <div class="ensemble-logo">
@@ -12,13 +14,13 @@
         </div>
         <div class="container__middle__buttons">
           <select v-model="selectedDifficulty" class="btn btn--green btn--select"  aria-label="selectionner la difficulté">
-            <option value="facile">Facile</option>
-            <option value="moyen">Moyen</option>
-            <option value="difficile">Difficile</option>
+            <option value="facile">{{ $t("home.facile") }}</option>
+            <option value="moyen">{{ $t("home.moyen") }}</option>
+            <option value="difficile">{{ $t("home.difficile") }}</option>
           </select>
-          <button @click="playGame" class="btn btn--green"  aria-label="jouer">Jouer</button>
+          <button @click="playGame" class="btn btn--green"  aria-label="jouer">{{ $t("home.jouer") }}</button>
         </div>
-        <router-link to="/mentions-legales" class="at-bottom"><p class="underline">Mentions Légales</p></router-link>
+        <router-link to="/mentions-legales" class="at-bottom"><p class="underline">{{ $t("home.mentionsLegales") }}</p></router-link>
       </div>
 
       <div class="container__right">
@@ -30,8 +32,13 @@
 </template>
 
 <script>
+import ToggleLanguage from '../components/ToggleLanguage.vue';
+
 export default {
   name: 'App',
+  components: {
+    ToggleLanguage
+  },
   data() {
     return {
       selectedDifficulty: 'facile'
