@@ -28,7 +28,7 @@
         <div>
           <div class="container__right">
             <div class="timer">
-              <p> {{ displayTime }}</p>
+              <p class="vert-p"> {{ displayTime }}</p>
             </div>
           </div>
         </div>

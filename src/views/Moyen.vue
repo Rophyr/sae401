@@ -31,17 +31,17 @@
       </div>
       <div class="container__right">
         <div class="timer">
-          <p> {{ displayTime }}</p>
+          <p class="orange-p"> {{ displayTime }}</p>
         </div>
       </div>
     </div>
   </div>
   <div class="victory orange" style="display: none">
-    <p id="vic-text">Bravo !</p>
+    <p id="vic-text" class="orange-p">Bravo !</p>
     <div class="separation"></div>
     <p>
       Félicitations ! <br><br>
-      Tu as mis {{ gameTime }} pour réaliser le niveau moyen
+      Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
     </p>
     <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
     <router-link to="/" class="btn btn--green">Accueil</router-link>
