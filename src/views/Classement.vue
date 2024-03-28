@@ -1,5 +1,6 @@
 <script>
     import '../assets/styles.css'; 
+
 </script>
 
 <template>
@@ -18,7 +19,7 @@
         <div class="container__middle">
 
             <div class="title">
-                <h1>CLASSSEMENT</h1>
+                <h1>{{$t('classement.title')}}</h1>
                 <div class="green-bar"></div>
             </div>
 
@@ -27,9 +28,9 @@
                 <table>
                 <thead>
                     <tr>
-                        <th>Top</th>
-                        <th>Temps</th>
-                        <th>Pseudo</th>
+                        <th>{{$t('classement.top')}}</th>
+                        <th>{{$t('classement.temps')}}</th>
+                        <th>{{$t('classement.pseudo')}}</th>
                     </tr>
                 </thead>
                 
@@ -58,9 +59,9 @@
             </table>
             </div>
             <div class="niveau">
-                <button class="btn btn--facile">Facile</button>
-                <button class="btn btn--moyen">Intermédiaire</button>
-                <button class="btn btn--difficile">Difficile</button>
+                <button class="btn btn--facile">{{$t('home.facile')}}</button>
+                <button class="btn btn--moyen">{{$t('home.moyen')}}</button>
+                <button class="btn btn--difficile">{{$t('home.difficile')}}</button>
                 
                 
             </div>

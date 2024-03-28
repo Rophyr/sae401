@@ -8,6 +8,7 @@ import Login from '../views/Login.vue'
 import Classement from '../views/Classement.vue'
 import Mentions from '../views/MentionsLegales.vue'
 import Profil from '../views/Profil.vue'
+import Regles from '../views/Regles.vue'
 
 const routes = [
   { path: '/', redirect: '/homepage' },
@@ -19,7 +20,8 @@ const routes = [
   { path: '/login', component: Login },
   {path: '/classement', component: Classement},
   {path: '/mentions-legales', component: Mentions},
-  {path: '/profil', component: Profil}
+  {path: '/profil', component: Profil},
+  {path: '/regles', component: Regles}
 ]
 
 const router = createRouter({

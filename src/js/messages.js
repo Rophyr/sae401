@@ -23,6 +23,12 @@ export default {
         difficile: 'hard',
         jouer: 'play',
         mentionsLegales: 'Legal Notice'
+      },
+      classement:{
+        title: "RANK",
+        temps: 'TIME',
+        top: 'TOP',
+        pseudo: 'USERNAME'
       }
 
     },
@@ -49,6 +55,19 @@ export default {
         difficile: 'difficile',
         jouer: 'jouer',
         mentionsLegales: 'Mentions Légales'
-      } // Ajout d'une virgule ici
+      },
+      classement:{
+        title: "CLASSEMENT",
+        temps: 'Temps',
+        top: 'Top',
+        pseudo: 'Pseudo'
+      },
+      profil:{
+        title: "TON PROFIL",
+        niveau: 'Niveau',
+        parties: 'Parties jouées',
+        bestTemps: 'Meilleur Temps',
+        classement: 'Classement'
+      }
     }
 };
