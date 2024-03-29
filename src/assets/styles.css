@@ -77,7 +77,6 @@ body {
   align-items: center;
   gap: 10px;
   width: 10vw;
-  border: 1px solid blue;
 }
 .home .container__middle .form-select {
   appearance: none;
