@@ -74,6 +74,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 10vw;
 }
 .home .container__middle .form-select {
   appearance: none;
@@ -475,6 +476,26 @@ body {
   background: none;
 }
 
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #5FAE30;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  z-index: 1000;
+}
+
+.option {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #4C8B25;
+}
+
 @font-face {
   font-family: "Sobiscuit";
   src: url("/public/fonts/Sobiscuit.otf") format("opentype");
@@ -598,28 +619,7 @@ a .btn:visited {
 }
 .btn--select {
   padding: 0.2em 2em;
-}
-.btn--group {
-  width: 200px;
-  background-color: red;
-}
-.btn--group :nth-child(1) {
-  margin-top: 10px;
-  background-color: #8CCF57;
-  border: 1px solid #4C8B25;
-  border-radius: 5px;
-  padding: 5px;
-}
-.btn--group .difficulty-options .btn {
-  cursor: pointer;
-  padding: 5px;
-  margin-bottom: 5px;
-}
-.btn--group div {
-  margin-top: 10px;
-  background-color: #8CCF57;
-  border-radius: 5px;
-  padding: 5px;
+  border: 1px solid red;
 }
 
 .underline {

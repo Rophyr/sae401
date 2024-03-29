@@ -19,9 +19,9 @@ export default {
       },
       home:{
         choix: 'Level',
-        facile: 'easy',
-        moyen: 'medium',
-        difficile: 'hard',
+        facile: 'Easy',
+        moyen: 'Medium',
+        difficile: 'Hard',
         jouer: 'play',
         mentionsLegales: 'Legal Notice'
       },
@@ -77,9 +77,9 @@ export default {
       },
       home:{
         choix: 'Niveau',
-        facile: 'facile',
-        moyen: 'moyen',
-        difficile: 'difficile',
+        facile: 'Facile',
+        moyen: 'Moyen',
+        difficile: 'Difficile',
         jouer: 'jouer',
         mentionsLegales: 'Mentions Légales'
       },
