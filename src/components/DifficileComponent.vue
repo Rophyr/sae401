@@ -1,15 +1,15 @@
 <template>
   <div id="app" class="jeux jeux--moyen">
-    <div class="container container__facile">
+    <div class="container container__difficile">
       <div class="container__left">
-        <div  class="explain explain--moyen">
+        <div  class="explain explain--difficile">
           <div class="word">
             <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
           <p class="description">{{ cardDescription }}</p>
           <div class="row">
-            <img draggable="false" src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
-            <button class="no-btn"><img draggable="false" src="/public/images/son_orange.svg" alt="icon allumer le son"></button>
+            <img draggable="false" src="/images/grenouille lunettes.svg" alt="icon grenouille lunette">
+            <button class="no-btn"><img draggable="false" src="/images/son_rouge.svg" alt="icon allumer le son"></button>
           </div>
         </div>
         <router-link to="/" class="btn btn--moyen btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
@@ -32,20 +32,20 @@
         <div>
           <div class="container__right">
             <div class="timer">
-              <p class="orange-p"> {{ displayTime }}</p>
+              <p class="rouge-p"> {{ displayTime }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="victory" class="orange">
-    <p id="vic-text" class="dark-orange-p">Bravo !</p>
+  <div id="victory" class="rouge">
+    <p id="vic-text" class="rouge-p">Bravo !</p>
     <div class="separation"></div>
     <p>
       Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
     </p>
-    <button class="btn btn--moyen" aria-label="recommencer une partie">Nouvelle partie</button>
+    <button class="btn btn--difficile" aria-label="recommencer une partie">Nouvelle partie</button>
     <button @click="goToMenu"  class="btn btn--green">Accueil</button>
   </div>
 </template>
@@ -110,10 +110,10 @@ const gameTime = computed(() => {
 });
 
 
-const rows = 4;
-const columns = 5;
+const rows = 5;
+const columns = 6;
 const totalCards = rows * columns;
-const numEachType = totalCards / 10;
+const numEachType = totalCards / 30;
 
 let winCount = 0;
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({
@@ -142,7 +142,7 @@ function flipCard(rowIndex, cardIndex) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
         winCount++;
-        if (winCount === 10) {
+        if (winCount === 15) {
           setTimeout(() => {
             grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
             card.isFlipped = false;
@@ -170,20 +170,25 @@ function flipCard(rowIndex, cardIndex) {
 }
 
 function getCardImagePath(rowIndex, cardIndex) {
-  return "/images/moyen/back.svg";
+  return "/images/difficile/back.svg";
 }
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/moyen/arrosoir.svg", count: 0 },
-    { image: "/images/moyen/biomasse.svg", count: 0 },
-    { image: "/images/moyen/courgette.svg", count: 0 },
-    { image: "/images/moyen/eolienne.svg", count: 0 },
-    { image: "/images/moyen/fourche.svg", count: 0 },
-    { image: "/images/moyen/seau.svg", count: 0 },
-    { image: "/images/moyen/hydraulique.svg", count: 0 },
-    { image: "/images/moyen/pelle.svg", count: 0 },
-    { image: "/images/moyen/solaire.svg", count: 0 },
-    { image: "/images/moyen/tomate.svg", count: 0 }
+    { image: "/images/difficile/arrosoir.svg", count: 0 },
+    { image: "/images/difficile/balais.svg", count: 0 },
+    { image: "/images/difficile/carotte.svg", count: 0 },
+    { image: "/images/difficile/courgette.svg", count: 0 },
+    { image: "/images/difficile/eolienne.svg", count: 0 },
+    { image: "/images/difficile/feuilles.svg", count: 0 },
+    { image: "/images/difficile/hydraulique.svg", count: 0 },
+    { image: "/images/difficile/geothermique.svg", count: 0 },
+    { image: "/images/difficile/laitue.svg", count: 0 },
+    { image: "/images/difficile/oeuf.svg", count: 0 },
+    { image: "/images/difficile/pelle.svg", count: 0 },
+    { image: "/images/difficile/rateau.svg", count: 0 },
+    { image: "/images/difficile/seau.svg", count: 0 },
+    { image: "/images/difficile/solaire.svg", count: 0 },
+    { image: "/images/difficile/tomate.svg", count: 0}
   ];
   for (let i = 0; i < grid.value.length; i++) {
     for (let j = 0; j < grid.value[i].length; j++) {
@@ -208,8 +213,20 @@ function getBackImagePath(rowIndex, cardIndex) {
     case "/arrosoir.svg":
       numArrosoir++;
       break;
-    case "/biomasse.svg":
-      numBiomasse++;
+    case "/balais.svg":
+      numBalais++;
+      break;
+    case "/carotte.svg":
+      numCarotte++;
+      break;
+    case "/laitue.svg":
+      numLaitue++;
+      break;
+    case "/feuilles.svg":
+      numFeuilles++;
+      break;
+    case "/oeuf.svg":
+      numOeuf++;
       break;
     case "/courgette.svg":
       numCourgette++;
@@ -226,6 +243,9 @@ function getBackImagePath(rowIndex, cardIndex) {
     case "/hydraulique.svg":
       numHydro++;
       break;
+    case "/geothermique.svg":
+      numGeothermique++;
+      break;
     case "/pelle.svg":
       numPelle++;
       break;
@@ -240,12 +260,17 @@ function getBackImagePath(rowIndex, cardIndex) {
   return selectedType.image;
 }
 let numArrosoir = 0;
-let numBiomasse = 0;
+let numBalais = 0;
+let numCarotte = 0;
+let numLaitue = 0;
+let numFeuilles = 0;
+let numOeuf = 0;
 let numCourgette = 0;
 let numEolienne = 0;
 let numFourche = 0;
 let numSeau = 0;
 let numHydro = 0;
+let numGeothermique = 0;
 let numPelle = 0;
 let numSolaire = 0;
 let numTomate = 0;

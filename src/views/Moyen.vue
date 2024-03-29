@@ -1,10 +1,6 @@
 <template>
   <MoyenComponent />
 </template>
-
-<script setup>
-
-</script>
 <script>
 import MoyenComponent from '../components/MoyenComponent.vue';
 export default {

@@ -8,8 +8,8 @@
           </div>
           <p class="description">{{ cardDescription }}</p>
           <div class="row">
-              <img src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
-              <button class="no-btn"><img src="/public/images/son_vert.svg" alt="icon allumer le son"></button>
+              <img src="/images/grenouille lunettes.svg" alt="icon grenouille lunette">
+              <button class="no-btn"><img src="/images/son_vert.svg" alt="icon allumer le son"></button>
           </div>
         </div>
         <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
@@ -109,13 +109,6 @@ const gameTime = computed(() => {
   }
 });
 
-const textmp3 = '../../public/sound/text.mp3';
-function playsound(){
-  const audio = new Audio(textmp3);
-  audio.play();
-  console.log('le son est bien charger')
-}
-
 const rows = 3;
 const columns = 4;
 const totalCards = rows * columns;
@@ -162,8 +155,6 @@ function flipCard(rowIndex, cardIndex) {
         if (matchingCard) {
           cardName = matchingCard.name;
           cardDescription = matchingCard.description;
-          const audio = new Audio(textmp3);
-          audio.play();
         } else {
         }
       } else {

@@ -1,12 +1,8 @@
 <template>
-  <Game />
+  <FacileComponent />
 </template>
-
-<script setup>
-
-</script>
 <script>
-  import Game from '../components/Game.vue';
+  import FacileComponent from '@/components/FacileComponent.vue'
   export default {
     methods: {
       goToMenu() {
@@ -14,7 +10,7 @@
       }
     },
     components: {
-      Game
+      FacileComponent,
     },
   }
 </script>
