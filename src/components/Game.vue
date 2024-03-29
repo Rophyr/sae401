@@ -9,7 +9,7 @@
           <p class="description">{{ cardDescription }}</p>
           <div class="row">
               <img src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
-              <button><img src="/public/images/son-logo.svg" alt="icon allumer le son"></button>
+              <button class="no-btn"><img src="/public/images/son_vert.svg" alt="icon allumer le son"></button>
           </div>
         </div>
         <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>

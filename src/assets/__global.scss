@@ -540,7 +540,6 @@ body{
             text-align: center;
         }
     }
-
     .back{
         position: absolute;
         top: 10px;
@@ -640,4 +639,9 @@ body{
 
 /* Fin bouton langue */
 
-/* div select niveau de jeu */
+/* Bouton Son Grenouille */
+
+.no-btn{
+    border: none;
+    background: none;
+}

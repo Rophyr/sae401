@@ -10,6 +10,10 @@
             <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
           <p class="description">{{ cardDescription }}</p>
+          <div class="row">
+            <img src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
+            <button class="no-btn"><img src="/public/images/son_orange.svg" alt="icon allumer le son"></button>
+          </div>
         </div>
         <button @click="goToMenu" class="btn btn--moyen btn--round btn--round--col"><img src="/images/back_door.svg" alt=""></button>
       </div>

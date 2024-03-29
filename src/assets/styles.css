@@ -469,7 +469,12 @@ body {
 }
 
 /* Fin bouton langue */
-/* div select niveau de jeu */
+/* Bouton Son Grenouille */
+.no-btn {
+  border: none;
+  background: none;
+}
+
 @font-face {
   font-family: "Sobiscuit";
   src: url("/public/fonts/Sobiscuit.otf") format("opentype");
