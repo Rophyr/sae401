@@ -19,7 +19,7 @@
               <div class="option" @click="selectDifficulty('difficile')">{{$t('home.difficile')}}</div>
             </div>
           </div>
-          <button @click="playGame" class="btn btn--green" aria-label="jouer">{{ $t("home.jouer") }}</button>
+          <button @click="playGame" class="btn btn--green btn--select" aria-label="jouer">{{ $t("home.jouer") }}</button>
         </div>
         <router-link to="/mentions-legales" class="at-bottom"><p class="underline">{{ $t("home.mentionsLegales") }}</p></router-link>
       </div>
