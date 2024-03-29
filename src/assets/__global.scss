@@ -256,57 +256,20 @@ body{
                     flex-direction: row;
                     justify-content: space-between;
                     width: 80%;
-
-
                     img{
                         height: 50px;
                     }
                 }
-
                 &--moyen{
                     background-color: $light-light-yellow;
                     border-color: $dark-yellow;
                     color: $dark-yellow;
                 }
-
                 &--difficile{
                     background-color: $light-light-red;
                     border-color: $dark-red;
                     color: $dark-red;
                 }
-            
-                // .word{
-
-                //     $colors: ($dark-green, $dark-blue, $dark-red, $dark-yellow);
-                //     $count: 0;
-                //     $word: 'Rateau';
-                    
-
-                //     // @for $i from 0 through length($word){
-                //     //     .#{$lettre-#{$i}}{
-                //     //         color: $colors($count);
-                //     //     }
-                //     //     $count: $count + 1;
-
-                //     //     @if $count == length($colors){
-                //     //         $count: 0;
-                //     //     }@else{
-                //     //         $count: $count + 1; 
-                //     //     }
-                //     // }
-                   
-
-
-
-                //     // .lettre-#{$i}{
-                //     //     @for $i from 0 through length($word){
-                //     //         color: $couleur;
-                //     //     }
-                //     // }
-
-                    
-                // }
-
                 .FroggyDesc{
                     font-family: 'Sobiscuit', sans-serif;
                     font-size: 40px;
@@ -318,9 +281,6 @@ body{
 
                 }
             }
-  
-  
-              
 
         }
 
@@ -395,6 +355,7 @@ body{
         // $lighterDark: lighten($dark, 30%);
 }
 #victory{
+    display: none;
     padding: 50px;
     position: absolute;
     top: 50%;
