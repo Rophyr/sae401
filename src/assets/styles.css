@@ -427,7 +427,7 @@ body {
 }
 
 /* Bouton langue */
-.language-switch {
+.level-switch {
   display: flex;
   position: absolute;
   top: 10px;
@@ -459,6 +459,7 @@ body {
 }
 
 /* Fin bouton langue */
+/* div select niveau de jeu */
 @font-face {
   font-family: "Sobiscuit";
   src: url("/public/fonts/Sobiscuit.otf") format("opentype");
@@ -582,6 +583,28 @@ a .btn:visited {
 }
 .btn--select {
   padding: 0.2em 2em;
+}
+.btn--group {
+  width: 200px;
+  background-color: red;
+}
+.btn--group :nth-child(1) {
+  margin-top: 10px;
+  background-color: #8CCF57;
+  border: 1px solid #4C8B25;
+  border-radius: 5px;
+  padding: 5px;
+}
+.btn--group .difficulty-options .btn {
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.btn--group div {
+  margin-top: 10px;
+  background-color: #8CCF57;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .underline {

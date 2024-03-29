@@ -18,6 +18,7 @@ export default {
         backButton: 'Back'
       },
       home:{
+        choix: 'Level',
         facile: 'easy',
         moyen: 'medium',
         difficile: 'hard',
@@ -75,6 +76,7 @@ export default {
         backButton: 'Retour'
       },
       home:{
+        choix: 'Niveau',
         facile: 'facile',
         moyen: 'moyen',
         difficile: 'difficile',

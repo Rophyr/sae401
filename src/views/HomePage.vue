@@ -3,7 +3,7 @@
 
     <div class="container container--home">
       <div class="container__left">
-        
+
         <router-link to="classement" class="btn btn--green btn--round"><img src="/images/Classement.svg"  aria-label="aller au classement"></router-link>
         <ToggleLanguage />
       </div>
@@ -13,12 +13,16 @@
           <img src="/public/images/logo-froggy.svg" draggable="false" alt="Logo texte" class="logo-froggy">
         </div>
         <div class="container__middle__buttons">
-          <select v-model="selectedDifficulty" class="btn btn--green btn--select"  aria-label="selectionner la difficulté">
-            <option value="facile">{{ $t("home.facile") }}</option>
-            <option value="moyen">{{ $t("home.moyen") }}</option>
-            <option value="difficile">{{ $t("home.difficile") }}</option>
-          </select>
-          <button @click="playGame" class="btn btn--green"  aria-label="jouer">{{ $t("home.jouer") }}</button>
+          <div class="btn btn--group" @click="toggleDifficultyOptions">
+            <button @click="playGame" class="btn btn--green"  aria-label="jouer">{{ $t("home.jouer") }}</button>
+            <div class="btn--div">{{ $t("home.choix") }}</div>
+            <div v-if="showDifficultyOptions" class="btn btn--div">
+              <div @click="selectDifficulty('facile')" :class="{ 'btn': true, 'btn--green': selectedDifficulty === 'facile', 'btn--selected': selectedDifficulty === 'facile' }">{{ $t("home.facile") }}</div>
+              <div @click="selectDifficulty('moyen')" :class="{ 'btn': true, 'btn--green': selectedDifficulty === 'moyen', 'btn--selected': selectedDifficulty === 'moyen' }">{{ $t("home.moyen") }}</div>
+              <div @click="selectDifficulty('difficile')" :class="{ 'btn': true, 'btn--green': selectedDifficulty === 'difficile', 'btn--selected': selectedDifficulty === 'difficile' }">{{ $t("home.difficile") }}</div>
+            </div>
+          </div>
+
         </div>
         <router-link to="/mentions-legales" class="at-bottom"><p class="underline">{{ $t("home.mentionsLegales") }}</p></router-link>
       </div>
@@ -41,11 +45,18 @@ export default {
   },
   data() {
     return {
-      selectedDifficulty: 'facile'
+      selectedDifficulty: 'facile',
+      showDifficultyOptions: false
     }
   },
   methods: {
-
+    toggleDifficultyOptions() {
+      this.showDifficultyOptions = !this.showDifficultyOptions;
+    },
+    selectDifficulty(difficulty) {
+      this.selectedDifficulty = difficulty;
+      this.showDifficultyOptions = false; // Hide the options after selection
+    },
     playGame() {
       const selectedDifficulty = this.selectedDifficulty;
 
@@ -62,8 +73,5 @@ export default {
 </script>
 
 <style lang="scss">
-
-
-// @import url('https://fonts.cdnfonts.com/css/simply-rounded');
 
 </style>
