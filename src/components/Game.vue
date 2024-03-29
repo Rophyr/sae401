@@ -39,7 +39,7 @@
       </div>
     </div>
   </div>
-  <div id="victory" class="vert" style="display: none">
+  <div id="victory" class="vert">
     <p id="vic-text" class="light-vert-p">Bravo !</p>
     <div class="separation"></div>
     <p>
@@ -62,10 +62,8 @@ let jsonData;
 
 if (language === 'fr') {
   jsonData = jsonDataFr;
-  console.log('Français')
 } else {
   jsonData = jsonDataEn;
-  console.log('Anglais')
 }
 
 const word = "FROGGY";
@@ -111,6 +109,13 @@ const gameTime = computed(() => {
     return `${minute + ' minute et '}${second + ' secondes'}`;
   }
 });
+
+const textmp3 = '../../public/sound/text.mp3';
+function playsound(){
+  const audio = new Audio(textmp3);
+  audio.play();
+  console.log('le son est bien charger')
+}
 
 const rows = 3;
 const columns = 4;
@@ -158,6 +163,8 @@ function flipCard(rowIndex, cardIndex) {
         if (matchingCard) {
           cardName = matchingCard.name;
           cardDescription = matchingCard.description;
+          const audio = new Audio(textmp3);
+          audio.play();
         } else {
         }
       } else {

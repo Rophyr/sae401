@@ -40,15 +40,15 @@
       </div>
     </div>
   </div>
-  <div class="victory orange" style="display: none">
-    <p id="vic-text" class="orange-p">Bravo !</p>
+  <div id="victory" class="orange">
+    <p id="vic-text" class="light-vert-p">Bravo !</p>
     <div class="separation"></div>
     <p>
       Félicitations ! <br><br>
-      Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
+      Tu as mis {{ gameTime }} pour réaliser le niveau facile.
     </p>
     <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
-    <router-link to="/" class="btn btn--green">Accueil</router-link>
+    <button @click="goToMenu"  class="btn btn--green">Accueil</button>
   </div>
 </template>
  <script setup>
@@ -108,13 +108,12 @@ const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns
 let flippedCard = null;
 
 import jsonData from '../../public/data/objectDescription.json';
-let cardDescription = ''; // Ajout d'une variable pour stocker la description de la carte
+let cardDescription = '';
 
 const textmp3 = '../../public/sound/text.mp3';
 function playsound(){
   const audio = new Audio(textmp3);
   audio.play();
-  console.log('le son est bien charger')
 }
 
 function flipCard(rowIndex, cardIndex) {
@@ -137,11 +136,12 @@ function flipCard(rowIndex, cardIndex) {
         card.isFlipped = true;
         winCount++;
         if (winCount === 10) {
-          let elements = document.getElementsByClassName("victory");
-
-          for (let i = 0; i < elements.length; i++) {
-            elements[i].style.display = "flex";
-          }
+          setTimeout(() => {
+            grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
+            card.isFlipped = false;
+          }, 2000);
+          document.getElementById('grid').style.display = "none";
+          document.getElementById('victory').style.display = "flex";
           stopTimer();
         }
         let cardName = card.backImagePath.split('/').pop().split('.')[0];
@@ -149,10 +149,8 @@ function flipCard(rowIndex, cardIndex) {
         if (matchingCard) {
           cardName = matchingCard.name;
           cardDescription = matchingCard.description;
-          console.log('card')
           const audio = new Audio(textmp3);
           audio.play();
-          console.log('le son est bien charger')
         } else {
         }
       } else {
