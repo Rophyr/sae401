@@ -7,6 +7,10 @@
             <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
           <p class="description">{{ cardDescription }}</p>
+          <div class="row">
+              <img src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
+              <button><img src="/public/images/son-logo.svg" alt="icon allumer le son"></button>
+          </div>
         </div>
         <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>
@@ -92,18 +96,21 @@ onMounted(() => {
 onBeforeUnmount(() => {
   stopTimer();
 });
+
 const displayTime = computed(() => {
   return `${minutes.value < 10 ? '0' + minutes.value : minutes.value}:${secondes.value < 10 ? '0' + secondes.value : secondes.value}`;
 });
 const gameTime = computed(() => {
-  if (minutes.value < 1)
-  {
-    return `${minutes.value < 1 ? '' + '' : ''}${secondes.value + ' secondes'}`;
+  const minute = minutes.value;
+  const second = secondes.value;
+  if (minute < 1) {
+    return `${minute < 1 ? '' + '' : ''}${second + ' secondes'}`;
+  } else if (minute > 1) {
+    return `${minute + ' minutes et '}${second + ' secondes'}`;
+  } else {
+    return `${minute + ' minute et '}${second + ' secondes'}`;
   }
-  else {
-    return `${minutes.value + 'minutes et '}${secondes.value + ' secondes'}`;
-  }
-})
+});
 
 const rows = 3;
 const columns = 4;
