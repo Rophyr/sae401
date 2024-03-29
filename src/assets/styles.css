@@ -191,6 +191,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   height: 60vh;
   width: 13vw;
   min-width: 160px;
@@ -200,6 +201,15 @@ body {
   background-color: #DBFFD5;
   font-size: 1.5em;
   color: #4C8B25;
+}
+.jeux .container__left .explain .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+.jeux .container__left .explain .row img {
+  height: 50px;
 }
 .jeux .container__left .explain--moyen {
   background-color: #fff0d2;
