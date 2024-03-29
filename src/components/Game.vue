@@ -56,24 +56,20 @@ import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import jsonDataEn from '../../public/data/objectDescription.json';
 import jsonDataFr from '../../public/data/objectDescription_en.json';
 
-const word = "FROGGY";
-const colors = ['#E2A340FF', '#D3715BFF', '#228AB9FF', '#4C8B25FF'];
+const language = localStorage.getItem('lang');
 
-const language = localStorage.getItem('lang'); 
-console.log(language); 
-
-let jsonData; 
+let jsonData;
 
 if (language === 'fr') {
-  jsonData = jsonDataFr; 
+  jsonData = jsonDataFr;
+  console.log('Français')
 } else {
-  jsonData = jsonDataEn; 
+  jsonData = jsonDataEn;
+  console.log('Anglais')
 }
 
-console.log(jsonData);
-
-
-
+const word = "FROGGY";
+const colors = ['#E2A340FF', '#D3715BFF', '#228AB9FF', '#4C8B25FF'];
 
 function getColorByIndex(index) {
   return colors[index % colors.length];
