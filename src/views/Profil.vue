@@ -14,7 +14,7 @@
             <div class="container__middle">
 
                 <div class="title">
-                    <h1>Ton profil</h1>
+                    <h1>{{ $t('profil.title') }}</h1>
                     <div class="green-bar green-bar--blue"></div>
                 </div>
 
@@ -22,10 +22,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Niveau</th>
-                                <th>Parties jouées</th>
-                                <th>Meilleur temps</th>
-                                <th>Classement</th>
+                                <th>{{$t('profil.niveau')}}</th>
+                                <th>{{ $t('profil.parties') }}</th>
+                                <th>{{ $t('profil.bestTemps') }}</th>
+                                <th>{{$t('profil.classement')}}</th>
                             </tr>
                         </thead>
                         <tbody>
