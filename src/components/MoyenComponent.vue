@@ -1,18 +1,18 @@
 <template>
-  <div id="app" class="jeux jeux--facile">
+  <div id="app" class="jeux jeux--moyen">
     <div class="container container__facile">
       <div class="container__left">
-        <div  class="explain">
+        <div  class="explain explain--moyen">
           <div class="word">
             <span class="FroggyDesc" v-for="(letter, index) in word" :key="index" :style="{ color: getColorByIndex(index) }">{{ letter }}</span>
           </div>
           <p class="description">{{ cardDescription }}</p>
           <div class="row">
-              <img src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
-              <button class="no-btn"><img src="/public/images/son_vert.svg" alt="icon allumer le son"></button>
+            <img draggable="false" src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
+            <button class="no-btn"><img draggable="false" src="/public/images/son_orange.svg" alt="icon allumer le son"></button>
           </div>
         </div>
-        <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
+        <router-link to="/" class="btn btn--moyen btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>
       <div class="container__middle">
         <div id="jeu" class="grid game">
@@ -32,20 +32,20 @@
         <div>
           <div class="container__right">
             <div class="timer">
-              <p class="dark-vert-p"> {{ displayTime }}</p>
+              <p class="orange-p"> {{ displayTime }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="victory" class="vert">
-    <p id="vic-text" class="light-vert-p">Bravo !</p>
+  <div id="victory" class="orange">
+    <p id="vic-text" class="dark-orange-p">Bravo !</p>
     <div class="separation"></div>
     <p>
-      Tu as mis {{ gameTime }} pour réaliser le niveau facile.
+      Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
     </p>
-    <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
+    <button class="btn btn--moyen" aria-label="recommencer une partie">Nouvelle partie</button>
     <button @click="goToMenu"  class="btn btn--green">Accueil</button>
   </div>
 </template>
@@ -65,7 +65,7 @@ if (language === 'fr') {
   jsonData = jsonDataEn;
 }
 
-const word = { cardName: name };
+const word = "FROGGY";
 const colors = ['#E2A340FF', '#D3715BFF', '#228AB9FF', '#4C8B25FF'];
 
 function getColorByIndex(index) {
@@ -116,10 +116,10 @@ function playsound(){
   console.log('le son est bien charger')
 }
 
-const rows = 3;
-const columns = 4;
+const rows = 4;
+const columns = 5;
 const totalCards = rows * columns;
-const numEachType = totalCards / 6;
+const numEachType = totalCards / 10;
 
 let winCount = 0;
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({
@@ -148,7 +148,7 @@ function flipCard(rowIndex, cardIndex) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
         winCount++;
-        if (winCount === 6) {
+        if (winCount === 10) {
           setTimeout(() => {
             grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
             card.isFlipped = false;
@@ -178,16 +178,20 @@ function flipCard(rowIndex, cardIndex) {
 }
 
 function getCardImagePath(rowIndex, cardIndex) {
-  return "/images/facile/back.svg";
+  return "/images/moyen/back.svg";
 }
 function getBackImagePath(rowIndex, cardIndex) {
   const types = [
-    { image: "/images/facile/arrosoir.svg", count: 0 },
-    { image: "/images/facile/biomasse.svg", count: 0 },
-    { image: "/images/facile/courgette.svg", count: 0 },
-    { image: "/images/facile/eolienne.svg", count: 0 },
-    { image: "/images/facile/fourche.svg", count: 0 },
-    { image: "/images/facile/geothermique.svg", count: 0 }
+    { image: "/images/moyen/arrosoir.svg", count: 0 },
+    { image: "/images/moyen/biomasse.svg", count: 0 },
+    { image: "/images/moyen/courgette.svg", count: 0 },
+    { image: "/images/moyen/eolienne.svg", count: 0 },
+    { image: "/images/moyen/fourche.svg", count: 0 },
+    { image: "/images/moyen/seau.svg", count: 0 },
+    { image: "/images/moyen/hydraulique.svg", count: 0 },
+    { image: "/images/moyen/pelle.svg", count: 0 },
+    { image: "/images/moyen/solaire.svg", count: 0 },
+    { image: "/images/moyen/tomate.svg", count: 0 }
   ];
   for (let i = 0; i < grid.value.length; i++) {
     for (let j = 0; j < grid.value[i].length; j++) {
@@ -198,6 +202,7 @@ function getBackImagePath(rowIndex, cardIndex) {
       }
     }
   }
+
   let selectedType = null;
   do {
     const randomIndex = Math.floor(Math.random() * types.length);
@@ -206,34 +211,52 @@ function getBackImagePath(rowIndex, cardIndex) {
       selectedType.count++;
     }
   } while (!selectedType);
+
   switch (selectedType.image) {
-    case "/images/facile/arrosoir.svg":
+    case "/arrosoir.svg":
       numArrosoir++;
       break;
-    case "/images/facile/biomasse.svg":
+    case "/biomasse.svg":
       numBiomasse++;
       break;
-    case "/images/facile/courgette.svg":
+    case "/courgette.svg":
       numCourgette++;
       break;
-    case "/images/facile/eolienne.svg":
-      numEolie++;
+    case "/eolienne.svg":
+      numEolienne++;
       break;
-    case "/images/facile/fourche.svg":
+    case "/fourche.svg":
       numFourche++;
       break;
-    case "/images/facile/geothermique.svg":
-      numGeo++;
+    case "/seau.svg":
+      numSeau++;
+      break;
+    case "/hydraulique.svg":
+      numHydro++;
+      break;
+    case "/pelle.svg":
+      numPelle++;
+      break;
+    case "/solaire.svg":
+      numSolaire++;
+      break;
+    case "/tomate.svg":
+      numTomate++;
       break;
   }
+
   return selectedType.image;
 }
 let numArrosoir = 0;
 let numBiomasse = 0;
 let numCourgette = 0;
-let numEolie = 0;
+let numEolienne = 0;
 let numFourche = 0;
-let numGeo = 0;
+let numSeau = 0;
+let numHydro = 0;
+let numPelle = 0;
+let numSolaire = 0;
+let numTomate = 0;
 
 for (let i = 0; i < grid.value.length; i++) {
   for (let j = 0; j < grid.value[i].length; j++) {
