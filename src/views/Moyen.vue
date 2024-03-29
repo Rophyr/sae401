@@ -251,11 +251,9 @@ for (let i = 0; i < grid.value.length; i++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
   }
 }
-
 </script>
 <script>
-
-import '../assets/styles.css';  //link css / scss
+import '../assets/styles.css';
 
 export default {
   methods: {

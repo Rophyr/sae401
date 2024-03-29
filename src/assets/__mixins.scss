@@ -1,57 +1,33 @@
 @mixin container-col{
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    
-    // border: 1px solid blue;
-
     height: 100%;
-
-    
 }
-
-
 @mixin container-row{
-    
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        
-        // border: 1px solid red;
-        width: 90%; 
+        width: 90%;
 }
-
 @mixin container-top{
-    // &__top{
         height: 100px;
         width: 94%;
-        // width: 100%;
 }
-    
 @mixin container-middle{
-
-    // &__middle{
         @include container-row;
         justify-content: center;
         align-items: center;
         gap: 100px;
 }
-
 @mixin container-bottom{
-    // &__bottom{
-            
         display: flex;
         flex-direction: row;
         justify-content: start;
         width: 100%;
         justify-content: space-between;
-        // padding: 1% 3%;
-
-        // border: 1px solid red;
-
 }
 
 @mixin container-left{
@@ -59,7 +35,6 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-
 }
 
 @mixin ensemble-logo{
@@ -69,10 +44,7 @@
         align-items: center;
         .logo-frog{
             width: 200px;
-
-            // border: 1px solid red;
         }
-
         .logo-froggy{
             width: 500px;
         }

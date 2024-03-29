@@ -1,99 +1,54 @@
 @import '__variable.scss';
 
-
 a .btn{
     color: $light;
-
     &:visited{
         color: $light;
         text-decoration: none;
     }
 }
-
-.btn{
+.btn {
     padding: 2% 2%;
     font-family: 'simply rounded', sans-serif;
     font-size: 1.5em;
     color: $light;
     background-color: $light;
-    // border: 1.5px solid $dark;
     border: none;
     border-radius: 10px;
-
-    
     width: auto;
-    
-
     box-shadow: inset 0px 2px 0px 1px $dark;
-
-    
-
-    &:hover,&:focus{
-            
+    &:hover, &:focus {
         transition: box-shadow 0.1s ease-in;
         transform: translate(0, 0.025em);
         box-shadow: inset 0.125em 0.125em $dark-green;
         background-color: darker($light-green);
-        
     }
-    
-
-    &:hover{
-        
+    &:hover {
         transform: translate(0, 0.025em);
         box-shadow: inset 0px 2px 0px 1px $dark;
-
         cursor: pointer;
     }
-
-
-
-    &--facile{
+    &--facile {
         background-color: $light-green;
-        
-        
         box-shadow: inset -0.1875rem -0.1875rem $dark-green;
-
-        &:hover,&:focus{
-            
-            
+        &:hover, &:focus {
             box-shadow: inset 0.125em 0.125em $dark-green;
-            
-            
         }
-        
     }
-
     &--moyen{
         background-color: $light-yellow;
-        
         box-shadow: inset -0.1875rem -0.1875rem $dark-yellow;
-
         &:hover,&:focus{
-            
-            
             box-shadow: inset 0.125em 0.125em $dark-yellow;
-            
-            
         }
-       
     }
-
     &--difficile{
         background-color: $light-red;
-        
         box-shadow: inset -0.1875rem -0.1875rem $dark-red;
-
         &:hover,&:focus{
-            
-            
             box-shadow: inset 0.125em 0.125em $dark-red;
-            
-            
         }
-        
     }
-
     &--green{
         background-color: $light-green;
         box-shadow: inset -0.1875rem -0.1875rem $dark-green;
@@ -107,44 +62,35 @@ a .btn{
             box-shadow: inset 0.125em 0.125em $dark-green;
             background-color: darker($light-green);
         }
-
         i{
             font-size: 0.8em;
         }
     }
-
     &--blue{
         background-color: $light-blue;
         box-shadow: inset -0.1875rem -0.1875rem $dark-blue;
         border: none;
         color: $light;
         transition: box-shadow 0.1s ease-out;
-
         &:hover,&:focus{
-            
             transition: box-shadow 0.1s ease-in;
             transform: translate(0, 0.025em);
             box-shadow: inset 0.125em 0.125em $dark-blue;
             background-color: darker($light-blue);
-            
         }
-
         i{
             font-size: 0.8em;
         }
     }
-
     &--dark-green{
         background-color: $dark-green;
         box-shadow: 0em 0.13em 0em 0em $mid-green;
         border: none;
         color: $light;
-
         i{
             font-size: 0.8em;
         }
     }
-
     &--round{
         display: flex;
         align-items: center;
@@ -152,33 +98,22 @@ a .btn{
         height: 5vw;
         width: 5vw;
         border-radius: 100%;
-
         min-height: 75px;
         min-width: 75px;
-
         img{
             max-width: 40px;
-            
         }
-
-        
     }
-
     &--select{
         padding: 0.2em 2em;
-        // padding-right: 30px;
     }
-  }
-  
+}
 select{
     // border: 1px solid red;
 }
-
-
 .underline{
     text-decoration: underline
 }
-
 .logo-bg-white{
     display: flex;
     flex-direction: row;
@@ -188,18 +123,13 @@ select{
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    // padding: 0;
     background-color: $light;
     box-shadow: 0.12rem 0.12rem #00000068;
     z-index: 1;
-
-    // border: 1Px solid red;
-
     img{
         height: 100px;
     }
 }
-
 body{
     position: relative;
     .at-bottom{
@@ -209,8 +139,6 @@ body{
         transform: translateX(-50%);
     }
 }
-
-
 .title{
     height: fit-content;              
     width: max-content;
@@ -637,3 +565,38 @@ img {
     background: transparent;
 }
 
+// Couleurs
+
+.vert{
+    border: solid $light-green 10px;
+    .separation{
+        background-color: $light-green;
+    }
+}
+.dark-vert-p{
+    color: $dark-green;
+}
+.light-vert-p{
+    color: $light-green;
+}
+.orange{
+    border: solid $light-yellow 10px;
+    .separation{
+        background-color: $light-yellow;
+    }
+}
+.dark-orange-p{
+    color: $dark-yellow;
+}
+.orange-p{
+    color: $light-yellow;
+}
+.rouge{
+    border: solid $light-red 10px;
+    .separation{
+        background-color: $light-red;
+    }
+}
+.rouge-p{
+    color: $light-red;
+}

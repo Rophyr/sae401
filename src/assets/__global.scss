@@ -386,34 +386,7 @@ body{
     }
         // $lighterDark: lighten($dark, 30%);
 }
-.vert{
-    border: solid $light-green 10px;
-    .separation{
-        background-color: $light-green;
-    }
-}
-.vert-p{
-    color: $light-green;
-}
-.orange{
-    border: solid $light-yellow 10px;
-    .separation{
-        background-color: $light-yellow;
-    }
-}
-.orange-p{
-    color: $light-yellow;
-}
-.rouge{
-    border: solid $light-red 10px;
-    .separation{
-        background-color: $light-red;
-    }
-}
-.rouge-p{
-    color: $light-red;
-}
-.victory{
+#victory{
     padding: 50px;
     position: absolute;
     top: 50%;
@@ -421,7 +394,6 @@ body{
     transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 25px;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;

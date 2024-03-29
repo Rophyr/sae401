@@ -28,15 +28,15 @@
         <div>
           <div class="container__right">
             <div class="timer">
-              <p> {{ displayTime }}</p>
+              <p class="dark-vert-p"> {{ displayTime }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="victory" style="display: none">
-    <p id="vic-text">Bravo !</p>
+  <div id="victory" class="vert" style="display: none">
+    <p id="vic-text" class="light-vert-p">Bravo !</p>
     <div class="separation"></div>
     <p>
       Félicitations ! <br><br>
