@@ -27,8 +27,8 @@ export default {
     position: relative;
     top: 20px;
     left: 20px;
-    width: 60px; /* Ajustez la largeur selon vos besoins */
-    height: 30px; /* Ajustez la hauteur selon vos besoins */
+    width: 60px;
+    height: 30px;
     background-color: #ccc;
     border-radius: 15px;
     cursor: pointer;

@@ -1,113 +1,115 @@
 {
-    "text": [
-      {
-        "name": "froggy",
-        "description": "Well done, you have completed the game!"
-      },
-      {
-        "name": "rateau",
-        "description": "A rake is a gardening tool used for raking dead leaves or grass."
-      },
-      {
-        "name": "arrosoir",
-        "description": "A watering can is a container with a handle and a spout, used for watering plants."
-      },
-      {
-        "name": "elec",
-        "description": "Electricity is a form of energy resulting from the movement of electrons."
-      },
-      {
-        "name": "rotten",
-        "description": "A rotten fruit is a fruit that has started to decompose and is no longer edible."
-      },
-      {
-        "name": "trash",
-        "description": "Trash refers to objects or substances that are discarded because they are no longer useful or necessary."
-      },
-      {
-        "name": "velo",
-        "description": "A bicycle is an eco-friendly and healthy means of transportation, propelled by muscular force."
-      },
-      {
-        "name": "solaire",
-        "description": "Solar energy is produced from sunlight, captured by solar panels to generate electricity."
-      },
-      {
-        "name": "eolienne",
-        "description": "Wind energy is produced by the force of the wind and captured by wind turbines to generate electricity."
-      },
-      {
-        "name": "hydraulique",
-        "description": "Hydraulic energy is produced by the force of moving water, used in hydroelectric dams to generate electricity."
-      },
-      {
-        "name": "biomasse",
-        "description": "Biomass is energy produced from organic matter, such as wood, agricultural waste, and urban waste, transformed into fuel or biogas."
-      },
-      {
-        "name": "geothermique",
-        "description": "Geothermal energy is produced by the heat of the Earth, harnessed through geothermal power plants to produce heat or electricity."
-      },
-      {
-        "name": "secateur",
-        "description": "Pruners are gardening tools used for pruning smaller branches, cutting plant stems, and removing dead flowers. They enable clean and precise cuts, thus promoting plant health."
-      },
-      {
-        "name": "seau",
-        "description": "A bucket is a useful container for carrying water, collecting garden waste, storing tools, and gathering harvests."
-      },
-      {
-        "name": "fourche",
-        "description": "A pitchfork is a tool with prongs used for aerating soil, breaking up clumps, and uprooting weeds in the garden."
-      },
-      {
-        "name": "balai",
-        "description": "A leaf broom is a tool used to gather and clean up dead leaves, debris, and other garden litter, thus facilitating the maintenance of a clean and orderly outdoor space."
-      },
-      {
-        "name": "compost",
-        "description": "Compost is a mixture of decomposing organic matter, such as food scraps, dead leaves, and manure, used as a natural fertilizer to enrich garden soil."
-      },
-      {
-        "name": "peelings",
-        "description": "Fruit and vegetable peelings are food waste that can be added to compost to enrich the soil with nutrients."
-      },
-      {
-        "name": "dead_leaves",
-        "description": "Dead leaves are a valuable source of organic matter for composting, providing essential nutrients and promoting soil health in the garden."
-      },
-      {
-        "name": "paper",
-        "description": "Paper, especially uncolored paper, is an excellent source of carbonaceous matter for compost. It can be shredded and added to the compost pile to promote decomposition and improve soil structure."
-      },
-      {
-        "name": "branches",
-        "description": "Branches and small pruning cuts are woody materials that can be composted to provide structure and nutrients to the compost pile. They decompose slowly and help aerate the pile."
-      },
-      {
-        "name": "lettuce",
-        "description": "Lettuce is a leafy green plant often used as a base for salads. It is rich in fiber, vitamins, and minerals, making it an excellent addition to a balanced diet."
-      },
-      {
-        "name": "basil",
-        "description": "Basil is a plant with pretty green leaves that smell very good! It is often used to make tomato sauce or to flavor our favorite dishes like pasta or pizza."
-      },
-      {
-        "name": "tomato",
-        "description": "The tomato is a red and juicy fruit found in gardens. It can be eaten raw in salads or cooked in sauces and soups."
-      },
-      {
-        "name": "strawberry",
-        "description": "The strawberry is a plant that produces delicious red and sweet strawberries. They can be eaten as they are, or they can be used in desserts like pies or fruit salads."
-      },
-      {
-        "name": "beans",
-        "description": "Beans are tall plants with pretty flowers and green pods. Inside the pods, there are small seeds that can be eaten after cooking."
-      },
-      {
-        "name": "pumpkin",
-        "description": "The pumpkin is a large, round, orange vegetable that grows in gardens in the autumn. It can be used to make delicious soups or pies to warm up when it's cold outside!"
-      }
-    ]
-  }
+  "text": [
+    {
+      "name": "froggy",
+      "description": "Bien joué, vous avez terminé la partie !"
+    },
+    {
+      "name": "rateau",
+      "description": "Le rateau est un outil de jardinage utilisé pour ratisser les feuilles mortes ou le gazon."
+    },
+    {
+      "name": "arrosoir",
+      "description": "L'arrosoir est un récipient muni d'une anse et d'un bec verseur, utilisé pour arroser les plantes."
+    },
+    {
+      "name": "elec",
+      "description": "L'électricité est une forme d'énergie résultant du mouvement des électrons."
+    },
+    {
+      "name": "rotten",
+      "description": "Un fruit pourri est un fruit qui a commencé à se décomposer et qui n'est plus comestible."
+    },
+    {
+      "name": "trash",
+      "description": "Les déchets sont des objets ou des substances dont on se débarrasse parce qu'ils ne sont plus utiles ou nécessaires."
+    },
+    {
+      "name": "velo",
+      "description": "Le vélo est un moyen de transport écologique et sain, propulsé par la force musculaire."
+    },
+    {
+      "name": "solaire",
+      "description": "L'énergie solaire est produite à partir de la lumière du soleil, captée par des panneaux solaires pour générer de l'électricité."
+    },
+    {
+      "name": "eolienne",
+      "description": "L'énergie éolienne est produite par la force du vent et captée par des éoliennes pour produire de l'électricité."
+    },
+    {
+      "name": "hydraulique",
+      "description": "L'énergie hydraulique est produite par la force de l'eau en mouvement, utilisée dans les barrages hydroélectriques pour produire de l'électricité."
+    },
+    {
+      "name": "biomasse",
+      "description": "La biomasse est une énergie produite à partir de la matière organique, telle que le bois, les déchets agricoles et les déchets urbains, transformée en combustible ou en biogaz."
+    },
+    {
+      "name": "geothermique",
+      "description": "L'énergie géothermique est produite par la chaleur de la Terre, exploitée à travers des centrales géothermiques pour produire de la chaleur ou de l'électricité."
+    },
+    {
+      "name": "secateur",
+      "description": "Les sécateurs sont des outils de jardinage utilisés pour tailler les branches plus petites, couper les tiges des plantes et enlever les fleurs fanées. Ils permettent une coupe nette et précise, favorisant ainsi la santé des plantes."
+    },
+    {
+      "name": "seau",
+      "description": "Un seau est un conteneur utile pour transporter de l'eau, collecter les déchets de jardin, stocker les outils et recueillir les récoltes."
+    },
+    {
+      "name": "fourche",
+      "description": "Une fourche est un outil à dents utilisé pour aérer le sol, briser les mottes et déraciner les mauvaises herbes dans le jardin."
+    },
+    {
+      "name": "balai",
+      "description": "Un balai à feuilles est un outil utilisé pour rassembler et nettoyer les feuilles mortes, les débris et autres détritus du jardin, facilitant ainsi le maintien d'un espace extérieur propre et ordonné."
+    },
+    {
+      "name": "compost",
+      "description": "Le compost est un mélange de matières organiques en décomposition, telles que des restes de nourriture, des feuilles mortes et du fumier, utilisé comme engrais naturel pour enrichir le sol du jardin."
+    },
+    {
+      "name": "eppluchures",
+      "description": "Les épluchures de fruits et légumes sont des déchets alimentaires pouvant être ajoutés au compost pour enrichir le sol en nutriments."
+    },
+    {
+      "name": "feuilles_mortes",
+      "description": "Les feuilles mortes sont une source de matière organique précieuse pour le compostage, fournissant des nutriments essentiels et favorisant la santé du sol dans le jardin."
+    },
+    {
+      "name": "papier",
+      "description": "Le papier, en particulier le papier non coloré, est une excellente source de matière carbonée pour le compost. Il peut être déchiqueté et ajouté au tas de compost pour favoriser la décomposition et améliorer la structure du sol."
+    },
+    {
+      "name": "branches",
+      "description": "Les branches et les petites coupes de taille sont des matériaux ligneux qui peuvent être compostés pour fournir de la structure et des nutriments au tas de compost. Ils se décomposent lentement et aident à aérer le tas."
+    },
+    {
+      "name": "laitue",
+      "description": "La laitue est une plante à feuilles vertes et croquantes souvent utilisée comme base pour les salades. Elle est riche en fibres, en vitamines et en minéraux, ce qui en fait un excellent ajout à un régime alimentaire équilibré."
+    },
+    {
+      "name": "basilic",
+      "description": "Le basilic est une plante avec de jolies feuilles vertes qui sentent très bon ! On l'utilise souvent pour faire de la sauce à la tomate ou pour parfumer nos plats préférés comme les pâtes ou la pizza. "
+    },
+    {
+      "name":  "tomate",
+      "description": "La tomate est un fruit rouge et juteux que l'on trouve dans les jardins. On peut la manger crue dans les salades ou cuite dans les sauces et les soupes."
+    },
+    {
+      "name": "fraisier",
+      "description": "Le fraisier est une plante qui donne de délicieuses fraises rouges et sucrées. On les mange telles quelles ou on peut les mettre dans les desserts comme les tartes ou les salades de fruits."
+    },
+    {
+      "name": "haricots",
+      "description": "Les haricots sont de longues plantes avec de jolies fleurs et des gousses vertes. À l'intérieur des gousses, on trouve de petites graines que l'on peut manger après les avoir fait cuire."
+    },
+    {
+      "name": "potiron",
+      "description": "Le potiron est un gros légume rond et orange qui pousse dans les jardins en automne. On peut en faire de délicieuses soupes ou des tartes pour se réchauffer quand il fait froid dehors !"
+    }
+
+  ]
+}
+
   

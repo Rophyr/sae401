@@ -5,7 +5,7 @@ import { createI18n } from 'vue-i18n';
 import messages from '../src/js/messages'; // Importez vos messages de traduction
 
 const i18n = createI18n({
-  locale: 'fr', // Langue par défaut
+  locale: 'fr',
   messages
 });
 
