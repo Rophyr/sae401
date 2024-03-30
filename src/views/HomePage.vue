@@ -85,5 +85,5 @@ const playGame = () => {
 </script>
 
 <style>
-/* Ajoutez votre style ici */
+
 </style>

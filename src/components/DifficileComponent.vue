@@ -49,7 +49,6 @@
     <button @click="goToMenu"  class="btn btn--green">Accueil</button>
   </div>
 </template>
-
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import jsonDataEn from '../../public/data/objectDescription.json';
@@ -173,6 +172,11 @@ function getCardImagePath(rowIndex, cardIndex) {
   return "/images/difficile/back.svg";
 }
 function getBackImagePath(rowIndex, cardIndex) {
+  let rowCount = 0; // Initialisation du compteur pour les lignes
+  let columnCount = 0; // Initialisation du compteur pour les colonnes
+  
+  console.log('Début de la fonction getBackImagePath'); // Ajout d'un console.log pour indiquer le début de la fonction
+
   const types = [
     { image: "/images/difficile/arrosoir.svg", count: 0 },
     { image: "/images/difficile/balais.svg", count: 0 },
@@ -190,15 +194,30 @@ function getBackImagePath(rowIndex, cardIndex) {
     { image: "/images/difficile/solaire.svg", count: 0 },
     { image: "/images/difficile/tomate.svg", count: 0}
   ];
+
   for (let i = 0; i < grid.value.length; i++) {
+    rowCount++; // Incrémenter le compteur à chaque itération de la boucle des lignes pour debug
     for (let j = 0; j < grid.value[i].length; j++) {
-      const backImagePath = grid.value[i][j].backImagePath;
-      const index = types.findIndex(type => type.image === backImagePath);
-      if (index !== -1) {
-        types[index].count++;
-      }
+        columnCount++; // Incrémenter le compteur à chaque itération de la boucle des colonnes pour debug
+        const backImagePath = grid.value[i][j].backImagePath;
+        const index = types.findIndex(type => type.image === backImagePath);
+        if (index !== -1) {
+            types[index].count++;
+        }
+        if (columnCount > 2) {
+            break; // Arrêter la boucle si columnCount dépasse 2
+        }
     }
-  }
+    // Réinitialiser columnCount pour la prochaine itération de la boucle externe
+    columnCount = 0;
+    if (rowCount > 2) {
+        break; // Arrêter la boucle externe si rowCount dépasse 2
+    }
+}
+
+
+  console.log('Nombre d\'itérations de la boucle des lignes :', rowCount);
+  console.log('Nombre d\'itérations de la boucle des colonnes :', columnCount);
 
   let selectedType = null;
   do {
@@ -256,6 +275,8 @@ function getBackImagePath(rowIndex, cardIndex) {
       numTomate++;
       break;
   }
+
+  console.log('Fin de la fonction getBackImagePath'); // Ajout d'un console.log pour indiquer la fin de la fonction
 
   return selectedType.image;
 }
