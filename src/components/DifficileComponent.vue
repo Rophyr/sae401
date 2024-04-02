@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="jeux jeux--moyen">
+  <div id="app" class="jeux jeux--difficile">
     <div class="container container__difficile">
       <div class="container__left">
         <div  class="explain explain--difficile">
@@ -12,7 +12,7 @@
             <button class="no-btn"><img draggable="false" src="/images/son_rouge.svg" alt="icon allumer le son"></button>
           </div>
         </div>
-        <router-link to="/" class="btn btn--moyen btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
+        <router-link to="/" class="btn btn--difficile btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>
       <div class="container__middle">
         <div id="jeu" class="grid game">
@@ -141,7 +141,7 @@ function flipCard(rowIndex, cardIndex) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
         winCount++;
-        if (winCount === 15) {
+        if (winCount === 30) {
           setTimeout(() => {
             grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
             card.isFlipped = false;
