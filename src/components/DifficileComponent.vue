@@ -39,7 +39,7 @@
       </div>
     </div>
   </div>
-  <div id="victory" class="rouge">
+  <div id="victory" class="rouge" v-show="winCount === 15">
     <p id="vic-text" class="rouge-p">Bravo !</p>
     <div class="separation"></div>
     <p>
@@ -112,19 +112,16 @@ const gameTime = computed(() => {
 const rows = 5;
 const columns = 6;
 const totalCards = rows * columns;
-const numEachType = totalCards / 30;
+const numEachType = totalCards / 15;
 
-let winCount = 0;
+let winCount = ref(0);
 const grid = ref(Array.from({ length: rows }, () => Array.from({ length: columns }, () => ({
   isFlipped: false,
   backImagePath: ''
 }))));
 let flippedCard = null;
 
-
-
-let cardName = ''; // Ajout d'une variable pour stocker le nom de la carte
-let cardDescription = ''; // Ajout d'une variable pour stocker la description de la carte
+let cardDescription = '';
 
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
@@ -140,8 +137,8 @@ function flipCard(rowIndex, cardIndex) {
       if (card.backImagePath === prevBackImagePath) {
         grid.value[prevRowIndex][prevCardIndex].isFlipped = true;
         card.isFlipped = true;
-        winCount++;
-        if (winCount === 30) {
+        winCount.value++;
+        if (winCount.value === 15) {
           setTimeout(() => {
             grid.value[prevRowIndex][prevCardIndex].isFlipped = false;
             card.isFlipped = false;
@@ -171,54 +168,8 @@ function flipCard(rowIndex, cardIndex) {
 function getCardImagePath(rowIndex, cardIndex) {
   return "/images/difficile/back.svg";
 }
+
 function getBackImagePath(rowIndex, cardIndex) {
-  let rowCount = 0; // Initialisation du compteur pour les lignes
-  let columnCount = 0; // Initialisation du compteur pour les colonnes
-  
-  console.log('Début de la fonction getBackImagePath'); // Ajout d'un console.log pour indiquer le début de la fonction
-
-  const types = [
-    { image: "/images/difficile/arrosoir.svg", count: 0 },
-    { image: "/images/difficile/balais.svg", count: 0 },
-    { image: "/images/difficile/carotte.svg", count: 0 },
-    { image: "/images/difficile/courgette.svg", count: 0 },
-    { image: "/images/difficile/eolienne.svg", count: 0 },
-    { image: "/images/difficile/feuilles.svg", count: 0 },
-    { image: "/images/difficile/hydraulique.svg", count: 0 },
-    { image: "/images/difficile/geothermique.svg", count: 0 },
-    { image: "/images/difficile/laitue.svg", count: 0 },
-    { image: "/images/difficile/oeuf.svg", count: 0 },
-    { image: "/images/difficile/pelle.svg", count: 0 },
-    { image: "/images/difficile/rateau.svg", count: 0 },
-    { image: "/images/difficile/seau.svg", count: 0 },
-    { image: "/images/difficile/solaire.svg", count: 0 },
-    { image: "/images/difficile/tomate.svg", count: 0}
-  ];
-
-  for (let i = 0; i < grid.value.length; i++) {
-    rowCount++; // Incrémenter le compteur à chaque itération de la boucle des lignes pour debug
-    for (let j = 0; j < grid.value[i].length; j++) {
-        columnCount++; // Incrémenter le compteur à chaque itération de la boucle des colonnes pour debug
-        const backImagePath = grid.value[i][j].backImagePath;
-        const index = types.findIndex(type => type.image === backImagePath);
-        if (index !== -1) {
-            types[index].count++;
-        }
-        if (columnCount > 2) {
-            break; // Arrêter la boucle si columnCount dépasse 2
-        }
-    }
-    // Réinitialiser columnCount pour la prochaine itération de la boucle externe
-    columnCount = 0;
-    if (rowCount > 2) {
-        break; // Arrêter la boucle externe si rowCount dépasse 2
-    }
-}
-
-
-  console.log('Nombre d\'itérations de la boucle des lignes :', rowCount);
-  console.log('Nombre d\'itérations de la boucle des colonnes :', columnCount);
-
   let selectedType = null;
   do {
     const randomIndex = Math.floor(Math.random() * types.length);
@@ -228,58 +179,9 @@ function getBackImagePath(rowIndex, cardIndex) {
     }
   } while (!selectedType);
 
-  switch (selectedType.image) {
-    case "/arrosoir.svg":
-      numArrosoir++;
-      break;
-    case "/balais.svg":
-      numBalais++;
-      break;
-    case "/carotte.svg":
-      numCarotte++;
-      break;
-    case "/laitue.svg":
-      numLaitue++;
-      break;
-    case "/feuilles.svg":
-      numFeuilles++;
-      break;
-    case "/oeuf.svg":
-      numOeuf++;
-      break;
-    case "/courgette.svg":
-      numCourgette++;
-      break;
-    case "/eolienne.svg":
-      numEolienne++;
-      break;
-    case "/fourche.svg":
-      numFourche++;
-      break;
-    case "/seau.svg":
-      numSeau++;
-      break;
-    case "/hydraulique.svg":
-      numHydro++;
-      break;
-    case "/geothermique.svg":
-      numGeothermique++;
-      break;
-    case "/pelle.svg":
-      numPelle++;
-      break;
-    case "/solaire.svg":
-      numSolaire++;
-      break;
-    case "/tomate.svg":
-      numTomate++;
-      break;
-  }
-
-  console.log('Fin de la fonction getBackImagePath'); // Ajout d'un console.log pour indiquer la fin de la fonction
-
   return selectedType.image;
 }
+
 let numArrosoir = 0;
 let numBalais = 0;
 let numCarotte = 0;
@@ -296,11 +198,31 @@ let numPelle = 0;
 let numSolaire = 0;
 let numTomate = 0;
 
+// Initialisation des types d'images
+const types = [
+  { image: "/images/difficile/arrosoir.svg", count: 0 },
+  { image: "/images/difficile/balais.svg", count: 0 },
+  { image: "/images/difficile/carotte.svg", count: 0 },
+  { image: "/images/difficile/courgette.svg", count: 0 },
+  { image: "/images/difficile/eolienne.svg", count: 0 },
+  { image: "/images/difficile/feuilles.svg", count: 0 },
+  { image: "/images/difficile/hydraulique.svg", count: 0 },
+  { image: "/images/difficile/geothermique.svg", count: 0 },
+  { image: "/images/difficile/laitue.svg", count: 0 },
+  { image: "/images/difficile/oeuf.svg", count: 0 },
+  { image: "/images/difficile/pelle.svg", count: 0 },
+  { image: "/images/difficile/rateau.svg", count: 0 },
+  { image: "/images/difficile/seau.svg", count: 0 },
+  { image: "/images/difficile/solaire.svg", count: 0 },
+  { image: "/images/difficile/tomate.svg", count: 0}
+];
+
 for (let i = 0; i < grid.value.length; i++) {
   for (let j = 0; j < grid.value[i].length; j++) {
     grid.value[i][j].backImagePath = getBackImagePath(i, j);
   }
 }
+
 function getCardAlt(imagePath) {
   return "Carte " + imagePath.split('/').pop().split('.')[0];
 }
