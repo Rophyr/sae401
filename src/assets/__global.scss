@@ -54,6 +54,58 @@ body {
             // border: 1px solid red;
         }
 
+        .choix-langue {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            // border: 1px solid red;
+
+            width: 160px;
+            height: 100px;
+
+            .lang-icon{
+                height: 40px;
+            }
+
+            .level-switch {
+                display: flex;
+                width: 60px; /* Ajustez la largeur selon vos besoins */
+                height: 30px; /* Ajustez la hauteur selon vos besoins */
+                background-color: $light;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+            .language-switch {
+                position: absolute;
+                top: 35px;
+                left: 50px;
+                background-color: $light;
+                border: 3px solid $dark;
+
+                .switch {
+                width: 20px;
+                height: 20.5px;
+                background-color: $dark;
+                border: 3px solid $light;
+                border-radius: 50%;
+                transition: left 0.3s ease;
+
+                &-en {
+                    left: 0;
+                }
+
+                &-fr {
+                    left: 50%;
+                }
+                }
+            }
+            }
+
     &__right {
       @include container-left // display: flex;
         // flex-direction: column;

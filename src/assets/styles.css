@@ -41,9 +41,8 @@ body {
   justify-content: space-between;
   height: 100%;
   flex-direction: column-reverse;
-  /* Fin bouton langue */
 }
-.home .container__left .choix-langue {
+.home .container .choix-langue {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -54,10 +53,10 @@ body {
   width: 160px;
   height: 100px;
 }
-.home .container__left .choix-langue .lang-icon {
+.home .container .choix-langue .lang-icon {
   height: 40px;
 }
-.home .container__left .choix-langue .level-switch {
+.home .container .choix-langue .level-switch {
   display: flex;
   width: 60px; /* Ajustez la largeur selon vos besoins */
   height: 30px; /* Ajustez la hauteur selon vos besoins */
@@ -65,14 +64,14 @@ body {
   border-radius: 15px;
   cursor: pointer;
 }
-.home .container__left .choix-langue .language-switch {
+.home .container .choix-langue .language-switch {
   position: absolute;
   top: 35px;
   left: 50px;
   background-color: #F7FAF7;
   border: 3px solid #313131;
 }
-.home .container__left .choix-langue .language-switch .switch {
+.home .container .choix-langue .language-switch .switch {
   width: 20px;
   height: 20.5px;
   background-color: #313131;
@@ -80,10 +79,10 @@ body {
   border-radius: 50%;
   transition: left 0.3s ease;
 }
-.home .container__left .choix-langue .language-switch .switch-en {
+.home .container .choix-langue .language-switch .switch-en {
   left: 0;
 }
-.home .container__left .choix-langue .language-switch .switch-fr {
+.home .container .choix-langue .language-switch .switch-fr {
   left: 50%;
 }
 .home .container__right {
@@ -120,9 +119,7 @@ body {
   width: 10vw;
 }
 .home .container__middle .form-select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-repeat: no-repeat;
   background-size: 1em;
   background-position: 90% center;
@@ -279,26 +276,17 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  max-width: -moz-max-content;
   max-width: max-content;
   padding-left: 5vw;
 }
-.jeux .container__middle--difficile {
-  padding-left: 0;
-  margin-right: 10vw;
-}
 .jeux .container__middle .grid--moyen {
   transform: scale(0.9);
-}
-.jeux .container__middle .grid--difficile {
-  transform: scale(0.7);
 }
 .jeux .container__right {
   position: absolute;
   top: 10px;
   right: 10px;
   padding: 0 3%;
-  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -507,6 +495,39 @@ body {
   text-shadow: 0.05em 0.05em 0em #228AB9;
 }
 
+/* Bouton langue */
+.level-switch {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 60px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+  background-color: #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+
+.switch-en {
+  left: 0;
+}
+
+.switch-fr {
+  left: 50%;
+}
+
+/* Fin bouton langue */
 /* Bouton Son Grenouille */
 .no-btn {
   border: none;
@@ -685,9 +706,7 @@ body .at-bottom {
 }
 
 .title {
-  height: -moz-fit-content;
   height: fit-content;
-  width: -moz-max-content;
   width: max-content;
   text-align: center;
 }
@@ -724,7 +743,6 @@ a:visited {
 form {
   display: flex;
   flex-direction: column;
-  height: -moz-fit-content;
   height: fit-content;
   padding: 2.5em 2em;
   width: 30vw;
@@ -745,11 +763,6 @@ form .inputs input {
   border: none;
   border-radius: 8px;
   font-family: "Simply Rounded", sans-serif;
-}
-form .inputs ::-moz-placeholder {
-  display: flex;
-  color: #8CCF57;
-  font-size: 20px;
 }
 form .inputs ::placeholder {
   display: flex;
@@ -936,4 +949,6 @@ form .inputs ::placeholder {
 
 .rouge-p {
   color: #EC8670;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
