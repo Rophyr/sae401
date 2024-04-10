@@ -51,8 +51,8 @@
 </template>
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
-import jsonDataEn from '../../public/data/objectDescription.json';
-import jsonDataFr from '../../public/data/objectDescription_en.json';
+import jsonDataEn from '/public/data/objectDescription_en.json';
+import jsonDataFr from '/public/data/objectDescription_fr.json';
 
 const language = localStorage.getItem('lang');
 

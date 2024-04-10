@@ -1,0 +1,115 @@
+{
+  "text": [
+    {
+      "name": "froggy",
+      "description": "Bien joué, vous avez terminé la partie !"
+    },
+    {
+      "name": "rateau",
+      "description": "Le rateau est un outil de jardinage utilisé pour ratisser les feuilles mortes ou le gazon."
+    },
+    {
+      "name": "arrosoir",
+      "description": "L'arrosoir est un récipient muni d'une anse et d'un bec verseur, utilisé pour arroser les plantes."
+    },
+    {
+      "name": "elec",
+      "description": "L'électricité est une forme d'énergie résultant du mouvement des électrons."
+    },
+    {
+      "name": "rotten",
+      "description": "Un fruit pourri est un fruit qui a commencé à se décomposer et qui n'est plus comestible."
+    },
+    {
+      "name": "trash",
+      "description": "Les déchets sont des objets ou des substances dont on se débarrasse parce qu'ils ne sont plus utiles ou nécessaires."
+    },
+    {
+      "name": "velo",
+      "description": "Le vélo est un moyen de transport écologique et sain, propulsé par la force musculaire."
+    },
+    {
+      "name": "solaire",
+      "description": "L'énergie solaire est produite à partir de la lumière du soleil, captée par des panneaux solaires pour générer de l'électricité."
+    },
+    {
+      "name": "eolienne",
+      "description": "L'énergie éolienne est produite par la force du vent et captée par des éoliennes pour produire de l'électricité."
+    },
+    {
+      "name": "hydraulique",
+      "description": "L'énergie hydraulique est produite par la force de l'eau en mouvement, utilisée dans les barrages hydroélectriques pour produire de l'électricité."
+    },
+    {
+      "name": "biomasse",
+      "description": "La biomasse est une énergie produite à partir de la matière organique, telle que le bois, les déchets agricoles et les déchets urbains, transformée en combustible ou en biogaz."
+    },
+    {
+      "name": "geothermique",
+      "description": "L'énergie géothermique est produite par la chaleur de la Terre, exploitée à travers des centrales géothermiques pour produire de la chaleur ou de l'électricité."
+    },
+    {
+      "name": "secateur",
+      "description": "Les sécateurs sont des outils de jardinage utilisés pour tailler les branches plus petites, couper les tiges des plantes et enlever les fleurs fanées. Ils permettent une coupe nette et précise, favorisant ainsi la santé des plantes."
+    },
+    {
+      "name": "seau",
+      "description": "Un seau est un conteneur utile pour transporter de l'eau, collecter les déchets de jardin, stocker les outils et recueillir les récoltes."
+    },
+    {
+      "name": "fourche",
+      "description": "Une fourche est un outil à dents utilisé pour aérer le sol, briser les mottes et déraciner les mauvaises herbes dans le jardin."
+    },
+    {
+      "name": "balai",
+      "description": "Un balai à feuilles est un outil utilisé pour rassembler et nettoyer les feuilles mortes, les débris et autres détritus du jardin, facilitant ainsi le maintien d'un espace extérieur propre et ordonné."
+    },
+    {
+      "name": "compost",
+      "description": "Le compost est un mélange de matières organiques en décomposition, telles que des restes de nourriture, des feuilles mortes et du fumier, utilisé comme engrais naturel pour enrichir le sol du jardin."
+    },
+    {
+      "name": "eppluchures",
+      "description": "Les épluchures de fruits et légumes sont des déchets alimentaires pouvant être ajoutés au compost pour enrichir le sol en nutriments."
+    },
+    {
+      "name": "feuilles_mortes",
+      "description": "Les feuilles mortes sont une source de matière organique précieuse pour le compostage, fournissant des nutriments essentiels et favorisant la santé du sol dans le jardin."
+    },
+    {
+      "name": "papier",
+      "description": "Le papier, en particulier le papier non coloré, est une excellente source de matière carbonée pour le compost. Il peut être déchiqueté et ajouté au tas de compost pour favoriser la décomposition et améliorer la structure du sol."
+    },
+    {
+      "name": "branches",
+      "description": "Les branches et les petites coupes de taille sont des matériaux ligneux qui peuvent être compostés pour fournir de la structure et des nutriments au tas de compost. Ils se décomposent lentement et aident à aérer le tas."
+    },
+    {
+      "name": "laitue",
+      "description": "La laitue est une plante à feuilles vertes et croquantes souvent utilisée comme base pour les salades. Elle est riche en fibres, en vitamines et en minéraux, ce qui en fait un excellent ajout à un régime alimentaire équilibré."
+    },
+    {
+      "name": "basilic",
+      "description": "Le basilic est une plante avec de jolies feuilles vertes qui sentent très bon ! On l'utilise souvent pour faire de la sauce à la tomate ou pour parfumer nos plats préférés comme les pâtes ou la pizza. "
+    },
+    {
+      "name":  "tomate",
+      "description": "La tomate est un fruit rouge et juteux que l'on trouve dans les jardins. On peut la manger crue dans les salades ou cuite dans les sauces et les soupes."
+    },
+    {
+      "name": "fraisier",
+      "description": "Le fraisier est une plante qui donne de délicieuses fraises rouges et sucrées. On les mange telles quelles ou on peut les mettre dans les desserts comme les tartes ou les salades de fruits."
+    },
+    {
+      "name": "haricots",
+      "description": "Les haricots sont de longues plantes avec de jolies fleurs et des gousses vertes. À l'intérieur des gousses, on trouve de petites graines que l'on peut manger après les avoir fait cuire."
+    },
+    {
+      "name": "potiron",
+      "description": "Le potiron est un gros légume rond et orange qui pousse dans les jardins en automne. On peut en faire de délicieuses soupes ou des tartes pour se réchauffer quand il fait froid dehors !"
+    }
+
+  ]
+}
+
+  
