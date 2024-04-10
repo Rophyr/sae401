@@ -124,13 +124,15 @@ select {
   text-decoration: underline;
 }
 .logo-bg-white {
-  height: 5vw;
-  width: 5vw;
+  height: 75px;
+  width: 75px;
   border-radius: 100%;
-  min-height: 75px;
-  min-width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   img {
-    height: 100%;
+    width: 100%;
   }
 }
 body {
