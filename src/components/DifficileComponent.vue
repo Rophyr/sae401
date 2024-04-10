@@ -14,8 +14,8 @@
         </div>
         <router-link to="/" class="btn btn--difficile btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>
-      <div class="container__middle">
-        <div id="jeu" class="grid game">
+      <div class="container__middle container__middle--difficile">
+        <div id="jeu" class="grid grid--difficile game">
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
               <div class="card" :class="{ active: card.isFlipped }">

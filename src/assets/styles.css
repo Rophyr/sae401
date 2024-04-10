@@ -280,8 +280,15 @@ body {
   max-width: max-content;
   padding-left: 5vw;
 }
+.jeux .container__middle--difficile {
+  padding-left: 0;
+  margin-right: 10vw;
+}
 .jeux .container__middle .grid--moyen {
   transform: scale(0.9);
+}
+.jeux .container__middle .grid--difficile {
+  transform: scale(0.7);
 }
 .jeux .container__right {
   position: absolute;

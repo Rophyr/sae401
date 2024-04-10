@@ -140,6 +140,8 @@ body{
             // border: 1px solid green;
 
 
+
+
             &__buttons {
                 display: flex;
                 flex-direction: column;
@@ -174,6 +176,9 @@ body{
                     box-shadow: 0 4px 0 0 $dark-green;
                 }
             }
+
+
+            
         }
     }
 }
@@ -320,11 +325,15 @@ body{
                     background-color: $light-light-yellow;
                     border-color: $dark-yellow;
                     color: $dark-yellow;
+
+                
                 }
                 &--difficile{
                     background-color: $light-light-red;
                     border-color: $dark-red;
                     color: $dark-red;
+
+                    
                 }
                 .FroggyDesc{
                     font-family: 'Sobiscuit', sans-serif;
@@ -349,7 +358,16 @@ body{
             max-width: max-content;
             padding-left: 5vw;
         
+
+
             // border: 1px solid blue;
+
+
+
+            &--difficile{
+                padding-left: 0;
+                margin-right: 10vw;
+            }
 
             .grid{
 
@@ -357,6 +375,10 @@ body{
 
                 &--moyen{
                     transform: scale(0.9);
+                }
+
+                &--difficile{
+                    transform: scale(0.7);
                 }
 
 
