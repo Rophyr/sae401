@@ -339,7 +339,7 @@ body {
 }
 
 #victory {
-  display: flex;
+  display: none;
   padding: 50px;
   position: absolute;
   top: 50%;
