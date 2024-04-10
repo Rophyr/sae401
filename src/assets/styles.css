@@ -73,17 +73,18 @@ body {
 }
 .home .container .choix-langue .language-switch .switch {
   width: 20px;
-  height: 20.5px;
+  height: 21px;
   background-color: #313131;
-  border: 3px solid #F7FAF7;
+  border: 1px solid #F7FAF7;
   border-radius: 50%;
   transition: left 0.3s ease;
+  margin-top: 1px;
 }
 .home .container .choix-langue .language-switch .switch-en {
-  left: 0;
+  left: 5%;
 }
 .home .container .choix-langue .language-switch .switch-fr {
-  left: 50%;
+  left: 55%;
 }
 .home .container__right {
   display: flex;
