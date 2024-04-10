@@ -85,7 +85,7 @@
       "name": "pelle",
       "description": "La pelle est utile pour creuser des trous, pour transplanter des plantes et pour manipuler des matériaux comme le compost ou le terreau.",
       "sound": "../pelle_fr.mp3"
-    }
+    },
     {
       "name": "carotte",
       "description": "Une carotte est un légume qui pousse sous terre. Les carottes sont riches en vitamines et en fibres, ce qui les rend bonnes pour la santé.",
