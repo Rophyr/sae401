@@ -74,6 +74,21 @@
       "name": "oeuf",
       "description": "L'œuf est un aliment polyvalent, produit par certaines espèces d'oiseaux et de reptiles. Riche en protéines, vitamines et minéraux, il peut être consommé de diverses manières : bouilli, poché, frit ou utilisé comme ingrédient dans de nombreux plats.",
       "sound": "../sounds/oeuf_fr.mp3"
+    },
+    {
+      "name": "courgette",
+      "description": "La courgette est un légume vert en forme de bâtonnet. On peut la manger crue dans les salades ou cuite dans les plats comme la ratatouille ou les gratins.",
+      "sound": "../sounds/courgette_fr.mp3"
+    },
+    {
+      "name": "pelle",
+      "description": "La pelle est utile pour creuser des trous, pour transplanter des plantes et pour manipuler des matériaux comme le compost ou le terreau.",
+      "sound": "../pelle_fr.mp3"
+    }
+    {
+      "name": "carotte",
+      "description": "Une carotte est un légume qui pousse sous terre. Les carottes sont riches en vitamines et en fibres, ce qui les rend bonnes pour la santé.",
+      "sound": "../pelle_fr.mp3"
     }
   ]
 }
