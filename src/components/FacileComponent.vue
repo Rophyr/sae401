@@ -9,7 +9,7 @@
           <p class="description">{{ cardDescription }}</p>
           <div class="row">
               <img src="/images/grenouille lunettes.svg" alt="icon grenouille lunette">
-              <button class="no-btn"><img src="/images/son_vert.svg" alt="icon allumer le son"></button>
+              <button  @click="playSound()" class="no-btn"><img src="/images/son_vert.svg" alt="icon allumer le son"></button>
           </div>
         </div>
         <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
@@ -56,13 +56,18 @@ import jsonDataEn from '../../public/data/objectDescription_en.json';
 import jsonDataFr from '../../public/data/objectDescription_fr.json';
 
 const language = localStorage.getItem('lang');
+let langAudio = '';
+let cardSound = '';
 
 let jsonData;
 
 if (language === 'fr') {
   jsonData = jsonDataFr;
+  langAudio = '_fr.mp3';
+
 } else {
   jsonData = jsonDataEn;
+  langAudio = '_en.mp3';
 }
 
 const word = { cardName: name };
@@ -126,6 +131,10 @@ let flippedCard = null;
 let cardName = ''; // Ajout d'une variable pour stocker le nom de la carte
 let cardDescription = ''; // Ajout d'une variable pour stocker la description de la carte
 
+
+
+
+
 function flipCard(rowIndex, cardIndex) {
   const card = grid.value[rowIndex][cardIndex];
   if (!card.isFlipped) {
@@ -155,6 +164,7 @@ function flipCard(rowIndex, cardIndex) {
         if (matchingCard) {
           cardName = matchingCard.name;
           cardDescription = matchingCard.description;
+          cardSound = matchingCard.name;
         } else {
         }
       } else {
@@ -233,5 +243,15 @@ for (let i = 0; i < grid.value.length; i++) {
 }
 function getCardAlt(imagePath) {
   return "Carte " + imagePath.split('/').pop().split('.')[0];
+}
+
+function playSound(){
+  console.log("A appuyer sur le bouton pour le son")
+  console.log(cardSound);
+  console.log("Card sound:", cardSound); // Affiche le son de la carte
+  let audio = new Audio("../../public/sounds/" + cardSound + langAudio);
+  audio.play();
+
+  
 }
 </script>
