@@ -39,9 +39,9 @@
       </div>
     </div>
   </div>
-  <div id="victory" class="vert">
+  <div id="victory" class="victory victory--green">
     <p id="vic-text" class="light-vert-p">Bravo !</p>
-    <div class="separation"></div>
+    <!-- <div class="separation separation--green"></div> -->
     <p>
       Tu as mis {{ gameTime }} pour réaliser le niveau facile.
     </p>
@@ -128,8 +128,8 @@ let flippedCard = null;
 
 
 
-let cardName = ''; // Ajout d'une variable pour stocker le nom de la carte
-let cardDescription = ''; // Ajout d'une variable pour stocker la description de la carte
+let cardName = ''; 
+let cardDescription = ''; 
 
 
 

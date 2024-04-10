@@ -120,9 +120,7 @@ body {
   width: 10vw;
 }
 .home .container__middle .form-select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-repeat: no-repeat;
   background-size: 1em;
   background-position: 90% center;
@@ -279,19 +277,28 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  max-width: -moz-max-content;
   max-width: max-content;
   padding-left: 5vw;
 }
+.jeux .container__middle--moyen {
+  padding: 0;
+  margin-right: 10vw;
+}
+.jeux .container__middle--difficile {
+  padding: 0;
+  margin-right: 10vw;
+}
 .jeux .container__middle .grid--moyen {
   transform: scale(0.9);
+}
+.jeux .container__middle .grid--difficile {
+  transform: scale(0.7);
 }
 .jeux .container__right {
   position: absolute;
   top: 10px;
   right: 10px;
   padding: 0 3%;
-  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -315,14 +322,29 @@ body {
   color: #D3715B;
 }
 
+.victory--green {
+  background-color: #DBFFD5;
+  border: 10px solid #4C8B25;
+  color: #4C8B25;
+}
+.victory--orange {
+  background-color: #fff0d2;
+  border: 10px solid #E2A340;
+  color: #E2A340;
+}
+.victory--red {
+  background-color: #ffe8e3;
+  border: 10px solid #D3715B;
+  color: #D3715B;
+}
+
 #victory {
-  display: none;
+  display: flex;
   padding: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
   border-radius: 25px;
   justify-content: center;
   align-items: center;
@@ -334,6 +356,9 @@ body {
   text-align: center;
   margin: 0;
 }
+#victory .light-vert-p {
+  color: #4C8B25;
+}
 #victory .separation {
   position: relative;
   margin-bottom: 5px;
@@ -341,6 +366,9 @@ body {
   width: 224px;
   border-radius: 100px;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2509803922);
+}
+#victory .separation--green {
+  background-color: #4C8B25;
 }
 #victory p {
   margin-bottom: 30px;
@@ -633,6 +661,14 @@ a .btn:visited {
   color: #F7FAF7;
   transition: box-shadow 0.1s ease-out;
 }
+.btn--green--yellow {
+  background-color: #FBB03A;
+  box-shadow: inset -0.1875rem -0.1875rem #E2A340;
+}
+.btn--green--red {
+  background-color: #EC8670;
+  box-shadow: inset -0.1875rem -0.1875rem #D3715B;
+}
 .btn--green:hover, .btn--green:focus {
   transition: box-shadow 0.1s ease-in;
   transform: translate(0, 0.025em);
@@ -712,9 +748,7 @@ body .at-bottom {
 }
 
 .title {
-  height: -moz-fit-content;
   height: fit-content;
-  width: -moz-max-content;
   width: max-content;
   text-align: center;
 }
@@ -751,7 +785,6 @@ a:visited {
 form {
   display: flex;
   flex-direction: column;
-  height: -moz-fit-content;
   height: fit-content;
   padding: 2.5em 2em;
   width: 30vw;
@@ -772,11 +805,6 @@ form .inputs input {
   border: none;
   border-radius: 8px;
   font-family: "Simply Rounded", sans-serif;
-}
-form .inputs ::-moz-placeholder {
-  display: flex;
-  color: #8CCF57;
-  font-size: 20px;
 }
 form .inputs ::placeholder {
   display: flex;
@@ -963,4 +991,6 @@ form .inputs ::placeholder {
 
 .rouge-p {
   color: #EC8670;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

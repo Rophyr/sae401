@@ -39,14 +39,14 @@
       </div>
     </div>
   </div>
-  <div id="victory" class="rouge" v-show="winCount === 15">
+  <div id="victory" class="victory victory--red rouge">
     <p id="vic-text" class="rouge-p">Bravo !</p>
-    <div class="separation"></div>
+    <!-- <div class="separation"></div> -->
     <p>
       Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
     </p>
     <button class="btn btn--difficile" aria-label="recommencer une partie">Nouvelle partie</button>
-    <button @click="goToMenu"  class="btn btn--green">Accueil</button>
+    <button @click="goToMenu"  class="btn btn--green--red">Accueil</button>
   </div>
 </template>
 <script setup>

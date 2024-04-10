@@ -14,8 +14,8 @@
         </div>
         <router-link to="/" class="btn btn--moyen btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
       </div>
-      <div class="container__middle">
-        <div id="jeu" class="grid game">
+      <div class="container__middle container__middle--moyen">
+        <div id="jeu" class="grid grid--moyen game">
           <div class="row" v-for="(row, rowIndex) in grid" :key="rowIndex">
             <div class="container" v-for="(card, cardIndex) in row" :key="cardIndex" @click="flipCard(rowIndex, cardIndex)">
               <div class="card" :class="{ active: card.isFlipped }">
@@ -39,14 +39,14 @@
       </div>
     </div>
   </div>
-  <div id="victory" class="orange">
+  <div id="victory" class="victory victory--orange orange">
     <p id="vic-text" class="dark-orange-p">Bravo !</p>
-    <div class="separation"></div>
+    <!-- <div class="separation"></div> -->
     <p>
       Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
     </p>
     <button class="btn btn--moyen" aria-label="recommencer une partie">Nouvelle partie</button>
-    <button @click="goToMenu"  class="btn btn--green">Accueil</button>
+    <button @click="goToMenu"  class="btn btn--green--yellow">Accueil</button>
   </div>
 </template>
 

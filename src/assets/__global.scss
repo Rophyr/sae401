@@ -328,6 +328,19 @@ body {
             align-items: center;          
             max-width: max-content;
             padding-left: 5vw;
+
+            &--moyen{
+              padding: 0;
+              margin-right: 10vw;
+
+              
+            }
+
+            &--difficile{
+              padding: 0;
+              margin-right: 10vw;
+            }
+
         
             // border: 1px solid blue;
 
@@ -337,6 +350,11 @@ body {
 
                 &--moyen{
                     transform: scale(0.9);
+
+                }
+
+                &--difficile{
+                  transform: scale(0.7);
                 }
 
 
@@ -387,14 +405,38 @@ body {
   }
   // $lighterDark: lighten($dark, 30%);
 }
+
+.victory{
+  
+
+  &--green{
+    background-color: $light-light-green;
+    border: 10px solid $dark-green;
+    color: $dark-green;
+  } 
+
+  &--orange{
+    background-color: $light-light-yellow;
+    border: 10px solid $dark-yellow;
+    color: $dark-yellow;
+  }
+
+  &--red{
+    background-color: $light-light-red;
+    border: 10px solid $dark-red;
+    color: $dark-red;
+  }
+}
+
+
 #victory {
-  display: none;
+  display: flex;
   padding: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  // background-color: white;
   border-radius: 25px;
   justify-content: center;
   align-items: center;
@@ -405,6 +447,11 @@ body {
     text-align: center;
     margin: 0;
   }
+
+  .light-vert-p{
+
+    color: $dark-green;
+  }
   .separation {
     position: relative;
     margin-bottom: 5px;
@@ -412,6 +459,10 @@ body {
     width: 224px;
     border-radius: 100px;
     box-shadow: 2px 2px #00000040;
+
+    &--green{
+      background-color: $dark-green;
+    }
   }
   p {
     margin-bottom: 30px;
