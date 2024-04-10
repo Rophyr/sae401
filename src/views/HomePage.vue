@@ -2,8 +2,8 @@
   <div id="app" class="home">
     <div class="container container--home">
       <div class="container__left">
-        <router-link to="classement" class="btn btn--green btn--round"><img src="/images/Classement.svg" aria-label="aller au classement"></router-link>
-        <ToggleLanguage />
+          <router-link to="classement" class="btn btn--green btn--round"><img src="/images/Classement.svg" aria-label="aller au classement"></router-link>
+          <ToggleLanguage />
       </div>
       <div class="container__middle">
         <div class="ensemble-logo">
@@ -11,6 +11,7 @@
           <img src="/public/images/logo-froggy.svg" draggable="false" alt="Logo texte" class="logo-froggy">
         </div>
         <div class="container__middle__buttons">
+
           <div class="btn btn--green btn--select" @click="toggleDropdown" aria-label="selectionner la difficulté">
             {{ selectedDifficultyLabel }}
             <div v-if="isDropdownOpen" class="dropdown">

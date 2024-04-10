@@ -123,7 +123,7 @@
 
                 </div>
 
-                <router-link to="/mentions-legales" class="at-bottom"><p class="underline">Mentions Légales</p></router-link>
+                <router-link to="/mentions-legales" class="at-bottom"><p class="underline">{{ $t("home.mentionsLegales") }}</p></router-link>
 
             </div>
 

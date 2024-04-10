@@ -32,9 +32,9 @@ body{
 
     // border: 1px solid red;
 
-    .language-switch{
-        display: flex;
-    }
+    // .language-switch{
+    //     display: flex;
+    // }
 
     .container {
         @include container-row;
@@ -55,6 +55,61 @@ body{
 
 
             // border: 1px solid red;
+
+                            
+                .choix-langue {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                // border: 1px solid red;
+
+                width: 160px;
+                height: 100px;
+
+                .lang-icon{
+                    height: 40px;
+                }
+
+                .level-switch {
+                    display: flex;
+                    width: 60px; /* Ajustez la largeur selon vos besoins */
+                    height: 30px; /* Ajustez la hauteur selon vos besoins */
+                    background-color: $light;
+                    border-radius: 15px;
+                    cursor: pointer;
+                }
+
+                .language-switch {
+                    position: absolute;
+                    top: 35px;
+                    left: 50px;
+                    background-color: $light;
+                    border: 3px solid $dark;
+
+                    .switch {
+                    width: 20px;
+                    height: 20.5px;
+                    background-color: $dark;
+                    border: 3px solid $light;
+                    border-radius: 50%;
+                    transition: left 0.3s ease;
+
+                    &-en {
+                        left: 0;
+                    }
+
+                    &-fr {
+                        left: 50%;
+                    }
+                    }
+                }
+                }
+
+            /* Fin bouton langue */
         }
 
         &__right {
@@ -566,41 +621,7 @@ body{
     }
 }
 
-/* Bouton langue */
 
-
-.level-switch {
-    display: flex;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 60px; /* Ajustez la largeur selon vos besoins */
-    height: 30px; /* Ajustez la hauteur selon vos besoins */
-    background-color: #ccc;
-    border-radius: 15px;
-    cursor: pointer;
-  }
-  
-  .switch {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: left 0.3s ease;
-  }
-  
-  .switch-en {
-    left: 0;
-  }
-  
-  .switch-fr {
-    left: 50%;
-  }
-
-/* Fin bouton langue */
 
 /* Bouton Son Grenouille */
 

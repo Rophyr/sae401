@@ -26,9 +26,6 @@ body {
   overflow: hidden;
   width: 100vw;
 }
-.home .language-switch {
-  display: flex;
-}
 .home .container {
   display: flex;
   flex-direction: row;
@@ -44,6 +41,50 @@ body {
   justify-content: space-between;
   height: 100%;
   flex-direction: column-reverse;
+  /* Fin bouton langue */
+}
+.home .container__left .choix-langue {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+  height: 100px;
+}
+.home .container__left .choix-langue .lang-icon {
+  height: 40px;
+}
+.home .container__left .choix-langue .level-switch {
+  display: flex;
+  width: 60px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+  background-color: #F7FAF7;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.home .container__left .choix-langue .language-switch {
+  position: absolute;
+  top: 35px;
+  left: 50px;
+  background-color: #F7FAF7;
+  border: 3px solid #313131;
+}
+.home .container__left .choix-langue .language-switch .switch {
+  width: 20px;
+  height: 20.5px;
+  background-color: #313131;
+  border: 3px solid #F7FAF7;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+.home .container__left .choix-langue .language-switch .switch-en {
+  left: 0;
+}
+.home .container__left .choix-langue .language-switch .switch-fr {
+  left: 50%;
 }
 .home .container__right {
   display: flex;
@@ -440,39 +481,6 @@ body {
   text-shadow: 0.05em 0.05em 0em #228AB9;
 }
 
-/* Bouton langue */
-.level-switch {
-  display: flex;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 60px; /* Ajustez la largeur selon vos besoins */
-  height: 30px; /* Ajustez la hauteur selon vos besoins */
-  background-color: #ccc;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.switch {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: left 0.3s ease;
-}
-
-.switch-en {
-  left: 0;
-}
-
-.switch-fr {
-  left: 50%;
-}
-
-/* Fin bouton langue */
 /* Bouton Son Grenouille */
 .no-btn {
   border: none;
