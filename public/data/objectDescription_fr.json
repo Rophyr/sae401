@@ -2,7 +2,8 @@
   "text": [
     {
       "name": "froggy",
-      "description": "Bien joué, vous avez terminé la partie !"
+      "description": "Bien joué, vous avez terminé la partie !",
+      "sound": "froggy_fr.mp3"
     },
     {
       "name": "rateau",
