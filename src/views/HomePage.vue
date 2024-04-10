@@ -25,7 +25,7 @@
         <router-link to="/mentions-legales" class="at-bottom"><p class="underline">{{ $t("home.mentionsLegales") }}</p></router-link>
       </div>
       <div class="container__right">
-        <router-link to="/profil" class="btn btn--green btn--round btn--round--col"><img src="/images/Profil.svg" aria-label="voir le profil"></router-link>
+        <router-link to="/login" class="btn btn--green btn--round btn--round--col"><img src="/images/Profil.svg" aria-label="voir le profil"></router-link>
         <router-link to="/regles" class="btn btn--green btn--round"><img src="/images/Rules.svg" aria-label="règles"></router-link>
       </div>
     </div>

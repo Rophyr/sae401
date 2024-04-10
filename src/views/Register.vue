@@ -27,6 +27,7 @@
               <input v-model="confirmPassword" type="password" :placeholder="$t('login.confirmPasswordPlaceholder')" required>
             </div>
             <button type="submit" class="btn btn--dark-green">{{ $t('login.submitButton') }}</button>
+            <router-link to="/login">Se connecter</router-link>
           </form>
 
         </div>

@@ -26,8 +26,8 @@
               <input v-model="password" type="password" :placeholder="$t('login.passwordPlaceholder')" required>
             </div>
             <button type="submit" class="btn btn--dark-green">{{ $t('login.submitButton') }}</button>
+            <router-link to="/register">S'inscrire</router-link>
           </form>
-
         </div>
         
       </div>
