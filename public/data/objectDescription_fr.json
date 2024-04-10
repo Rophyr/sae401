@@ -24,6 +24,7 @@
       "name": "eolienne",
       "description": "L'énergie éolienne est produite par la force du vent et captée par des éoliennes pour produire de l'électricité.",
       "sound": "../sounds/eolienne_fr.mp3"
+      
     },
     {
       "name": "hydraulique",
