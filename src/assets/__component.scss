@@ -1,252 +1,232 @@
 @import '__variable.scss';
 
-a .btn{
+a .btn {
+  color: $light;
+  &:visited {
     color: $light;
-    &:visited{
-        color: $light;
-        text-decoration: none;
-    }
+    text-decoration: none;
+  }
 }
 .btn {
-    padding: 2% 2%;
-    font-family: 'simply rounded', sans-serif;
-    font-size: 1.5em;
-    color: $light;
-    background-color: $light;
-    border: none;
-    border-radius: 10px;
-    width: auto;
+  padding: 2% 2%;
+  font-family: 'simply rounded', sans-serif;
+  font-size: 1.5em;
+  color: $light;
+  background-color: $light;
+  border: none;
+  border-radius: 10px;
+  width: auto;
+  box-shadow: inset 0px 2px 0px 1px $dark;
+  &:hover,
+  &:focus {
+    transition: box-shadow 0.1s ease-in;
+    transform: translate(0, 0.025em);
+    box-shadow: inset 0.125em 0.125em $dark-green;
+    background-color: darker($light-green);
+  }
+  &:hover {
+    transform: translate(0, 0.025em);
     box-shadow: inset 0px 2px 0px 1px $dark;
-    &:hover, &:focus {
-        transition: box-shadow 0.1s ease-in;
-        transform: translate(0, 0.025em);
-        box-shadow: inset 0.125em 0.125em $dark-green;
-        background-color: darker($light-green);
+    cursor: pointer;
+  }
+  &--facile {
+    background-color: $light-green;
+    box-shadow: inset -0.1875rem -0.1875rem $dark-green;
+    &:hover,
+    &:focus {
+      box-shadow: inset 0.125em 0.125em $dark-green;
     }
-    &:hover {
-        transform: translate(0, 0.025em);
-        box-shadow: inset 0px 2px 0px 1px $dark;
-        cursor: pointer;
+  }
+  &--moyen {
+    background-color: $light-yellow;
+    box-shadow: inset -0.1875rem -0.1875rem $dark-yellow;
+    &:hover,
+    &:focus {
+      box-shadow: inset 0.125em 0.125em $dark-yellow;
     }
-    &--facile {
-        background-color: $light-green;
-        box-shadow: inset -0.1875rem -0.1875rem $dark-green;
-        &:hover, &:focus {
-            box-shadow: inset 0.125em 0.125em $dark-green;
-        }
+  }
+  &--difficile {
+    background-color: $light-red;
+    box-shadow: inset -0.1875rem -0.1875rem $dark-red;
+    &:hover,
+    &:focus {
+      box-shadow: inset 0.125em 0.125em $dark-red;
     }
-    &--moyen{
-        background-color: $light-yellow;
-        box-shadow: inset -0.1875rem -0.1875rem $dark-yellow;
-        &:hover,&:focus{
-            box-shadow: inset 0.125em 0.125em $dark-yellow;
-        }
-    }
-    &--difficile{
-        background-color: $light-red;
-        box-shadow: inset -0.1875rem -0.1875rem $dark-red;
-        &:hover,&:focus{
-            box-shadow: inset 0.125em 0.125em $dark-red;
-        }
-    }
-    &--green{
-        background-color: $light-green;
-        box-shadow: inset -0.1875rem -0.1875rem $dark-green;
-        border: none;
-        color: $light;
-        transition: box-shadow 0.1s ease-out;
+  }
+  &--green {
+    background-color: $light-green;
+    box-shadow: inset -0.1875rem -0.1875rem $dark-green;
+    border: none;
+    color: $light;
+    transition: box-shadow 0.1s ease-out;
 
-        &:hover,&:focus{
-            transition: box-shadow 0.1s ease-in;
-            transform: translate(0, 0.025em);
-            box-shadow: inset 0.125em 0.125em $dark-green;
-            background-color: darker($light-green);
-        }
-        i{
-            font-size: 0.8em;
-        }
+    &:hover,
+    &:focus {
+      transition: box-shadow 0.1s ease-in;
+      transform: translate(0, 0.025em);
+      box-shadow: inset 0.125em 0.125em $dark-green;
+      background-color: darker($light-green);
     }
-    &--blue{
-        background-color: $light-blue;
-        box-shadow: inset -0.1875rem -0.1875rem $dark-blue;
-        border: none;
-        color: $light;
-        transition: box-shadow 0.1s ease-out;
-        &:hover,&:focus{
-            transition: box-shadow 0.1s ease-in;
-            transform: translate(0, 0.025em);
-            box-shadow: inset 0.125em 0.125em $dark-blue;
-            background-color: darker($light-blue);
-        }
-        i{
-            font-size: 0.8em;
-        }
+    i {
+      font-size: 0.8em;
     }
-    &--dark-green{
-        background-color: $dark-green;
-        box-shadow: 0em 0.13em 0em 0em $mid-green;
-        border: none;
-        color: $light;
-        i{
-            font-size: 0.8em;
-        }
+  }
+  &--blue {
+    background-color: $light-blue;
+    box-shadow: inset -0.1875rem -0.1875rem $dark-blue;
+    border: none;
+    color: $light;
+    transition: box-shadow 0.1s ease-out;
+    &:hover,
+    &:focus {
+      transition: box-shadow 0.1s ease-in;
+      transform: translate(0, 0.025em);
+      box-shadow: inset 0.125em 0.125em $dark-blue;
+      background-color: darker($light-blue);
     }
-    &--round{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 5vw;
-        width: 5vw;
-        border-radius: 100%;
-        min-height: 75px;
-        min-width: 75px;
-        img{
-            max-width: 40px;
-        }
+    i {
+      font-size: 0.8em;
     }
-    &--select{
-        // padding: 0.2em 2em;
-        text-align: center;
-        // border: 1px solid red;
-        width: 100%;
+  }
+  &--dark-green {
+    background-color: $dark-green;
+    box-shadow: 0em 0.13em 0em 0em $mid-green;
+    border: none;
+    color: $light;
+    i {
+      font-size: 0.8em;
     }
-    
-
-    
-
-
-
-}
-select{
-    // border: 1px solid red;
-}
-.underline{
-    text-decoration: underline
-}
-.logo-bg-white{
+  }
+  &--round {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    height: 100px;
-    width: 100px;
+    height: 5vw;
+    width: 5vw;
     border-radius: 100%;
-    background-color: $light;
-    box-shadow: 0.12rem 0.12rem #00000068;
-    z-index: 1;
-    img{
-        height: 100px;
+    min-height: 75px;
+    min-width: 75px;
+    img {
+      max-width: 40px;
     }
-}
-body{
-    position: relative;
-    .at-bottom{
-        position: absolute;
-        left: 50%;
-        bottom: 5px;
-        transform: translateX(-50%);
-    }
-}
-.title{
-    height: fit-content;              
-    width: max-content;
+  }
+  &--select {
+    // padding: 0.2em 2em;
     text-align: center;
-    // border: 1px solid green;
+    // border: 1px solid red;
+    width: 100%;
+  }
+}
+select {
+  // border: 1px solid red;
+}
+.underline {
+  text-decoration: underline;
+}
+.logo-bg-white {
+  height: 5vw;
+  width: 5vw;
+  border-radius: 100%;
+  min-height: 75px;
+  min-width: 75px;
+  img {
+    height: 100%;
+  }
+}
+body {
+  position: relative;
+  .at-bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+  }
+}
+.title {
+  height: fit-content;
+  width: max-content;
+  text-align: center;
+  // border: 1px solid green;
 
-    h1{
-        font-size: 3em;
-        font-family: 'sobiscuit', sans-serif;
-        color: $light-green;
-        text-shadow: 0.05em 0.05em 0em $dark-green;
+  h1 {
+    font-size: 3em;
+    font-family: 'sobiscuit', sans-serif;
+    color: $light-green;
+    text-shadow: 0.05em 0.05em 0em $dark-green;
 
-        margin: 0 20px;
+    margin: 0 20px;
+  }
+
+  .green-bar {
+    display: flex;
+    background-color: $dark-green;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+
+    height: 10px;
+    width: 100%;
+    margin-top: 10px;
+
+    &--blue {
+      background-color: $dark-blue;
+      color: $light-blue;
     }
-    
-
-
-    .green-bar{
-        display: flex;
-        background-color: $dark-green;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 5px;
-
-        height: 10px;
-        width: 100%;
-        margin-top: 10px;
-
-        &--blue{
-            background-color: $dark-blue;
-            color: $light-blue;
-        }
-        
-    }
-
-
-    
+  }
 }
 
-.color-black{
-    color: $dark;
+.color-black {
+  color: $dark;
 }
 
-a:visited{
-    color: $dark;
+a:visited {
+  color: $dark;
 }
-
 
 // Formulaire //
 
-form{
+form {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 2.5em 2em;
+  width: 30vw;
+
+  background-color: $light-green;
+  color: $light-green;
+  border-radius: 15px;
+
+  gap: 30px;
+
+  .inputs {
     display: flex;
     flex-direction: column;
-    height: fit-content;
-    padding: 2.5em 2em;
-    width: 30vw;
+    gap: 20px;
 
-    background-color: $light-green;
-    color: $light-green;
-    border-radius: 15px;
+    input {
+      // height: 30px;
+      width: 94%;
+      // height: 50px;
+      background-color: $light;
+      padding: 2% 3%;
+      border: none;
+      border-radius: 8px;
 
-    gap: 30px;
-
-    .inputs{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        input{
-            // height: 30px;
-            width: 94%;
-            // height: 50px;
-            background-color: $light;
-            padding: 2% 3%;
-            border: none;
-            border-radius: 8px;
-            
-            font-family: 'Simply Rounded', sans-serif;
-    
-    
-            
-        }
-    
-        ::placeholder{
-            display: flex;
-            color: $light-green;
-            font-size: 20px;
-            // margin: 0 30px 0 0;
-            // border: 1px solid red;
-            // align-items: center;
-            
-            
-        }
+      font-family: 'Simply Rounded', sans-serif;
     }
+
+    ::placeholder {
+      display: flex;
+      color: $light-green;
+      font-size: 20px;
+      // margin: 0 30px 0 0;
+      // border: 1px solid red;
+      // align-items: center;
+    }
+  }
 }
 
-
 // Fin Formulaire //
-
 
 // Tableau //
 
@@ -268,11 +248,9 @@ form{
 //         color: $light-green;
 //         border-radius: 15px;
 //         font-size: 2em;
-//         border: 1px solid $light-green; 
+//         border: 1px solid $light-green;
 //         max-width: 100%;
 //         max-height: 100%;
-
-
 
 //         border: 3px solid black;
 //         z-index: 2;
@@ -283,33 +261,29 @@ form{
 //                 min-height: 40px;
 //             }
 //           }
-    
+
 //         th{
-           
+
 //             margin: 0 2% 0.5% 2%;
 //             padding: 0 1.5em 0.5em 1.5em;
 //             text-align: center;
 //             font-family: 'Sobiscuit';
 //             font-weight: 300;
-          
+
 //             color: $light;
-        
 
 //         //   border: 1px solid red;
 //         }
-    
+
 //         td{
 //             padding: 0% 0% 1.5% 0%;
-//             // border-bottom: 1px solid $light-green; 
+//             // border-bottom: 1px solid $light-green;
 //             font-family: 'Simply Rounded';
 //             color: $light;
-
-           
 
 //         //   border: 1px solid blue;
 //         }
 
-        
 //         thead th {
 
 //             position: sticky;
@@ -326,16 +300,16 @@ form{
 //         // background-color: $light-green;
 //         table{
 //             background-color: $light-green;
-//             border: 1px solid $light-green; 
+//             border: 1px solid $light-green;
 //             color: $light-green;
 //         }
-        
+
 //         th{
 //             text-shadow: 0.05em 0.05em 0em $dark-green;
 //         }
 
 //         td{
-//             // border-bottom: 1px solid $light-green; 
+//             // border-bottom: 1px solid $light-green;
 //         }
 //     }
 
@@ -343,110 +317,100 @@ form{
 //         // background-color: $light-blue;
 //         table{
 //             background-color: $light-blue;
-//             border: 1px solid $light-blue; 
+//             border: 1px solid $light-blue;
 //             color: $light-blue;
 //         }
-        
+
 //         th{
 //             text-shadow: 0.05em 0.05em 0em $dark-blue;
 //         }
 
 //         td{
-//             // border-bottom: 1px solid $light-blue; 
+//             // border-bottom: 1px solid $light-blue;
 //         }
-//     }   
+//     }
 // }
 
-.tableau{
-    overflow-x: auto;
-    max-width: 100%;
-    max-height: 40vh;
-    color: $light;
-    padding: 0 40px 10px 40px ;
-    // border: 1px solid red;
-    border-radius: 20px;
-    // background-color: $light-blue;
+.tableau {
+  overflow-x: auto;
+  max-width: 100%;
+  max-height: 40vh;
+  color: $light;
+  padding: 0 40px 10px 40px;
+  // border: 1px solid red;
+  border-radius: 20px;
+  // background-color: $light-blue;
 
-  
-    table{
+  table {
     max-width: 100%;
     max-height: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    
+
     // text-align: center;
-  
-        thead {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-        // background-color: $light-blue;
-        font-size: 1.5em;
-        height: 53px;
-        padding: 50px 0 0 0;
 
-        // border: 1px solid white;
-        }
-    
-        th, td {
-        padding: 10px 20px;
-        text-align: left;
-        border: 1px solid transparent;
-        text-align: center;
-        font-size: 1.2em;
-        }
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      // background-color: $light-blue;
+      font-size: 1.5em;
+      height: 53px;
+      padding: 50px 0 0 0;
 
+      // border: 1px solid white;
     }
 
-    &--green{
+    th,
+    td {
+      padding: 10px 20px;
+      text-align: left;
+      border: 1px solid transparent;
+      text-align: center;
+      font-size: 1.2em;
+    }
+  }
+
+  &--green {
+    background-color: $light-green;
+    table {
+      background-color: $light-green;
+      border: 1px solid $light-green;
+      // color: $light-green;
+
+      thead {
         background-color: $light-green;
-        table{
-            background-color: $light-green;
-            border: 1px solid $light-green; 
-            // color: $light-green;
-
-            thead{
-                background-color: $light-green;
-                font-size: 1.5em;
-                th{
-                    text-shadow: 0.05em 0.05em 0em $dark-green;
-                }
-            }
+        font-size: 1.5em;
+        th {
+          text-shadow: 0.05em 0.05em 0em $dark-green;
         }
-        
-        
+      }
     }
+  }
 
-    &--blue{
+  &--blue {
+    background-color: $light-blue;
+
+    table {
+      background-color: $light-blue;
+      border: 1px solid $light-blue;
+      // color: $light-blue;
+
+      thead {
         background-color: $light-blue;
 
-        table{
-            background-color: $light-blue;
-            border: 1px solid $light-blue; 
-            // color: $light-blue;
-
-            thead{
-                background-color: $light-blue;
-
-                th{
-                    text-shadow: 0.05em 0.05em 0em $dark-blue;
-                }
-            }
+        th {
+          text-shadow: 0.05em 0.05em 0em $dark-blue;
         }
-        
-       
-    }  
-
-
+      }
+    }
   }
-  
+}
 
 // Fin Tableau //
 
-
-
 // css jeu //
-        
+
 // body {
 //     overflow: hidden;
 //     /* background-image: url("/homepagebg.png"); */
@@ -472,140 +436,136 @@ form{
 // }
 
 .grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  }
 
+  .container {
+    margin: 5px;
+    perspective: 1000px;
+  }
 
-    .row {
-        display: flex;
-    }
+  .card {
+    margin: 10px;
+    width: 10.417vw;
+    height: 10.417vw;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
 
-    .container {
-        margin: 5px;
-        perspective: 1000px;
-    }
+    // filter: drop-shadow(4px 4px 0px $lighterDark);
+  }
 
-    .card {
-        margin: 10px;
-        width: 10.417vw;
-        height: 10.417vw;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 0.3s;
+  .card:hover {
+    transform: scale(1.05);
+    // filter: drop-shadow(8px 8px 0px $lighterDark);
+    cursor: pointer;
+  }
 
-        // filter: drop-shadow(4px 4px 0px $lighterDark);
-    }
+  .card.active {
+    transform: rotateY(180deg);
+  }
 
-    .card:hover {
-        transform: scale(1.05);
-        // filter: drop-shadow(8px 8px 0px $lighterDark);
-        cursor: pointer;
-    }
+  .card.active:hover {
+    transform: scale(1.05) rotateY(180deg);
+  }
 
-    .card.active {
-        transform: rotateY(180deg);
-    }
+  .front,
+  .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
 
-    .card.active:hover {
-        transform: scale(1.05) rotateY(180deg);
-    }
+  .front {
+    transform: rotateY(0deg);
+  }
 
-    .front,
-    .back {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        backface-visibility: hidden;
-    }
+  .back {
+    transform: rotateY(180deg);
+  }
 
-    .front {
-        transform: rotateY(0deg);
-    }
+  img {
+    width: 100%;
+    height: 100%;
+  }
 
-    .back {
-        transform: rotateY(180deg);
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .btn-menu {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-    }
+  .btn-menu {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
 }
-
 
 // fin css jeu //
 
 /* Styles pour la scrollbar */
 ::-webkit-scrollbar {
-    width: 15px;
-    margin: 0 ;
-    
+  width: 15px;
+  margin: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $shadow;
-    border-radius: 10px;
-    // border: 1px solid $light;
+  background: $shadow;
+  border-radius: 10px;
+  // border: 1px solid $light;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: $shadow-light;
+  background: $shadow-light;
 }
 
 ::-webkit-scrollbar-track {
-    background: $shadow-dark;
-    border-radius: 10px;
-    
+  background: $shadow-dark;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track:hover {
-    background: $shadow-dark;
+  background: $shadow-dark;
 }
 
 ::-webkit-scrollbar-corner {
-    background: transparent;
+  background: transparent;
 }
 
 // Couleurs
 
-.vert{
-    border: solid $light-green 10px;
-    .separation{
-        background-color: $light-green;
-    }
+.vert {
+  border: solid $light-green 10px;
+  .separation {
+    background-color: $light-green;
+  }
 }
-.dark-vert-p{
-    color: $dark-green;
+.dark-vert-p {
+  color: $dark-green;
 }
-.light-vert-p{
-    color: $light-green;
+.light-vert-p {
+  color: $light-green;
 }
-.orange{
-    border: solid $dark-yellow 10px;
-    .separation{
-        background-color: $light-yellow;
-    }
+.orange {
+  border: solid $dark-yellow 10px;
+  .separation {
+    background-color: $light-yellow;
+  }
 }
-.dark-orange-p{
-    color: $dark-yellow;
+.dark-orange-p {
+  color: $dark-yellow;
 }
-.orange-p{
-    color: $light-yellow;
+.orange-p {
+  color: $light-yellow;
 }
-.rouge{
-    border: solid $light-red 10px;
-    .separation{
-        background-color: $light-red;
-    }
+.rouge {
+  border: solid $light-red 10px;
+  .separation {
+    background-color: $light-red;
+  }
 }
-.rouge-p{
-    color: $light-red;
+.rouge-p {
+  color: $light-red;
 }
