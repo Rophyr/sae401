@@ -16,7 +16,7 @@
           <div class="green-bar"></div>
         </div>
 
-        <div class="tableau ">
+        <div class="tableau tableau--green">
           <table>
             <thead>
               <tr>
@@ -51,9 +51,9 @@
           </table>
         </div>
         <div class="niveau">
-          <button @click="themeGreen" class="btn btn--facile">{{ $t('home.facile') }}</button>
-          <button @click="themeYellow" class="btn btn--moyen">{{ $t('home.moyen') }}</button>
-          <button @click="themeRed" class="btn btn--difficile">{{ $t('home.difficile') }}</button>
+          <button @click="setTheme('green')" class="btn btn--facile">{{ $t('home.facile') }}</button>
+          <button @click="setTheme('yellow')" class="btn btn--moyen">{{ $t('home.moyen') }}</button>
+          <button @click="setTheme('red')" class="btn btn--difficile">{{ $t('home.difficile') }}</button>
         </div>
       </div>
     </div>
@@ -64,41 +64,19 @@
 <script>
 export default {
   methods: {
-    themeGreen() {
-      console.log('themeGreen');
+    setTheme(theme) {
+      console.log(`Setting theme to ${theme}`);
       const classement = document.querySelector('.classement');
-      const tableau = document.querySelector('.tableau');
-      if (classement.classList.contains('classement--yellow')) {
-        classement.classList.remove('classement--yellow');
-      } else if (classement.classList.contains('classement--red')) {
-        classement.classList.remove('classement--red');
-      }
-      classement.classList.add('classement--green');
-      tableau.classList.add('tableau--green'); // Ajout de la classe tableau--green
-    },
-
-    themeYellow() {
-      console.log('themeYellow');
-      const classement = document.querySelector('.classement');
-      if (classement.classList.contains('classement--green')) {
-        classement.classList.remove('classement--green');
-      } else if (classement.classList.contains('classement--red')) {
-        classement.classList.remove('classement--red');
-      }
-      classement.classList.add('classement--yellow');
-    },
-    themeRed() {
-      console.log('themeRed');
-      const classement = document.querySelector('.classement');
-      if (classement.classList.contains('classement--green')) {
-        classement.classList.remove('classement--green');
-      } else if (classement.classList.contains('classement--yellow')) {
-        classement.classList.remove('classement--yellow');
-      }
-      classement.classList.add('classement--red');
+      ['green', 'yellow', 'red'].forEach(color => {
+        if (theme !== color && classement.classList.contains(`classement--${color}`)) {
+          classement.classList.remove(`classement--${color}`);
+        }
+      });
+      classement.classList.add(`classement--${theme}`);
     }
   }
 };
+
 </script>
 
 
