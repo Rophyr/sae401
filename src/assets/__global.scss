@@ -490,6 +490,104 @@ body {
   // background-repeat: no-repeat;
   overflow: hidden;
 
+  &--green{
+    background-image: url('/public/images/bg-classement.svg');
+
+
+  }
+
+  &--yellow{
+    background-image: url('/public/images/bg-classement-yellow.svg');
+    color: $light-light-yellow;
+    
+    .title{
+      
+      h1{
+        color: $light-yellow;
+        text-shadow: 0.05em 0.05em 0em $dark-yellow;
+      }
+
+      .green-bar{ //rendre la bar jaune
+        background-color: $dark-yellow;
+      }
+    }
+
+    .btn--green{ //rendre le bouton jaune
+      background-color: $light-yellow;
+      box-shadow: inset -0.1875rem -0.1875rem $dark-yellow;
+
+      &:hover, &:focus{
+        box-shadow: inset 0.125em 0.125em $dark-yellow;
+        background-color: darker($light-yellow);
+      }
+
+    }
+
+    .tableau{
+      background-color: $light-yellow;
+
+      table {
+        background-color: $light-yellow;
+        border: 1px solid $light-yellow;
+        // color: $light-blue;
+
+        thead {
+          background-color: $light-yellow;
+
+          th {
+            text-shadow: 0.05em 0.05em 0em $dark-yellow;
+          }
+        }
+      }
+    }
+  }
+
+  &--red{
+    background-image: url('/public/images/bg-classement-red.svg');
+    color: $light-light-red;
+    
+    .title{
+      
+      h1{
+        color: $light-red;
+        text-shadow: 0.05em 0.05em 0em $dark-red;
+      }
+
+      .green-bar{ //rendre la bar jaune
+        background-color: $dark-red;
+      }
+    }
+
+    .btn--green{ //rendre le bouton jaune
+      background-color: $light-red;
+      box-shadow: inset -0.1875rem -0.1875rem $dark-red;
+
+      &:hover, &:focus{
+        box-shadow: inset 0.125em 0.125em $dark-red;
+        background-color: darker($light-red);
+      }
+
+    }
+
+    .tableau{
+      background-color: $light-red;
+
+      table {
+        background-color: $light-red;
+        border: 1px solid $light-red;
+        // color: $light-blue;
+
+        thead {
+          background-color: $light-red;
+
+          th {
+            text-shadow: 0.05em 0.05em 0em $dark-red;
+          }
+        }
+      }
+    }
+  }
+
   .container {
     // border: 1px solid green;
 
@@ -497,6 +595,8 @@ body {
     flex-direction: row;
     height: 95%;
     width: 97%;
+
+
 
     &__left {
       @include container-left;

@@ -1,10 +1,6 @@
-<script>
-import '../assets/styles.css'
-</script>
-
 <template>
   <div class="classement">
-    <div class="container container__classement">
+    <div class="container container__classement"> 
       <div class="container__left">
         <div class="logo-bg-white">
           <img src="/public/images/logo-glasses-2.svg" alt="logo" />
@@ -20,7 +16,7 @@ import '../assets/styles.css'
           <div class="green-bar"></div>
         </div>
 
-        <div class="tableau tableau--green">
+        <div class="tableau ">
           <table>
             <thead>
               <tr>
@@ -55,14 +51,56 @@ import '../assets/styles.css'
           </table>
         </div>
         <div class="niveau">
-          <button class="btn btn--facile">{{ $t('home.facile') }}</button>
-          <button class="btn btn--moyen">{{ $t('home.moyen') }}</button>
-          <button class="btn btn--difficile">{{ $t('home.difficile') }}</button>
+          <button @click="themeGreen" class="btn btn--facile">{{ $t('home.facile') }}</button>
+          <button @click="themeYellow" class="btn btn--moyen">{{ $t('home.moyen') }}</button>
+          <button @click="themeRed" class="btn btn--difficile">{{ $t('home.difficile') }}</button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+
+<script>
+export default {
+  methods: {
+    themeGreen() {
+      console.log('themeGreen');
+      const classement = document.querySelector('.classement');
+      const tableau = document.querySelector('.tableau');
+      if (classement.classList.contains('classement--yellow')) {
+        classement.classList.remove('classement--yellow');
+      } else if (classement.classList.contains('classement--red')) {
+        classement.classList.remove('classement--red');
+      }
+      classement.classList.add('classement--green');
+      tableau.classList.add('tableau--green'); // Ajout de la classe tableau--green
+    },
+
+    themeYellow() {
+      console.log('themeYellow');
+      const classement = document.querySelector('.classement');
+      if (classement.classList.contains('classement--green')) {
+        classement.classList.remove('classement--green');
+      } else if (classement.classList.contains('classement--red')) {
+        classement.classList.remove('classement--red');
+      }
+      classement.classList.add('classement--yellow');
+    },
+    themeRed() {
+      console.log('themeRed');
+      const classement = document.querySelector('.classement');
+      if (classement.classList.contains('classement--green')) {
+        classement.classList.remove('classement--green');
+      } else if (classement.classList.contains('classement--yellow')) {
+        classement.classList.remove('classement--yellow');
+      }
+      classement.classList.add('classement--red');
+    }
+  }
+};
+</script>
+
 
 <style lang="scss">
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
