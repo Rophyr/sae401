@@ -611,18 +611,16 @@ body {
 .switch {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 50%;
   height: 100%;
   background-color: #fff;
   border-radius: 50%;
   transition: left 0.3s ease;
 }
-
 .switch-en {
   left: 0;
 }
-
 .switch-fr {
   left: 50%;
 }

@@ -32,7 +32,11 @@
         <div>
           <div class="container__right">
             <div class="timer">
-              <p class="dark-vert-p"> {{ displayTime }}</p>
+              <p class="dark-vert-p display-timer"> {{ displayTime }}</p>
+              
+              <button @click="displayTimer()" class="no-btn">stop</button> <!-- ici -->
+
+              
             </div>
           </div>
         </div>
@@ -42,7 +46,7 @@
   <div id="victory" class="victory victory--green">
     <p id="vic-text" class="light-vert-p">Bravo !</p>
     <!-- <div class="separation separation--green"></div> -->
-    <p>
+    <p id="display-time-victory">
       Tu as mis {{ gameTime }} pour réaliser le niveau facile.
     </p>
     <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
@@ -98,6 +102,8 @@ onMounted(() => {
 onBeforeUnmount(() => {
   stopTimer();
 });
+
+
 
 const displayTime = computed(() => {
   return `${minutes.value < 10 ? '0' + minutes.value : minutes.value}:${secondes.value < 10 ? '0' + secondes.value : secondes.value}`;
@@ -254,4 +260,20 @@ function playSound(){
 
   
 }
+
+
+// Arreter de display le timer
+
+function displayTimer() {
+  clearInterval(horloge.value);
+  const timerElement = document.getElementsByClassName('display-timer')[0];
+  timerElement.style.display = "none";
+  const displayTimeVictory = document.getElementById('display-time-victory');
+  displayTimeVictory.style.display = "none";
+}
+
+
+// Fin arreter de display le timer
+
+
 </script>
