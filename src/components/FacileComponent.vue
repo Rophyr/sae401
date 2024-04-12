@@ -32,11 +32,8 @@
         <div>
           <div class="container__right">
             <div class="timer">
-              <p class="dark-vert-p display-timer"> {{ displayTime }}</p>
-              
-              <button @click="displayTimer()" class="no-btn">stop</button> <!-- ici -->
-
-              
+              <p class="dark-vert-p display-timer"> {{ displayTime }} </p>
+              <button @click="displayTimer()" class="no-btn no-btn--sound"><img src="/public/images/no-btn-sound.svg" alt=""></button> <!-- ici -->
             </div>
           </div>
         </div>
@@ -44,7 +41,7 @@
     </div>
   </div>
   <div id="victory" class="victory victory--green">
-    <p id="vic-text" class="light-vert-p">Bravo !</p>
+    <p id="vic-text" class="light-vert-p">Bravo !</p> <br>
     <!-- <div class="separation separation--green"></div> -->
     <p id="display-time-victory">
       Tu as mis {{ gameTime }} pour réaliser le niveau facile.
@@ -266,14 +263,17 @@ function playSound(){
 
 function displayTimer() {
   clearInterval(horloge.value);
-  const timerElement = document.getElementsByClassName('display-timer')[0];
+  const timerElement = document.getElementsByClassName('timer')[0];
   timerElement.style.display = "none";
   const displayTimeVictory = document.getElementById('display-time-victory');
   displayTimeVictory.style.display = "none";
 }
 
-
 // Fin arreter de display le timer
+
+function goToMenu(){
+  location.href = "/";
+}
 
 
 </script>

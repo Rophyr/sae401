@@ -83,6 +83,16 @@ const playGame = () => {
       router.push('/facile');
   }
 };
+
+const language = localStorage.getItem('lang');
+if (language === 'fr') {
+  
+
+} else {
+  
+}
+
+
 </script>
 
 <style>

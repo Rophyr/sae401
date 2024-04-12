@@ -631,6 +631,10 @@ body {
   border: none;
   background: none;
 }
+.no-btn--sound img {
+  height: 20px;
+  margin: 5px;
+}
 
 .dropdown {
   position: absolute;

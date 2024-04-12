@@ -108,7 +108,7 @@ body {
             }
 
     &__right {
-      @include container-left // display: flex;
+      @include container-left; // display: flex;
         // flex-direction: column;
         // align-items: flex-end;
         // justify-content: end;
@@ -116,7 +116,13 @@ body {
         // justify-content: space-between;
         // // padding: 1% 3%;
         // // border: 1px solid red;
-;
+
+        
+
+
+      
+
+
     }
 
     &__middle {
@@ -786,6 +792,16 @@ body {
 .no-btn {
   border: none;
   background: none;
+
+  &--sound{
+    img{
+      height: 20px;
+      margin: 5px;
+
+      // border: 1px solid red;
+    }
+    
+  }
 }
 
 // select
