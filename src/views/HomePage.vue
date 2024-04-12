@@ -57,6 +57,8 @@ const selectDifficulty = (difficulty) => {
 
 import { createI18n } from 'vue-i18n';
 
+
+
 const i18n = createI18n({
   legacy: false,
   locale: localStorage.getItem('lang') || 'fr', // Récupérer la langue à partir du stockage local, ou définir par défaut sur le français ('fr')

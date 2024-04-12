@@ -1,10 +1,10 @@
 <template>
   <div class="choix-langue">
-    <img src="/public/images/en-icon.png" alt="icon choix langue anglais" class="lang-icon">
+    <img src="/public/images/fr-icon.png" alt="icon choix langue anglais" class="lang-icon">
     <button @click="toggleLanguage" class="language-switch">
     <div class="switch" :class="{ 'switch-en': currentLanguage === 'en', 'switch-fr': currentLanguage === 'fr' }"></div>
     </button>
-    <img src="/public/images/fr-icon.png" alt="icon choix langue français" class="lang-icon">
+    <img src="/public/images/en-icon.png" alt="icon choix langue français" class="lang-icon">
   </div>
 
 </template>
@@ -19,43 +19,17 @@ export default {
   methods: {
     toggleLanguage() {
       const newLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
+      
       this.currentLanguage = newLanguage;
       localStorage.setItem('lang', newLanguage); // Stocker la nouvelle langue sélectionnée dans le stockage local
       this.$i18n.locale = newLanguage; // Mettre à jour la langue dans l'instance de VueI18n
+      
     }
   }
 };
 </script>
   
   <style scoped>
-  .language-switch {
-    position: relative;
-    top: 20px;
-    left: 20px;
-    width: 60px;
-    height: 30px;
-    background-color: #ccc;
-    border-radius: 15px;
-    cursor: pointer;
-  }
   
-  .switch {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: left 0.3s ease;
-  }
-  
-  .switch-en {
-    left: 0;
-  }
-  
-  .switch-fr {
-    left: 50%;
-  }
   </style>
   
