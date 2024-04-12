@@ -4,7 +4,7 @@
     <button @click="toggleLanguage" class="language-switch">
     <div class="switch" :class="{ 'switch-en': currentLanguage === 'en', 'switch-fr': currentLanguage === 'fr' }"></div>
     </button>
-    <img src="/public/images/fr-icon.png" alt="icon choix langue anglais" class="lang-icon">
+    <img src="/public/images/fr-icon.png" alt="icon choix langue français" class="lang-icon">
   </div>
 
 </template>
@@ -13,12 +13,12 @@
 export default {
   data() {
     return {
-      currentLanguage: localStorage.getItem('lang') || 'en' // Récupérer la langue actuellement sélectionnée depuis le stockage local
+      currentLanguage: localStorage.getItem('lang') || 'fr' // Récupérer la langue actuellement sélectionnée depuis le stockage local
     };
   },
   methods: {
     toggleLanguage() {
-      const newLanguage = this.currentLanguage === 'en' ? 'fr' : 'en';
+      const newLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
       this.currentLanguage = newLanguage;
       localStorage.setItem('lang', newLanguage); // Stocker la nouvelle langue sélectionnée dans le stockage local
       this.$i18n.locale = newLanguage; // Mettre à jour la langue dans l'instance de VueI18n
@@ -42,7 +42,7 @@ export default {
   .switch {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 50%;
     height: 100%;
     background-color: #fff;

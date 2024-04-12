@@ -15,7 +15,7 @@
           <div class="btn btn--green btn--select" @click="toggleDropdown" aria-label="selectionner la difficulté">
             {{ selectedDifficultyLabel }}
             <div v-if="isDropdownOpen" class="dropdown">
-              <div class="option" @click="selectDifficulty('facile')">{{$t('home.facile')}}</div>
+              <div class="option" @click="selectDifficulty('facile')">{{$t('home.facile')}}</div> 
               <div class="option" @click="selectDifficulty('moyen')">{{$t('home.moyen')}}</div>
               <div class="option" @click="selectDifficulty('difficile')">{{$t('home.difficile')}}</div>
             </div>
@@ -31,6 +31,7 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import ToggleLanguage from '../components/ToggleLanguage.vue';
 import { ref } from 'vue';
@@ -48,24 +49,41 @@ const toggleDropdown = () => {
 const selectDifficulty = (difficulty) => {
   selectedDifficulty.value = difficulty;
   isDropdownOpen.value = false;
+
+  // Mettre à jour le libellé de la difficulté sélectionnée
   updateSelectedDifficultyLabel(difficulty);
 };
 
-const updateSelectedDifficultyLabel = (difficulty) => {
-  switch (difficulty) {
-    case 'facile':
-      selectedDifficultyLabel.value = 'Facile';
-      break;
-    case 'moyen':
-      selectedDifficultyLabel.value = 'Moyen';
-      break;
-    case 'difficile':
-      selectedDifficultyLabel.value = 'Difficile';
-      break;
-    default:
-      selectedDifficultyLabel.value = 'Facile';
+
+import { createI18n } from 'vue-i18n';
+
+const i18n = createI18n({
+  legacy: false,
+  locale: localStorage.getItem('lang') || 'fr', // Récupérer la langue à partir du stockage local, ou définir par défaut sur le français ('fr')
+  messages: {
+    en: {
+      easy: 'Easy',
+      medium: 'Medium',
+      hard: 'Hard'
+    },
+    fr: {
+      easy: 'Facile',
+      medium: 'Moyen',
+      hard: 'Difficile'
+    }
   }
+});
+
+// Au moment du changement de langue
+const changeLanguage = (newLang) => {
+  i18n.global.locale = newLang;
+  localStorage.setItem('lang', newLang); // Mettre à jour la langue dans le localStorage
+  updateSelectedDifficultyLabel(selectedDifficulty.value); // Mettre à jour le libellé de la difficulté sélectionnée
 };
+
+// Au démarrage de l'application
+const initialLang = localStorage.getItem('lang') || 'fr'; // Récupérer la langue à partir du localStorage
+i18n.global.locale = initialLang; // Définir la langue dans l'instance de i18n
 
 const playGame = () => {
   const selected = selectedDifficulty.value;
@@ -84,17 +102,26 @@ const playGame = () => {
   }
 };
 
-const language = localStorage.getItem('lang');
-if (language === 'fr') {
-  
+const updateSelectedDifficultyLabel = (difficulty) => {
+  const translations = {
+    fr: {
+      facile: 'Facile',
+      moyen: 'Moyen',
+      difficile: 'Difficile'
+    },
+    en: {
+      facile: 'Easy',
+      moyen: 'Medium',
+      difficile: 'Hard'
+    }
+  };
 
-} else {
-  
-}
-
+  const lang = i18n.global.locale;
+  selectedDifficultyLabel.value = translations[lang][difficulty] || translations['en'][difficulty];
+};
 
 </script>
 
 <style>
-
+/* Vos styles CSS ici */
 </style>
