@@ -13,12 +13,12 @@ body {
   cursor: url("/public/images/tete.svg"), auto;
 }
 
-a {
-  cursor: url("/public/images/main.svg"), pointer;
-}
-
 .logo {
   width: 30vw;
+}
+
+a {
+  cursor: url("/public/images/main.svg"), pointer;
 }
 
 .home {
@@ -67,7 +67,7 @@ a {
   height: 30px; /* Ajustez la hauteur selon vos besoins */
   background-color: #F7FAF7;
   border-radius: 15px;
-  cursor: url("/public/images/main.svg"), pointer;
+  cursor: url("/public/images/main.svg"), auto;
 }
 .home .container .choix-langue .language-switch {
   position: relative;
@@ -76,7 +76,7 @@ a {
   background-color: #F7FAF7;
   border: 3px solid #313131;
   border-radius: 15px;
-  cursor: url("/public/images/main.svg"), pointer;
+  cursor: url("/public/images/main.svg"), auto;
 }
 .home .container .choix-langue .language-switch .switch {
   width: 20px;
@@ -612,7 +612,7 @@ a {
   height: 30px; /* Ajustez la hauteur selon vos besoins */
   background-color: #ccc;
   border-radius: 15px;
-  cursor: url("/public/images/main.svg"), pointer;
+  cursor: url("/public/images/main.svg"), auto;
 }
 
 .switch {
@@ -656,7 +656,7 @@ a {
 
 .option {
   padding: 8px 12px;
-  cursor: url("/public/images/main.svg"), pointer;
+  cursor: url("/public/images/main.svg"), auto;
 }
 
 .option:hover {

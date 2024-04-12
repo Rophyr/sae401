@@ -11,14 +11,16 @@ body {
   // width: 100%;
 }
 
-a{
-  cursor: url('/public/images/main.svg'), pointer;
-}
+
 
 // GLOBAL //
 
 .logo {
   width: 30vw;
+}
+
+a{
+  cursor: url('/public/images/main.svg'), pointer;
 }
 
 // FIN GLOBAL //
@@ -84,7 +86,7 @@ a{
               height: 30px; /* Ajustez la hauteur selon vos besoins */
               background-color: $light;
               border-radius: 15px;
-              cursor: url('/public/images/main.svg'), pointer;
+              cursor: url('/public/images/main.svg'), auto;
             }
 
             .language-switch {
@@ -96,7 +98,7 @@ a{
               background-color: $light; 
               border: 3px solid $dark; 
               border-radius: 15px;
-              cursor: url('/public/images/main.svg'), pointer;
+              cursor: url('/public/images/main.svg'), auto;
           
               .switch {
                 width: 20px;
@@ -774,7 +776,7 @@ a{
     height: 30px; /* Ajustez la hauteur selon vos besoins */
     background-color: #ccc;
     border-radius: 15px;
-    cursor: url('/public/images/main.svg'), pointer;
+    cursor: url('/public/images/main.svg'), auto;
   }
   
   .switch {
@@ -833,7 +835,7 @@ a{
 
 .option {
   padding: 8px 12px;
-  cursor: url('/public/images/main.svg'), pointer;
+  cursor: url('/public/images/main.svg'), auto;
 }
 
 .option:hover {
