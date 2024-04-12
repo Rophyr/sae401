@@ -27,7 +27,7 @@ a .btn {
   &:hover {
     transform: translate(0, 0.025em);
     box-shadow: inset 0px 2px 0px 1px $dark;
-    cursor: pointer;
+    cursor: url('/public/images/main.svg'), auto;
   }
   &--facile {
     background-color: $light-green;
@@ -488,7 +488,7 @@ form {
   .card:hover {
     transform: scale(1.05);
     // filter: drop-shadow(8px 8px 0px $lighterDark);
-    cursor: pointer;
+    cursor: url('/public/images/main.svg'), auto;
   }
 
   .card.active {

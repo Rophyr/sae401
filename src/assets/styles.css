@@ -707,7 +707,7 @@ a .btn:visited {
 .btn:hover {
   transform: translate(0, 0.025em);
   box-shadow: inset 0px 2px 0px 1px #313131;
-  cursor: pointer;
+  cursor: url("/public/images/main.svg"), auto;
 }
 .btn--facile {
   background-color: #8CCF57;
@@ -978,7 +978,7 @@ form .inputs ::placeholder {
 }
 .grid .card:hover {
   transform: scale(1.05);
-  cursor: pointer;
+  cursor: url("/public/images/main.svg"), auto;
 }
 .grid .card.active {
   transform: rotateY(180deg);
