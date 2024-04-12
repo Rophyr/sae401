@@ -71,6 +71,10 @@
       "name":  "tomate",
       "description": "The tomato is a red and juicy fruit found in gardens. It can be eaten raw in salads or cooked in sauces and soups.",
       "sound": "../sounds/tomate_en.mp3"
+    },
+    {
+      "name": "courgette",
+      "description": "The zucchini is a green vegetable shaped like a stick. You can eat it raw in salads or cooked in dishes like ratatouille or gratins."
     }
   ]
 }

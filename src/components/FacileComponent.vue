@@ -248,15 +248,29 @@ function getCardAlt(imagePath) {
   return "Carte " + imagePath.split('/').pop().split('.')[0];
 }
 
-function playSound(){
-  console.log("A appuyer sur le bouton pour le son")
-  console.log(cardSound);
-  console.log("Card sound:", cardSound); // Affiche le son de la carte
-  let audio = new Audio("../../public/sounds/" + cardSound + langAudio);
-  audio.play();
+// Audio pour les cartes
 
-  
+let audio = null; // Définir la variable audio en dehors de la fonction
+
+function playSound() {
+  console.log("A appuyer sur le bouton pour le son");
+  console.log(cardSound);
+  console.log("Card sound:", cardSound); // Afficher le son de la carte
+
+  if (audio && !audio.paused) {
+    // Si l'audio est en cours de lecture, l'arrêter
+    audio.pause();
+    console.log("Audio stopped");
+  } else {
+    // Sinon, démarrer l'audio
+    audio = new Audio("../../public/sounds/" + cardSound + langAudio);
+    audio.play();
+    console.log("Audio started");
+  }
 }
+
+// Fin audio pour les cartes
+
 
 
 // Arreter de display le timer
