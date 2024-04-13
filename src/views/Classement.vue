@@ -60,8 +60,30 @@ onMounted(async () => {
 });
 
 const filteredClassementData = computed(() => {
-  return classementData.value.filter(data => data.difficulty === selectedDifficulty.value);
+  // Filtrer les données en fonction de la difficulté sélectionnée
+  const filteredData = classementData.value.filter(data => data.difficulty === selectedDifficulty.value);
+
+  // Trier les données en fonction du temps (du plus court au plus long)
+  filteredData.sort((a, b) => {
+    // Convertir les temps de chaînes de caractères en secondes pour la comparaison
+    const timeA = convertTimeStringToSeconds(a.time);
+    const timeB = convertTimeStringToSeconds(b.time);
+
+    return timeA - timeB;
+  });
+
+  return filteredData;
 });
+
+function convertTimeStringToSeconds(timeString) {
+  const parts = timeString.split(':');
+
+  const hours = parseInt(parts[0]) || 0;
+  const minutes = parseInt(parts[1]) || 0;
+  const seconds = parseInt(parts[2]) || 0;
+
+  return hours * 3600 + minutes * 60 + seconds;
+}
 
 function filterClassementData() {
   selectedDifficulty.value = 'easy'; // Réinitialiser la difficulté sélectionnée à "easy" par défaut
