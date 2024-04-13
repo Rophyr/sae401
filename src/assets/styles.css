@@ -641,7 +641,7 @@ a {
   background: none;
 }
 .no-btn:hover {
-  cursor: pointer;
+  cursor: url("/public/images/main.svg"), pointer;
 }
 .no-btn--timer img {
   height: 20px;
@@ -655,12 +655,30 @@ a {
   background-image: url("/public/images/son_vert.svg");
   background-size: cover;
 }
+.no-btn--sound--orange {
+  background-image: url("/public/images/son_orange.svg");
+}
+.no-btn--sound--red {
+  background-image: url("/public/images/son_rouge.svg");
+}
 .no-btn--sound--play {
   background-image: url("/public/images/son_vert.svg");
   background-size: cover;
 }
+.no-btn--sound--play--yellow {
+  background-image: url("/public/images/son_orange.svg");
+}
+.no-btn--sound--play--red {
+  background-image: url("/public/images/son_rouge.svg");
+}
 .no-btn--sound--pause {
   background-image: url("/public/images/no-son_vert.svg");
+}
+.no-btn--sound--pause--yellow {
+  background-image: url("/public/images/no-son_orange.svg");
+}
+.no-btn--sound--pause--red {
+  background-image: url("/public/images/no-son_rouge.svg");
 }
 
 .dropdown {

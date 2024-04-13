@@ -21,6 +21,8 @@ body {
 
 a{
   cursor: url('/public/images/main.svg'), pointer;
+
+
 }
 
 // FIN GLOBAL //
@@ -813,7 +815,7 @@ a{
   // border: 1px solid yellow;
 
   &:hover{
-    cursor: pointer;
+    cursor: url('/public/images/main.svg'), pointer;
   }
 
   &--timer{
@@ -837,6 +839,13 @@ a{
     background-image: url('/public/images/son_vert.svg');
     background-size: cover;
 
+    &--orange{
+      background-image: url('/public/images/son_orange.svg');
+    }
+
+    &--red{
+      background-image: url('/public/images/son_rouge.svg');
+    }
     // border: 1px solid black;
 
     &--play{
@@ -844,13 +853,27 @@ a{
       background-image: url('/public/images/son_vert.svg');
       background-size: cover;
       // border: 1px solid red;
+
+      &--yellow{
+        background-image: url('/public/images/son_orange.svg');
+      }
+
+      &--red{
+        background-image: url('/public/images/son_rouge.svg');
+      }
     }
 
     &--pause{
       // border: 1px solid green;
       background-image: url('/public/images/no-son_vert.svg');
-      // transform: scale(0.7);
-      // height
+
+      &--yellow{
+        background-image: url('/public/images/no-son_orange.svg');
+      }
+
+      &--red{
+        background-image: url('/public/images/no-son_rouge.svg');
+      }
     }
   }
 }

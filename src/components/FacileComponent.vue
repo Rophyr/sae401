@@ -97,7 +97,7 @@ if (language === 'fr') {
   langAudio = '_en.mp3';
 }
 
-const word = { cardName: name };
+const word = "FROGGY";
 const colors = ['#E2A340FF', '#D3715BFF', '#228AB9FF', '#4C8B25FF'];
 
 function getColorByIndex(index) {
@@ -306,7 +306,7 @@ function playSound() {
   }
 }
 
-
+//fin audio pour les cartes
 
 
 // Arreter de display le timer
