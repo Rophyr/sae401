@@ -46,16 +46,41 @@
     <p>
       Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
     </p>
+    <form @submit.prevent="submitPseudo" class="">
+      <input type="text" v-model="pseudo" placeholder="Entrez votre pseudo" required />
+      <button type="submit" class="btn btn--green">Envoyer</button>
+    </form>
     <button class="btn btn--moyen" aria-label="recommencer une partie">Nouvelle partie</button>
     <button @click="goToMenu"  class="btn btn--green--yellow">Accueil</button>
   </div>
 </template>
 
 <script setup>
+import axios from 'axios';
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import jsonDataEn from '../../public/data/objectDescription_en.json';
 import jsonDataFr from '../../public/data/objectDescription_fr.json';
 
+const time = ref('');
+const difficulty = ref('medium');
+const pseudo = ref('');
+
+const submitPseudo = async () => {
+  try {
+    const response = await axios.post('http://mmi22c07.mmi-troyes.fr/api/classements', {
+      time: displayTime.value,
+      difficulty: difficulty.value,
+      pseudo: pseudo.value
+    }, {
+      headers: {
+        'Content-Type': 'application/ld+json'
+      }
+    });
+    console.log('Pseudo envoyé avec succès !');
+  } catch (error) {
+    console.error('Erreur lors de l\'envoi du pseudo :', error);
+  }
+};
 const language = localStorage.getItem('lang');
 let langAudio = '';
 let cardSound = '';
