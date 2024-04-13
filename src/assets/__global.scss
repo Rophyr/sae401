@@ -403,12 +403,21 @@ a{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        width: 150px;
+        align-items: center;
+        width: 180px;
         padding: 1% 3%;
+        gap: 10px;
+
+        // border: 1px solid red;
+
         p {
           font-size: 2.5em;
           font-family: 'Simply Rounded', sans-serif;
           margin: 0 0;
+          min-width: 120px;
+          max-width: 120px;
+
+          // border: 1px solid green;
         }
 
         &--moyen {
@@ -819,11 +828,18 @@ a{
   }
 
   &--timer{
-    img{
-      height: 20px;
-      margin: 5px;
+    height: 50px;
+    width: 50px;
+    background-image: url('/public/images/no-btn-timer-vert.svg');
+    // border: 1px solid red;
+    background-size: cover;
+    
+    &--orange{
+      background-image: url('/public/images/no-btn-timer-jaune.svg');
+    }
 
-      // border: 1px solid red;
+    &--red{
+      background-image: url('/public/images/no-btn-timer-rouge.svg');
     }
 
     

@@ -33,7 +33,7 @@
           <div class="container__right">
             <div class="timer">
               <p class="orange-p"> {{ displayTime }}</p>
-              <button @click="displayTimer()" class="no-btn no-btn--timer"><img src="/public/images/no-btn-sound.svg" alt=""></button> <!-- ici -->
+              <button @click="displayTimer()" class="no-btn no-btn--timer no-btn--timer--orange"></button> <!-- ici -->
             </div>
           </div>
         </div>

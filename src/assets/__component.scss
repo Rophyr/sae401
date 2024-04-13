@@ -222,13 +222,17 @@ form {
   flex-direction: column;
   height: fit-content;
   padding: 2.5em 2em;
-  width: 30vw;
+  // width: 30vw;
 
-  background-color: $light-green;
-  color: $light-green;
-  border-radius: 15px;
+  // background-color: $light-green;
+  // color: $light-green;
+  // border-radius: 15px;
 
-  gap: 30px;
+  // gap: 30px;
+
+  input{
+    @include input;
+  }
 
   .inputs {
     display: flex;
@@ -236,15 +240,7 @@ form {
     gap: 20px;
 
     input {
-      // height: 30px;
-      width: 94%;
-      // height: 50px;
-      background-color: $light;
-      padding: 2% 3%;
-      border: none;
-      border-radius: 8px;
-
-      font-family: 'Simply Rounded', sans-serif;
+      @include input;
     }
 
     ::placeholder {

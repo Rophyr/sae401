@@ -13,7 +13,7 @@
         <div class="container__middle__buttons">
 
           <div class="btn btn--green btn--select" @click="toggleDropdown" aria-label="selectionner la difficulté">
-            {{ selectedDifficultyLabel }}
+            {{ selectedDifficultyLabel }} <img src="/public/images/chevron-down.svg" alt="icon dropdown">
             <div v-if="isDropdownOpen" class="dropdown">
               <div class="option" @click="selectDifficulty('facile')">{{$t('home.facile')}}</div> 
               <div class="option" @click="selectDifficulty('moyen')">{{$t('home.moyen')}}</div>
