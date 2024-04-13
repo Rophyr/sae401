@@ -9,7 +9,7 @@
           <p class="description">{{ cardDescription }}</p>
           <div class="row">
             <img draggable="false" src="/public/images/grenouille lunettes.svg" alt="icon grenouille lunette">
-            <button  @click="playSound()" class="no-btn"><img draggable="false" src="/public/images/son_orange.svg" alt="icon allumer le son"></button>
+            <div  @click="playSound()" class="no-btn  no-btn--sound no-btn--sound--orange"></div>
           </div>
         </div>
         <router-link to="/" class="btn btn--moyen btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
@@ -33,6 +33,7 @@
           <div class="container__right">
             <div class="timer">
               <p class="orange-p"> {{ displayTime }}</p>
+              <button @click="displayTimer()" class="no-btn no-btn--timer no-btn--timer--orange"></button> <!-- ici -->
             </div>
           </div>
         </div>
@@ -290,13 +291,50 @@ function getCardAlt(imagePath) {
   return "Carte " + imagePath.split('/').pop().split('.')[0];
 }
 
-function playSound(){
-  console.log("A appuyer sur le bouton pour le son")
-  console.log(cardSound);
-  console.log("Card sound:", cardSound); // Affiche le son de la carte
-  let audio = new Audio("../../public/sounds/" + cardSound + langAudio);
-  audio.play();
+// Audio pour les cartes
+let audio = null;
 
-  
+function playSound() {
+  console.log("A appuyer sur le bouton pour le son");
+  console.log(cardSound);
+  console.log("Card sound:", cardSound); // Afficher le son de la carte
+
+  const button = document.querySelector('.no-btn--sound'); // Sélectionnez le bouton une fois pour réutiliser
+
+  if (audio && !audio.paused) {
+    // Si l'audio est en cours de lecture, l'arrêter
+    audio.pause();
+    console.log("Audio stopped");
+    button.classList.remove('no-btn--sound--pause--yellow');
+    button.classList.add('no-btn--sound--play--yellow');
+  } else {
+    // Sinon, démarrer l'audio
+    audio = new Audio("../../public/sounds/" + cardSound + langAudio);
+    audio.play();
+    console.log("Audio started");
+    button.classList.remove('no-btn--sound--play--yellow');
+    button.classList.add('no-btn--sound--pause--yellow');
+    // Ajoutez un événement pour réinitialiser le bouton lorsque l'audio est terminé
+    audio.addEventListener('ended', function() {
+      console.log("Audio ended");
+      button.classList.remove('no-btn--sound--pause--yellow');
+      button.classList.add('no-btn--sound--play--yellow');
+    });
+  }
 }
+
+//fin audio pour les cartes
+
+
+// Arreter de display le timer
+
+function displayTimer() {
+  clearInterval(horloge.value);
+  const timerElement = document.getElementsByClassName('timer')[0];
+  timerElement.style.display = "none";
+  const displayTimeVictory = document.getElementById('display-time-victory');
+  displayTimeVictory.style.display = "none";
+}
+
+// Fin arreter de display le timer
 </script>
