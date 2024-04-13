@@ -21,7 +21,7 @@
       }
       
     ],
-    "start_url": "https://mmi22c07.sae401.ovh/",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#4C8B25",
     "background_color": "#ffffff"
