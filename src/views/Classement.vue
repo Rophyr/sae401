@@ -51,7 +51,7 @@ const selectedDifficulty = ref('easy'); // Par défaut, afficher les données de
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://mmi22c07.mmi-troyes.fr/api/classements');
+    const response = await axios.get('https://mmi22c07-2.h205.online/api/classements');
     classementData.value = response.data['hydra:member'];
     filterClassementData(); // Filtrer les données au chargement initial
   } catch (error) {

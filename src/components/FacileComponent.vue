@@ -67,7 +67,7 @@ const pseudo = ref('');
 
 const submitPseudo = async () => {
   try {
-    const response = await axios.post('http://mmi22c07.mmi-troyes.fr/api/classements', {
+    const response = await axios.post('https://mmi22c07-2.h205.online/api/classements', {
       time: displayTime.value,
       difficulty: difficulty.value,
       pseudo: pseudo.value
