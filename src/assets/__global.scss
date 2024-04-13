@@ -298,7 +298,8 @@ a{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 60vh;
+        min-height: 60vh;
+        max-width: 80vh;
         width: 13vw;
         min-width: 160px;
         padding: 3% 4%;
@@ -312,6 +313,7 @@ a{
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    align-items: center;
                     width: 80%;
                     img{
                         height: 50px;
@@ -808,14 +810,48 @@ a{
   border: none;
   background: none;
 
-  &--sound{
+  // border: 1px solid yellow;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &--timer{
     img{
       height: 20px;
       margin: 5px;
 
       // border: 1px solid red;
     }
+
     
+    
+  }
+
+  &--sound{
+    height: 30px;
+    min-width: 30px;
+    width: auto;
+    max-width: 50px;
+    // border: 1px solid red;
+    background-image: url('/public/images/son_vert.svg');
+    background-size: cover;
+
+    // border: 1px solid black;
+
+    &--play{
+      // border: 1px solid red;
+      background-image: url('/public/images/son_vert.svg');
+      background-size: cover;
+      // border: 1px solid red;
+    }
+
+    &--pause{
+      // border: 1px solid green;
+      background-image: url('/public/images/no-son_vert.svg');
+      // transform: scale(0.7);
+      // height
+    }
   }
 }
 

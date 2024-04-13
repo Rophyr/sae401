@@ -9,7 +9,7 @@
           <p class="description">{{ cardDescription }}</p>
           <div class="row">
               <img src="/images/grenouille lunettes.svg" alt="icon grenouille lunette">
-              <button  @click="playSound()" class="no-btn"><img src="/images/son_vert.svg" alt="icon allumer le son"></button>
+              <div  @click="playSound()" class="no-btn no-btn--sound"></div>
           </div>
         </div>
         <router-link to="/" class="btn btn--green btn--round"><img src="/images/back_door.svg" aria-label="Retourner au menu" alt="Retour au menu"></router-link>
@@ -33,7 +33,7 @@
           <div class="container__right">
             <div class="timer">
               <p class="dark-vert-p display-timer"> {{ displayTime }} </p>
-              <button @click="displayTimer()" class="no-btn no-btn--sound"><img src="/public/images/no-btn-sound.svg" alt=""></button> <!-- ici -->
+              <button @click="displayTimer()" class="no-btn no-btn--timer"><img src="/public/images/no-btn-sound.svg" alt=""></button> <!-- ici -->
             </div>
           </div>
         </div>
@@ -249,40 +249,51 @@ function getCardAlt(imagePath) {
 }
 
 // Audio pour les cartes
-
-let audio = null; // Définir la variable audio en dehors de la fonction
+let audio = null;
 
 function playSound() {
   console.log("A appuyer sur le bouton pour le son");
   console.log(cardSound);
   console.log("Card sound:", cardSound); // Afficher le son de la carte
 
+  const button = document.querySelector('.no-btn--sound'); // Sélectionnez le bouton une fois pour réutiliser
+
   if (audio && !audio.paused) {
     // Si l'audio est en cours de lecture, l'arrêter
     audio.pause();
     console.log("Audio stopped");
+    button.classList.remove('no-btn--sound--pause');
+    button.classList.add('no-btn--sound--play');
   } else {
     // Sinon, démarrer l'audio
     audio = new Audio("../../public/sounds/" + cardSound + langAudio);
     audio.play();
     console.log("Audio started");
+    button.classList.remove('no-btn--sound--play');
+    button.classList.add('no-btn--sound--pause');
+    // Ajoutez un événement pour réinitialiser le bouton lorsque l'audio est terminé
+    audio.addEventListener('ended', function() {
+      console.log("Audio ended");
+      button.classList.remove('no-btn--sound--pause');
+      button.classList.add('no-btn--sound--play');
+    });
   }
 }
 
-// Fin audio pour les cartes
 
 
 
 // Arreter de display le timer
 
-function displayTimer() {
-  clearInterval(horloge.value);
-  const timerElement = document.getElementsByClassName('timer')[0];
-  timerElement.style.display = "none";
-  const displayTimeVictory = document.getElementById('display-time-victory');
-  displayTimeVictory.style.display = "none";
-}
+  function displayTimer(){
+    clearInterval(horloge.value);
+    const timerElement = document.getElementsByClassName('timer')[0];
+    timerElement.style.display = "none";
+    const displayTimeVictory = document.getElementById('display-time-victory');
+    displayTimeVictory.style.display = "none";
+  }
 
+  
 // Fin arreter de display le timer
 
 function goToMenu(){

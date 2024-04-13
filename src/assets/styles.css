@@ -243,7 +243,8 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 60vh;
+  min-height: 60vh;
+  max-width: 80vh;
   width: 13vw;
   min-width: 160px;
   padding: 3% 4%;
@@ -257,6 +258,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 80%;
 }
 .jeux .container__left .explain .row img {
@@ -264,13 +266,13 @@ a {
 }
 .jeux .container__left .explain--moyen {
   background-color: #fff0d2;
-  border-color: #c99136;
-  color: #c99136;
+  border-color: #ECA438;
+  color: #ECA438;
 }
 .jeux .container__left .explain--difficile {
   background-color: #ffe8e3;
-  border-color: #c3553c;
-  color: #c3553c;
+  border-color: #CB664D;
+  color: #CB664D;
 }
 .jeux .container__left .explain .FroggyDesc {
   font-family: "Sobiscuit", sans-serif;
@@ -323,10 +325,10 @@ a {
   margin: 0 0;
 }
 .jeux .container__right .timer--moyen p {
-  color: #c99136;
+  color: #ECA438;
 }
 .jeux .container__right .timer--difficile p {
-  color: #c3553c;
+  color: #CB664D;
 }
 
 .victory--green {
@@ -336,13 +338,13 @@ a {
 }
 .victory--orange {
   background-color: #fff0d2;
-  border: 10px solid #c99136;
-  color: #c99136;
+  border: 10px solid #ECA438;
+  color: #ECA438;
 }
 .victory--red {
   background-color: #ffe8e3;
-  border: 10px solid #c3553c;
-  color: #c3553c;
+  border: 10px solid #CB664D;
+  color: #CB664D;
 }
 
 #victory {
@@ -409,17 +411,17 @@ a {
 }
 .classement--yellow .title h1 {
   color: #fbb03a;
-  text-shadow: 0.05em 0.05em 0em #c99136;
+  text-shadow: 0.05em 0.05em 0em #ECA438;
 }
 .classement--yellow .title .green-bar {
-  background-color: #c99136;
+  background-color: #ECA438;
 }
 .classement--yellow .btn--green {
   background-color: #fbb03a;
-  box-shadow: inset -0.1875rem -0.1875rem #c99136;
+  box-shadow: inset -0.1875rem -0.1875rem #ECA438;
 }
 .classement--yellow .btn--green:hover, .classement--yellow .btn--green:focus {
-  box-shadow: inset 0.125em 0.125em #c99136;
+  box-shadow: inset 0.125em 0.125em #ECA438;
   background-color: darker(#fbb03a);
 }
 .classement--yellow .tableau {
@@ -433,7 +435,7 @@ a {
   background-color: #fbb03a;
 }
 .classement--yellow .tableau table thead th {
-  text-shadow: 0.05em 0.05em 0em #c99136;
+  text-shadow: 0.05em 0.05em 0em #ECA438;
 }
 .classement--red {
   background-image: url("/public/images/bg-classement-red.svg");
@@ -441,17 +443,17 @@ a {
 }
 .classement--red .title h1 {
   color: #ec866f;
-  text-shadow: 0.05em 0.05em 0em #c3553c;
+  text-shadow: 0.05em 0.05em 0em #CB664D;
 }
 .classement--red .title .green-bar {
-  background-color: #c3553c;
+  background-color: #CB664D;
 }
 .classement--red .btn--green {
   background-color: #ec866f;
-  box-shadow: inset -0.1875rem -0.1875rem #c3553c;
+  box-shadow: inset -0.1875rem -0.1875rem #CB664D;
 }
 .classement--red .btn--green:hover, .classement--red .btn--green:focus {
-  box-shadow: inset 0.125em 0.125em #c3553c;
+  box-shadow: inset 0.125em 0.125em #CB664D;
   background-color: darker(#ec866f);
 }
 .classement--red .tableau {
@@ -465,7 +467,7 @@ a {
   background-color: #ec866f;
 }
 .classement--red .tableau table thead th {
-  text-shadow: 0.05em 0.05em 0em #c3553c;
+  text-shadow: 0.05em 0.05em 0em #CB664D;
 }
 .classement .container {
   display: flex;
@@ -638,9 +640,27 @@ a {
   border: none;
   background: none;
 }
-.no-btn--sound img {
+.no-btn:hover {
+  cursor: pointer;
+}
+.no-btn--timer img {
   height: 20px;
   margin: 5px;
+}
+.no-btn--sound {
+  height: 30px;
+  min-width: 30px;
+  width: auto;
+  max-width: 50px;
+  background-image: url("/public/images/son_vert.svg");
+  background-size: cover;
+}
+.no-btn--sound--play {
+  background-image: url("/public/images/son_vert.svg");
+  background-size: cover;
+}
+.no-btn--sound--pause {
+  background-image: url("/public/images/no-son_vert.svg");
 }
 
 .dropdown {
@@ -718,17 +738,17 @@ a .btn:visited {
 }
 .btn--moyen {
   background-color: #fbb03a;
-  box-shadow: inset -0.1875rem -0.1875rem #c99136;
+  box-shadow: inset -0.1875rem -0.1875rem #ECA438;
 }
 .btn--moyen:hover, .btn--moyen:focus {
-  box-shadow: inset 0.125em 0.125em #c99136;
+  box-shadow: inset 0.125em 0.125em #ECA438;
 }
 .btn--difficile {
   background-color: #ec866f;
-  box-shadow: inset -0.1875rem -0.1875rem #c3553c;
+  box-shadow: inset -0.1875rem -0.1875rem #CB664D;
 }
 .btn--difficile:hover, .btn--difficile:focus {
-  box-shadow: inset 0.125em 0.125em #c3553c;
+  box-shadow: inset 0.125em 0.125em #CB664D;
 }
 .btn--green {
   background-color: #8CCF57;
@@ -739,17 +759,17 @@ a .btn:visited {
 }
 .btn--green--yellow {
   background-color: #fbb03a;
-  box-shadow: inset -0.1875rem -0.1875rem #c99136;
+  box-shadow: inset -0.1875rem -0.1875rem #ECA438;
 }
 .btn--green--yellow:hover, .btn--green--yellow:focus {
-  box-shadow: inset 0.125em 0.125em #c99136;
+  box-shadow: inset 0.125em 0.125em #ECA438;
 }
 .btn--green--red {
   background-color: #ec866f;
-  box-shadow: inset -0.1875rem -0.1875rem #c3553c;
+  box-shadow: inset -0.1875rem -0.1875rem #CB664D;
 }
 .btn--green--red:hover, .btn--green--red:focus {
-  box-shadow: inset 0.125em 0.125em #c3553c;
+  box-shadow: inset 0.125em 0.125em #CB664D;
 }
 .btn--green:hover, .btn--green:focus {
   transition: box-shadow 0.1s ease-in;
@@ -1059,14 +1079,14 @@ form .inputs ::placeholder {
 }
 
 .orange {
-  border: solid #c99136 10px;
+  border: solid #ECA438 10px;
 }
 .orange .separation {
   background-color: #fbb03a;
 }
 
 .dark-orange-p {
-  color: #c99136;
+  color: #ECA438;
 }
 
 .orange-p {

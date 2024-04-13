@@ -33,6 +33,7 @@
           <div class="container__right">
             <div class="timer">
               <p class="rouge-p"> {{ displayTime }}</p>
+              <button @click="displayTimer()" class="no-btn no-btn--sound"><img src="/public/images/no-btn-sound.svg" alt=""></button> <!-- ici -->
             </div>
           </div>
         </div>
@@ -243,6 +244,20 @@ function playSound(){
 
   
 }
+
+
+
+// Arreter de display le timer
+
+function displayTimer() {
+  clearInterval(horloge.value);
+  const timerElement = document.getElementsByClassName('timer')[0];
+  timerElement.style.display = "none";
+  const displayTimeVictory = document.getElementById('display-time-victory');
+  displayTimeVictory.style.display = "none";
+}
+
+// Fin arreter de display le timer
 
 
 </script>
