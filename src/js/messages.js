@@ -72,6 +72,18 @@ export default {
       t7: '7. Competition',
       p7: 'Thanks to the timing function, players have the opportunity to participate in an overall competition. Their time to complete a game is recorded and compared to that of other players present in the game. The three difficulty levels each have their own ranking.',
       p8: 'Froggy combines entertainment and education, providing a fun and rewarding experience for all players, regardless of age and skill level.'
+    },
+    popUp: {
+      bravo: 'Congrats !',
+      victory1: 'You took',
+      victory2facile: 'to complete the easy level.',
+      victory2moyen: 'to complete the medium level.',
+      victory2difficile: 'to complete the hard level.',
+      submit: 'Submit',
+      confirmationPseudo: 'Username sent successfully!',
+      newPartie: 'Play again',
+      accueil: 'Home',
+      placeholder: 'enter your nickname'
     }
   },
   fr: {
@@ -146,6 +158,18 @@ export default {
       t7: '7. Compétition',
       p7: 'Grâce à la fonction de chronométrage, les joueurs ont la possibilité de participer à une compétition générale. Leur temps pour terminer une partie est enregistré et comparé à celui des autres joueurs présents sur le jeu. Les trois niveaux de difficulté ont chacun leur classement.',
       p8: 'Froggy combine divertissement et éducation, offrant ainsi une expérience ludique et enrichissante pour tous les joueurs, quels que soient leur âge et leur niveau de compétence.'
+    },
+    popUp:{
+      bravo: 'Bravo !',
+      victory1: 'Tu as mis',
+      victory2facile: 'pour réaliser le niveau facile.',
+      victory2moyen: 'pour réaliser le niveau moyen.',
+      victory2difficile: 'pour réaliser le niveau difficile.',
+      submit: 'Envoyer',
+      confirmationPseudo: 'Pseudo envoyé avec succès !',
+      newPartie: 'Nouvelle partie',
+      accueil: 'Accueil',
+      placeholder: 'entre ton pseudo'
     }
   }
 }

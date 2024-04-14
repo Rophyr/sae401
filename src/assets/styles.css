@@ -19,6 +19,7 @@ body {
 
 a {
   cursor: url("/public/images/main.svg"), pointer;
+  color: #313131;
 }
 a:visited {
   color: #313131;
@@ -354,6 +355,9 @@ a:visited {
   border: 10px solid #CB664D;
   color: #CB664D;
 }
+.victory .confirmation-pseudo {
+  display: none;
+}
 
 #victory {
   display: none;
@@ -388,7 +392,6 @@ a:visited {
   background-color: #4c8b25;
 }
 #victory p {
-  margin-bottom: 30px;
   text-align: center;
 }
 #victory button {
@@ -934,11 +937,13 @@ form {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  padding: 2.5em 2em;
+  padding: 3% 2% 3% 2%;
+  margin-bottom: 10%;
 }
 form input {
   background-color: #F7FAF7;
   padding: 0% 3%;
+  margin: 2% 0;
   border: none;
   border-radius: 8px;
   font-family: "Simply Rounded", sans-serif;
@@ -951,6 +956,7 @@ form .inputs {
 form .inputs input {
   background-color: #F7FAF7;
   padding: 0% 3%;
+  margin: 2% 0;
   border: none;
   border-radius: 8px;
   font-family: "Simply Rounded", sans-serif;

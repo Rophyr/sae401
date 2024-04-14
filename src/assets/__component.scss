@@ -217,11 +217,14 @@ a:visited {
 
 // Formulaire //
 
-form {
+form{
   display: flex;
   flex-direction: column;
   height: fit-content;
-  padding: 2.5em 2em;
+  padding: 3% 2% 3% 2%;
+
+  margin-bottom: 10%;
+
   // width: 30vw;
 
   // background-color: $light-green;

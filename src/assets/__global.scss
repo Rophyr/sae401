@@ -21,6 +21,7 @@ body {
 
 a{
   cursor: url('/public/images/main.svg'), pointer;
+  color: $dark;
 
   &:visited{
     color: $dark;
@@ -459,6 +460,10 @@ a{
     border: 10px solid $dark-red;
     color: $dark-red;
   }
+
+  .confirmation-pseudo{
+    display: none;
+  }
 }
 
 
@@ -498,7 +503,7 @@ a{
     }
   }
   p {
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     text-align: center;
   }
   button {

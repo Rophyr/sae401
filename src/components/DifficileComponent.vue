@@ -41,17 +41,18 @@
     </div>
   </div>
   <div id="victory" class="victory victory--red rouge">
-    <p id="vic-text" class="rouge-p">Bravo !</p>
+    <p id="vic-text" class="rouge-p">{{ $t('popUp.bravo') }}</p>
     <!-- <div class="separation"></div> -->
-    <p>
-      Tu as mis {{ gameTime }} pour réaliser le niveau moyen.
+    <p id="display-time-victory">
+      {{ $t('popUp.victory1') }} {{ gameTime }} {{ $t('popUp.victory2difficile') }}
     </p>
-    <form @submit.prevent="submitPseudo" class="">
-      <input type="text" v-model="pseudo" placeholder="Entrez votre pseudo" required />
-      <button type="submit" class="btn btn--green">Envoyer</button>
+    <form @submit.prevent="submitPseudo" class="input-classement">
+      <input type="text" v-model="pseudo" :placeholder="$t('popUp.placeholder')" required />
+      <button type="submit" class="btn btn--difficile">{{$t('popUp.submit')}}</button>
     </form>
-    <button class="btn btn--difficile" aria-label="recommencer une partie">Nouvelle partie</button>
-    <button @click="goToMenu"  class="btn btn--green--red">Accueil</button>
+    <p class="confirmation-pseudo">{{ $t("popUp.confirmationPseudo") }}</p>
+    <button @click="reload" class="btn btn--difficile" aria-label="recommencer une partie">{{ $t('popUp.newPartie') }}</button>
+    <button @click="goToMenu"  class="btn btn--difficile">{{$t('popUp.accueil')}}</button>
   </div>
 </template>
 <script setup>
@@ -76,6 +77,8 @@ const submitPseudo = async () => {
       }
     });
     console.log('Pseudo envoyé avec succès !');
+    const confirmationPseudo = document.querySelector('.confirmation-pseudo');
+    confirmationPseudo.style.display = "block";
   } catch (error) {
     console.error('Erreur lors de l\'envoi du pseudo :', error);
   }
@@ -305,9 +308,19 @@ function displayTimer() {
   timerElement.style.display = "none";
   const displayTimeVictory = document.getElementById('display-time-victory');
   displayTimeVictory.style.display = "none";
+  const timerInput = document.getElementsByClassName('input-classement')[0];
+  timerInput.style.display = "none";
 }
 
 // Fin arreter de display le timer
+
+function goToMenu(){
+  location.href = "/";
+}
+
+function reload(){
+  location.reload();
+}
 
 
 </script>

@@ -1,3 +1,4 @@
+<!-- FacileComponent.vue -->
 <template>
   <div id="app" class="jeux jeux--facile">
     <div class="container container__facile">
@@ -41,25 +42,32 @@
     </div>
   </div>
   <div id="victory" class="victory victory--green">
-    <p id="vic-text" class="light-vert-p">Bravo !</p> <br>
+    <p id="vic-text" class="light-vert-p">{{ $t("popUp.bravo") }}</p> <br>
     <!-- <div class="separation separation--green"></div> -->
     <p id="display-time-victory">
-      Tu as mis {{ gameTime }} pour réaliser le niveau facile.
+      {{$t("popUp.victory1")}} {{ gameTime }} {{$t("popUp.victory2facile")}}
     </p>
-    <form @submit.prevent="submitPseudo" class="">
-      <input type="text" v-model="pseudo" placeholder="Entrez votre pseudo" required />
-      <button type="submit" class="btn btn--green">Envoyer</button>
+    <form @submit.prevent="submitPseudo" class="input-classement">
+      <input type="text" v-model="pseudo" :placeholder="$t('popUp.placeholder')" required />
+
+      <button type="submit" class="btn btn--green">{{$t("popUp.submit")}}</button>
     </form>
-    <button class="btn btn--green" aria-label="recommencer une partie">Nouvelle partie</button>
-    <button @click="goToMenu"  class="btn btn--green">Accueil</button>
+    <p class="confirmation-pseudo" style="display: none;">{{ $t("popUp.confirmationPseudo") }}</p>
+    <button @click="reload" class="btn btn--green" aria-label="recommencer une partie">{{ $t("popUp.newPartie") }}</button> 
+    <button @click="goToMenu"  class="btn btn--green">{{ $t("popUp.accueil") }}</button>
   </div>
 </template>
+
+
 
 <script setup>
 import axios from 'axios';
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import jsonDataEn from '../../public/data/objectDescription_en.json';
 import jsonDataFr from '../../public/data/objectDescription_fr.json';
+
+
+
 
 const time = ref('');
 const difficulty = ref('easy');
@@ -77,6 +85,8 @@ const submitPseudo = async () => {
       }
     });
     console.log('Pseudo envoyé avec succès !');
+    const confirmationPseudo = document.querySelector('.confirmation-pseudo');
+    confirmationPseudo.style.display = "block";
   } catch (error) {
     console.error('Erreur lors de l\'envoi du pseudo :', error);
   }
@@ -311,13 +321,15 @@ function playSound() {
 
 // Arreter de display le timer
 
-  function displayTimer(){
-    clearInterval(horloge.value);
-    const timerElement = document.getElementsByClassName('timer')[0];
-    timerElement.style.display = "none";
-    const displayTimeVictory = document.getElementById('display-time-victory');
-    displayTimeVictory.style.display = "none";
-  }
+function displayTimer(){
+  clearInterval(horloge.value);
+  const timerElement = document.getElementsByClassName('timer')[0];
+  timerElement.style.display = "none";
+  const displayTimeVictory = document.getElementById('display-time-victory');
+  displayTimeVictory.style.display = "none";
+  const timerInput = document.getElementsByClassName('input-classement')[0];
+  timerInput.style.display = "none";
+}
 
   
 // Fin arreter de display le timer
@@ -326,5 +338,13 @@ function goToMenu(){
   location.href = "/";
 }
 
+function reload(){
+  location.reload();
+}
+
+//alterte pour dire que le pseudo a bien été envoyé
+
+
 
 </script>
+
