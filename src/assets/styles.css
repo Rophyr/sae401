@@ -936,11 +936,14 @@ a:visited {
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: fit-content;
   padding: 3% 2% 3% 2%;
   margin-bottom: 10%;
 }
 form input {
+  width: 90%;
+  height: 30px;
   background-color: #F7FAF7;
   padding: 0% 3%;
   margin: 2% 0;
@@ -954,6 +957,8 @@ form .inputs {
   gap: 20px;
 }
 form .inputs input {
+  width: 90%;
+  height: 30px;
   background-color: #F7FAF7;
   padding: 0% 3%;
   margin: 2% 0;
